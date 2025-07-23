@@ -55,18 +55,6 @@ fetch_package_metadata(app_name: str)
 
 ---
 
-## Mentor is Assessing These Skills
-
-| Skill                  | Why the mentor focuses on it                                 |
-|------------------------|--------------------------------------------------------------|
-| Working with APIs      | Communicate with multiple sources (PyPI + GitHub)            |
-| Data integration       | Aggregate & standardize heterogeneous data                   |
-| Writing reusable code  | Prototype should be reusable for chatbot/infra in the future |
-| Real data testing      | Try with "numpy", "flask", "scikit-learn" for real-world test|
-| Code quality           | Clear naming, proper error handling, extensibility           |
-
----
-
 ## Checklist
 
 - [x] Can fetch description and versions from PyPI
