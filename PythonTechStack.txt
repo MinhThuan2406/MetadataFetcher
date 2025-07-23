@@ -85,3 +85,10 @@ pytest-twisted
 pytest-xdist
 pytest-xprocess
 pytest-xvfb
+
+# Non-PyPI tools
+milvus
+postgresql
+redis
+elastic
+nats

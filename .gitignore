@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+env/
+venv/
+ENV/
+
+# Environment variables
+.env
+
+# Output and logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db 
+
+# Misc
+LibraryCommands.txt

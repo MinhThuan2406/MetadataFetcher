@@ -1,3 +1,4 @@
+from metadata_fetcher import PackageMetadata
 import requests
 from urllib.parse import urlparse
 
@@ -35,4 +36,23 @@ def fetch_readme_from_github(owner_repo):
             content = try_fetch_text(url)
             if content:
                 return content
-    return None 
+    return None
+
+def enrich_with_github_data(metadata: PackageMetadata):
+    """
+    Given a PackageMetadata object with github_url, fetch and fill readme_content and requirements fields.
+    """
+    if not metadata.github_url:
+        return metadata
+    owner_repo = extract_github_repo_path(metadata.github_url)
+    if not owner_repo:
+        return metadata
+    metadata.readme_content = fetch_readme_from_github(owner_repo)
+    # Try requirements.txt from both main and master
+    for branch in ["main", "master"]:
+        if not metadata.requirements:
+            req_url = f"{RAW_GITHUB_PREFIX}/{owner_repo}/{branch}/requirements.txt"
+            metadata.requirements = try_fetch_text(req_url)
+        if metadata.requirements:
+            break
+    return metadata 

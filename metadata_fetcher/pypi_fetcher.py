@@ -1,3 +1,4 @@
+from metadata_fetcher.schema import PackageMetadata, InstallationInfo
 import requests
 from packaging.version import parse as parse_version
 
@@ -6,31 +7,21 @@ PYPI_API_URL = "https://pypi.org/pypi/{}/json"
 def fetch_pypi_metadata(app_name: str):
     """
     Fetch metadata for a given Python package from PyPI.
-    Returns a dict with description, versions, dependencies, and project URLs.
+    Returns a PackageMetadata object.
     """
-    result = {
-        "description": None,
-        "latest_version": None,
-        "popular_versions": [],
-        "dependencies": {},
-        "info": {},
-        "releases": {},
-        "project_urls": {},
-    }
     try:
         res = requests.get(PYPI_API_URL.format(app_name), timeout=10)
         if res.status_code != 200:
-            return result
+            return None
         data = res.json()
         info = data.get("info", {})
         releases = data.get("releases", {})
-        result["info"] = info
-        result["releases"] = releases
-        result["description"] = info.get("summary") or info.get("description")
+        description = info.get("summary") or info.get("description")
         all_versions = sorted(releases.keys(), key=parse_version, reverse=True)
-        result["latest_version"] = all_versions[0] if all_versions else None
-        result["popular_versions"] = all_versions[:3]
-        for version in result["popular_versions"]:
+        latest_version = all_versions[0] if all_versions else None
+        popular_versions = all_versions[:3]
+        dependencies = {}
+        for version in popular_versions:
             dep_list = []
             try:
                 release_files = releases.get(version, [])
@@ -44,8 +35,30 @@ def fetch_pypi_metadata(app_name: str):
                     dep_list = info.get("requires_dist", []) or []
             except Exception:
                 dep_list = []
-            result["dependencies"][version] = dep_list
-        result["project_urls"] = info.get("project_urls", {})
+            dependencies[version] = dep_list
+        project_url = info.get("project_url") or info.get("home_page") or ""
+        urls = list(info.get("project_urls", {}).values()) + [project_url]
+        github_url = None
+        homepage = None
+        for url in urls:
+            if url and "github.com" in url:
+                github_url = url
+            if url and not homepage:
+                homepage = url
+        # Installation info (pip only for PyPI)
+        installation = InstallationInfo(
+            pip=f"pip install {app_name}"
+        )
+        return PackageMetadata(
+            name=app_name,
+            description=description,
+            latest_version=latest_version,
+            popular_versions=popular_versions,
+            dependencies=dependencies,
+            github_url=github_url,
+            installation=installation,
+            homepage=homepage,
+            source="pypi"
+        )
     except Exception:
-        pass
-    return result 
+        return None 
