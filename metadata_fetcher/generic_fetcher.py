@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup, Tag
 import re
 import json
 import os
+from metadata_fetcher import fetch_package_metadata
 
 DOC_KEYWORDS = ["docs", "documentation", "install", "setup", "getting-started", "guide"]
 INSTALL_KEYWORDS = ["install", "setup", "getting-started", "quickstart", "start"]
@@ -62,6 +63,29 @@ def validate_homepage(homepage: str, tool_name: str) -> bool:
         return True
     return False
 
+def is_likely_real_pypi(metadata: PackageMetadata) -> bool:
+    # Heuristics: homepage or documentation should not be just a GitHub repo, should not be empty, and description should be meaningful
+    suspicious_descs = [
+        "embeded milvus", "no description", "", None
+    ]
+    if metadata.description and metadata.description.strip().lower() in suspicious_descs:
+        return False
+    homepage = (metadata.homepage or "").lower()
+    documentation = (metadata.documentation or "").lower()
+    # If homepage or documentation is a generic github repo or empty
+    if homepage == "" and documentation == "":
+        return False
+    for url in [homepage, documentation]:
+        if url.startswith("https://github.com/") or url.startswith("http://github.com/"):
+            # If it's just a repo root or releases page, not docs
+            if url.count("/") <= 4 or "/releases" in url:
+                return False
+    # If at least one of homepage or documentation looks like a real project site
+    if ("docs" in homepage or "doc" in homepage or "readthedocs" in homepage or "org" in homepage or "io" in homepage) or \
+       ("docs" in documentation or "doc" in documentation or "readthedocs" in documentation or "org" in documentation or "io" in documentation):
+        return True
+    return False
+
 def fetch_generic_tool_metadata(app_name: str, homepage_override: Optional[str] = None) -> Optional[PackageMetadata]:
     # Use manual override if provided
     homepage = homepage_override or google_search(f"{app_name} official site")
@@ -102,8 +126,13 @@ def fetch_generic_tool_metadata(app_name: str, homepage_override: Optional[str] 
     )
 
 def save_metadata_json(metadata: PackageMetadata, tool_name: str):
-    os.makedirs("SampleOutputs", exist_ok=True)
-    output_path = os.path.join("SampleOutputs", f"{tool_name}_metadata.json")
+    # Determine subfolder based on source
+    if metadata.source == "pypi":
+        subfolder = os.path.join("SampleOutputs", "metadata", "PyPI")
+    else:
+        subfolder = os.path.join("SampleOutputs", "metadata", "Non-PyPI")
+    os.makedirs(subfolder, exist_ok=True)
+    output_path = os.path.join(subfolder, f"{tool_name}.json")
     # Create a summary dict similar to the terminal output
     summary = {
         "Name": metadata.name,
@@ -125,19 +154,22 @@ def save_metadata_json(metadata: PackageMetadata, tool_name: str):
     print(f"Saved summary metadata to {output_path}")
 
 if __name__ == "__main__":
-    tool_name = input("Enter a non-PyPI tool name to fetch metadata (e.g., milvus, postgresql): ").strip()
+    tool_name = input("Enter a tool or package name to fetch metadata (e.g., flask, milvus, postgresql): ").strip()
     homepage_override = input("(Optional) Enter homepage override URL (or leave blank): ").strip() or None
-    metadata = fetch_generic_tool_metadata(tool_name, homepage_override)
-    if metadata:
-        print("\nFetched Metadata:")
+
+    # Try PyPI fetch first
+    metadata = fetch_package_metadata(tool_name)
+    if metadata and is_likely_real_pypi(metadata):
+        print("\nFetched Metadata (PyPI):")
         print(f"Name: {metadata.name}")
+        print(f"Description: {metadata.description}")
+        print(f"Latest Version: {metadata.latest_version}")
+        print(f"Popular Versions: {metadata.popular_versions}")
+        print(f"Dependencies: {metadata.dependencies}")
+        print(f"GitHub URL: {metadata.github_url}")
         print(f"Homepage: {metadata.homepage}")
         print(f"Documentation: {metadata.documentation}")
         print(f"Source: {metadata.source}")
-        print(f"Homepage HTML length: {len(metadata.homepage_html) if metadata.homepage_html else 0}")
-        print(f"Documentation HTML length: {len(metadata.documentation_html) if metadata.documentation_html else 0}")
-        print(f"Documentation Links: {metadata.documentation_links}")
-        print(f"Installation Links: {metadata.installation_links}")
         print(f"Installation (pip): {metadata.installation.pip}")
         print(f"Installation (docker): {metadata.installation.docker}")
         print(f"Installation (from_source): {metadata.installation.from_source}")
@@ -146,4 +178,25 @@ if __name__ == "__main__":
         if save == 'y':
             save_metadata_json(metadata, tool_name)
     else:
-        print("No metadata found for the given tool.") 
+        metadata = fetch_generic_tool_metadata(tool_name, homepage_override)
+        if metadata:
+            print("\nFetched Metadata (manual + google):")
+            print(f"Name: {metadata.name}")
+            print(f"Homepage: {metadata.homepage}")
+            print(f"Documentation: {metadata.documentation}")
+            print(f"Source: {metadata.source}")
+            print(f"Homepage HTML length: {len(metadata.homepage_html) if metadata.homepage_html else 0}")
+            print(f"Documentation HTML length: {len(metadata.documentation_html) if metadata.documentation_html else 0}")
+            print(f"Documentation Links: {metadata.documentation_links}")
+            print(f"Installation Links: {metadata.installation_links}")
+            print(f"Installation (pip): {metadata.installation.pip}")
+            print(f"Installation (docker): {metadata.installation.docker}")
+            print(f"Installation (from_source): {metadata.installation.from_source}")
+            print(f"Installation (other): {metadata.installation.other}")
+            # Warn if likely a PyPI package but only generic metadata found
+            print("\n[NOTE] If this is a PyPI package, you may get more complete metadata by using the Python API: from metadata_fetcher import fetch_package_metadata")
+            save = input("Save this metadata as JSON in SampleOutputs/? (y/n): ").strip().lower()
+            if save == 'y':
+                save_metadata_json(metadata, tool_name)
+        else:
+            print("No metadata found for the given tool.") 

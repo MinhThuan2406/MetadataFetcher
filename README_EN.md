@@ -56,19 +56,26 @@
 ---
 
 ## 💡 Quick Usage
-### 1. Fetch metadata for any package/tool
+
+> **Note:**
+> - For **PyPI packages** (e.g., flask, numpy), use the Python API for the most complete metadata. The API now also provides more accurate documentation links for PyPI packages.
+> - The CLI is best for **non-PyPI tools** (e.g., milvus, postgresql, redis). For PyPI packages, the CLI may not return full metadata.
+
+### 1. Fetch metadata for any PyPI package (recommended)
 ```python
 from metadata_fetcher import fetch_package_metadata
 metadata = fetch_package_metadata("flask")
 print(metadata)
+# The 'documentation' field will now be set if available in PyPI metadata.
 ```
 
-### 2. Fetch metadata for a non-PyPI tool (e.g., milvus)
+### 2. Fetch metadata for a non-PyPI tool or any tool (CLI)
 ```bash
 python -m metadata_fetcher.generic_fetcher
-# Enter the tool name when prompted (e.g., milvus)
+# Enter the tool or package name when prompted (e.g., flask, milvus, postgresql)
 # You can manually enter a homepage URL if Google returns the wrong one
 ```
+> ⚠️ If you enter a PyPI package name in the CLI, you may see a warning suggesting to use the Python API for more complete results.
 
 ### 3. Save sample output as JSON
 After running, choose to save the output when prompted. The file will be in the `SampleOutputs/` directory.

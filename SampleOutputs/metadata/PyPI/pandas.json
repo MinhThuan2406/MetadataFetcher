@@ -1,0 +1,14 @@
+{
+  "Name": "pandas",
+  "Homepage": "https://pandas.pydata.org",
+  "Documentation": "https://pandas.pydata.org/docs/",
+  "Source": "pypi",
+  "Homepage HTML length": 0,
+  "Documentation HTML length": 0,
+  "Documentation Links": [],
+  "Installation Links": [],
+  "Installation (pip)": "pip install pandas",
+  "Installation (docker)": null,
+  "Installation (from_source)": null,
+  "Installation (other)": null
+}

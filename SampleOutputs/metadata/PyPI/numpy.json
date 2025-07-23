@@ -1,0 +1,14 @@
+{
+  "Name": "numpy",
+  "Homepage": "https://pypi.org/project/numpy/#files",
+  "Documentation": "https://numpy.org/doc/",
+  "Source": "pypi",
+  "Homepage HTML length": 0,
+  "Documentation HTML length": 0,
+  "Documentation Links": [],
+  "Installation Links": [],
+  "Installation (pip)": "pip install numpy",
+  "Installation (docker)": null,
+  "Installation (from_source)": null,
+  "Installation (other)": null
+}

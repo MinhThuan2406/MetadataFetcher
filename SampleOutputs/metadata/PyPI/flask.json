@@ -1,0 +1,14 @@
+{
+  "Name": "flask",
+  "Homepage": "https://flask.palletsprojects.com/page/changes/",
+  "Documentation": "https://flask.palletsprojects.com/",
+  "Source": "pypi",
+  "Homepage HTML length": 0,
+  "Documentation HTML length": 0,
+  "Documentation Links": [],
+  "Installation Links": [],
+  "Installation (pip)": "pip install flask",
+  "Installation (docker)": null,
+  "Installation (from_source)": null,
+  "Installation (other)": null
+}

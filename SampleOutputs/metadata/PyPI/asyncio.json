@@ -1,0 +1,14 @@
+{
+  "Name": "asyncio",
+  "Homepage": "http://www.python.org/dev/peps/pep-3156/",
+  "Documentation": null,
+  "Source": "pypi",
+  "Homepage HTML length": 0,
+  "Documentation HTML length": 0,
+  "Documentation Links": [],
+  "Installation Links": [],
+  "Installation (pip)": "pip install asyncio",
+  "Installation (docker)": null,
+  "Installation (from_source)": null,
+  "Installation (other)": null
+}

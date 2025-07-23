@@ -1,29 +1,55 @@
-# Modules
+# Modules (Standard Library)
 asyncio
-cryptography
-ipython
-lxml
-pillow
-pyyaml
-sympy
-networkx
-tqdm
+collections
+concurrent.futures
+contextlib
+csv
+datetime
+functools
+itertools
+json
+logging
+math
+os
+pathlib
+re
+subprocess
+sys
+threading
+time
+typing
+unittest
+uuid
 
-# Packages/Libraries
+# Packages/Libraries (PyPI)
 beautifulsoup4
+cryptography
+fastapi
+flask
+ipython
+jupyterlab
+lxml
 matplotlib
+networkx
+notebook
 numpy
 opencv-python
 pandas
+pillow
 plotly
 pydantic
+pyyaml
+requests
 scikit-learn
 scipy
 seaborn
 sqlalchemy
+starlette
 tensorflow
-keras
-pytorch
+torch
+tqdm
+transformers
+uvicorn
 
 # Apps/Frameworks
 django
@@ -31,8 +57,10 @@ fastapi
 flask
 jupyterlab
 notebook
+sanic
 sphinx
 starlette
+streamlit
 uvicorn
 
 # Pytest Plugins & Extensions
@@ -41,54 +69,22 @@ pytest-asyncio
 pytest-benchmark
 pytest-cov
 pytest-django
-pytest-docker
-pytest-env
-pytest-factoryboy
-pytest-fixture-config
-pytest-fixture-docker
-pytest-fixture-factoryboy
-pytest-fixture-mongodb
-pytest-fixture-mysql
-pytest-fixture-order
-pytest-fixture-postgresql
-pytest-fixture-qt
-pytest-fixture-redis
-pytest-fixture-tools
-pytest-fixture-utils
-pytest-fixture-variables
-pytest-fixture-warnings
-pytest-fixture-xdist
-pytest-fixture-xvfb
-pytest-flask
-pytest-forked
-pytest-freezegun
-pytest-html
-pytest-lazy-fixture
-pytest-metadata
 pytest-mock
-pytest-mock-resources
-pytest-mongodb
-pytest-mysql
-pytest-ordering
-pytest-postgresql
-pytest-qt
-pytest-randomly
-pytest-recording
-pytest-redis
-pytest-sanic
-pytest-socket
-pytest-splunk-addon
-pytest-subtests
-pytest-sugar
-pytest-tornado
-pytest-twisted
 pytest-xdist
-pytest-xprocess
-pytest-xvfb
+pytest-html
+pytest-metadata
+pytest-ordering
+pytest-randomly
+pytest-mock-resources
+pytest-freezegun
 
-# Non-PyPI tools
+# Non-PyPI Tools / Services
+docker
+git
 milvus
 postgresql
 redis
-elastic
+elasticsearch
+mongodb
 nats
+rabbitmq

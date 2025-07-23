@@ -56,19 +56,26 @@
 ---
 
 ## 💡 Cách sử dụng nhanh
-### 1. Lấy metadata cho package/tool bất kỳ
+
+> **Lưu ý:**
+> - Với **package PyPI** (ví dụ: flask, numpy), nên dùng API Python để lấy metadata đầy đủ nhất. API hiện đã lấy link tài liệu (documentation) chính xác hơn cho các package PyPI.
+> - CLI phù hợp nhất cho **tool ngoài PyPI** (ví dụ: milvus, postgresql, redis). Nếu dùng CLI cho package PyPI, kết quả có thể không đầy đủ.
+
+### 1. Lấy metadata cho package PyPI (khuyến nghị)
 ```python
 from metadata_fetcher import fetch_package_metadata
 metadata = fetch_package_metadata("flask")
 print(metadata)
+# Trường 'documentation' sẽ được điền nếu có trong metadata của PyPI.
 ```
 
-### 2. Lấy metadata cho tool ngoài PyPI (ví dụ: milvus)
+### 2. Lấy metadata cho tool ngoài PyPI hoặc bất kỳ tool nào (CLI)
 ```bash
 python -m metadata_fetcher.generic_fetcher
-# Nhập tên tool khi được hỏi (ví dụ: milvus)
+# Nhập tên tool hoặc package khi được hỏi (ví dụ: flask, milvus, postgresql)
 # Có thể nhập link homepage thủ công nếu Google trả về sai
 ```
+> ⚠️ Nếu nhập tên package PyPI vào CLI, bạn có thể thấy cảnh báo nên dùng API Python để có metadata đầy đủ hơn.
 
 ### 3. Lưu output mẫu ra file JSON
 Sau khi chạy, chọn lưu output khi được hỏi. File sẽ nằm trong thư mục `SampleOutputs/`.
