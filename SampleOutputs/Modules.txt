@@ -1,0 +1,44 @@
+# Sample outputs for popular Python modules
+
+--- os ---
+Package: os
+Description: This is a built-in Python module for interacting with the operating system. (Note: Not available on PyPI)
+Latest Version: Built-in
+Popular Versions: Built-in
+Dependencies:
+  - Built-in: None
+GitHub URL: No GitHub URL found.
+README (filtered, full content):
+  No README found.
+Requirements.txt:
+  No requirements.txt found.
+
+
+
+--- sys ---
+Package: sys
+Description: This is a built-in Python module for system-specific parameters and functions. (Note: Not available on PyPI)
+Latest Version: Built-in
+Popular Versions: Built-in
+Dependencies:
+  - Built-in: None
+GitHub URL: No GitHub URL found.
+README (filtered, full content):
+  No README found.
+Requirements.txt:
+  No requirements.txt found.
+
+
+
+--- math ---
+Package: math
+Description: This is a built-in Python module for mathematical functions. (Note: Not available on PyPI)
+Latest Version: Built-in
+Popular Versions: Built-in
+Dependencies:
+  - Built-in: None
+GitHub URL: No GitHub URL found.
+README (filtered, full content):
+  No README found.
+Requirements.txt:
+  No requirements.txt found. 
