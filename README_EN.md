@@ -1,10 +1,3 @@
-# Prototype Requirements: Python Package Metadata Fetcher
-
-## Python File Name
-`package_metadata_fetcher.py`
-
----
-
 ## Overall Objective
 Write a function that collects detailed information about any app/module/package (e.g., `"numpy"`) from popular sources like PyPI and GitHub, to support the development of a technical chatbot.
 
