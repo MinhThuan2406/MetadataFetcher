@@ -1,5 +1,5 @@
 ## Overall Objective
-Write a function that collects detailed information about any app/module/package (e.g., `"numpy"`) from popular sources like PyPI and GitHub, to support the development of a technical chatbot.
+Write a function that collects detailed information about any app/module/package (e.g., "numpy") from popular sources like PyPI and GitHub, to support the development of a technical chatbot.
 
 ---
 
@@ -52,18 +52,6 @@ fetch_package_metadata(app_name: str)
 | Data sources           | PyPI (metadata, versions, dependencies), GitHub (readme, requirements)               |
 | Robustness             | If no GitHub or file not found → return None, do not raise errors                    |
 | Skills to practice     | Working with APIs, merging data from multiple sources, cleaning/standardizing data, extensible code |
-
----
-
-## Mentor is Assessing These Skills
-
-| Skill                  | Why the mentor focuses on it                                 |
-|------------------------|--------------------------------------------------------------|
-| Working with APIs      | Communicate with multiple sources (PyPI + GitHub)            |
-| Data integration       | Aggregate & standardize heterogeneous data                   |
-| Writing reusable code  | Prototype should be reusable for chatbot/infra in the future |
-| Real data testing      | Try with "numpy", "flask", "scikit-learn" for real-world test|
-| Code quality           | Clear naming, proper error handling, extensibility           |
 
 ---
 

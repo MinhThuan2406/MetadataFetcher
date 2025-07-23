@@ -55,18 +55,6 @@ fetch_package_metadata(app_name: str)
 
 ---
 
-## Mentor kiểm tra các năng lực sau
-
-| Kỹ năng                | Vì sao mentor nhắm tới                                      |
-|------------------------|-------------------------------------------------------------|
-| Làm việc với API       | Giao tiếp nhiều nguồn (PyPI + GitHub)                       |
-| Kết hợp dữ liệu        | Tổng hợp & chuẩn hóa dữ liệu không đồng nhất                |
-| Viết hàm reusable      | Prototype dùng được về sau cho chatbot/infra                |
-| Testing với data thực  | Nhập "numpy", "flask", "scikit-learn" để kiểm thử thực tế   |
-| Code quality           | Đặt tên rõ ràng, xử lý lỗi hợp lý, có thể mở rộng           |
-
----
-
 ## Checklist 
 
 - [x] Lấy mô tả và version từ PyPI
