@@ -3,28 +3,33 @@
 --- numpy ---
 Package: numpy
 Description: Fundamental package for array computing in Python
+
 Latest Version: 2.3.1
 Popular Versions: 2.3.1, 2.3.0, 2.3.0rc1
+
 Dependencies:
   - 2.3.1: None
   - 2.3.0: None
   - 2.3.0rc1: None
+
 GitHub URL: https://github.com/numpy/numpy
-README (filtered, full content):
+
+README (simplified):
   NumPy is the fundamental package for scientific computing with Python.
-  Website: https://numpy.org
-  Documentation: https://numpy.org/doc
-  Mailing list: https://mail.python.org/mailman/listinfo/numpy-discussion
-  Source code: https://github.com/numpy/numpy
-  Contributing: https://numpy.org/devdocs/dev/index.html
-  Bug reports: https://github.com/numpy/numpy/issues
-  Report a security vulnerability: https://tidelift.com/docs/security
+  - Website: https://numpy.org
+  - Documentation: https://numpy.org/doc
+  - Mailing list: https://mail.python.org/mailman/listinfo/numpy-discussion
+  - Source code: https://github.com/numpy/numpy
+  - Contributing: https://numpy.org/devdocs/dev/index.html
+  - Bug reports: https://github.com/numpy/numpy/issues
+  - Report a security vulnerability: https://tidelift.com/docs/security
   It provides:
-  a powerful N-dimensional array object
-  sophisticated (broadcasting) functions
-  tools for integrating C/C++ and Fortran code
-  useful linear algebra, Fourier transform, and random number capabilities
-  ...
+  - a powerful N-dimensional array object
+  - sophisticated (broadcasting) functions
+  - tools for integrating C/C++ and Fortran code
+  - useful linear algebra, Fourier transform, and random number capabilities
+  NumPy is released under the BSD license. For more information, see the official documentation and community resources.
+
 Requirements.txt:
   No requirements.txt found.
 
@@ -33,16 +38,27 @@ Requirements.txt:
 --- pandas ---
 Package: pandas
 Description: Powerful data structures for data analysis, time series, and statistics
+
 Latest Version: 2.2.2
 Popular Versions: 2.2.2, 2.2.1, 2.2.0
+
 Dependencies:
   - 2.2.2: python (>=3.9), numpy (>=1.23.2), python-dateutil (>=2.8.2), pytz (>=2020.1), tzdata, setuptools
   - 2.2.1: python (>=3.9), numpy (>=1.23.2), python-dateutil (>=2.8.2), pytz (>=2020.1), tzdata, setuptools
   - 2.2.0: python (>=3.9), numpy (>=1.23.2), python-dateutil (>=2.8.2), pytz (>=2020.1), tzdata, setuptools
+
 GitHub URL: https://github.com/pandas-dev/pandas
-README (filtered, full content):
+
+README (simplified):
   pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with structured (tabular, multidimensional, potentially heterogeneous) and time series data both easy and intuitive.
-  ...
+  - Website: https://pandas.pydata.org
+  - Documentation: https://pandas.pydata.org/docs/
+  - Source code: https://github.com/pandas-dev/pandas
+  - Community: https://pandas.pydata.org/community.html
+  - Issue tracker: https://github.com/pandas-dev/pandas/issues
+  pandas is well suited for data cleaning, manipulation, analysis, and visualization. It is a core library for data science and analytics in Python.
+  pandas is released under the BSD license. For more information, see the official documentation and community resources.
+
 Requirements.txt:
   No requirements.txt found.
 
@@ -51,15 +67,26 @@ Requirements.txt:
 --- requests ---
 Package: requests
 Description: Python HTTP for Humans.
+
 Latest Version: 2.31.0
 Popular Versions: 2.31.0, 2.30.0, 2.29.0
+
 Dependencies:
   - 2.31.0: charset-normalizer (>=2,<4), idna (>=2.5,<4), urllib3 (>=1.21.1,<3), certifi (>=2017.4.17)
   - 2.30.0: charset-normalizer (>=2,<4), idna (>=2.5,<4), urllib3 (>=1.21.1,<3), certifi (>=2017.4.17)
   - 2.29.0: charset-normalizer (>=2,<4), idna (>=2.5,<4), urllib3 (>=1.21.1,<3), certifi (>=2017.4.17)
+
 GitHub URL: https://github.com/psf/requests
-README (filtered, full content):
+
+README (simplified):
   Requests is an elegant and simple HTTP library for Python, built for human beings.
-  ...
+  - Website: https://requests.readthedocs.io
+  - Documentation: https://requests.readthedocs.io/en/latest/
+  - Source code: https://github.com/psf/requests
+  - Community: https://github.com/psf/requests/discussions
+  - Issue tracker: https://github.com/psf/requests/issues
+  Requests allows you to send HTTP/1.1 requests, handle cookies, sessions, and SSL verification with a simple API. It is widely used for web scraping, REST API clients, and automation.
+  Requests is released under the Apache 2.0 license. For more information, see the official documentation and community resources.
+
 Requirements.txt:
   No requirements.txt found. 

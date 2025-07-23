@@ -3,13 +3,21 @@
 --- os ---
 Package: os
 Description: This is a built-in Python module for interacting with the operating system. (Note: Not available on PyPI)
+
 Latest Version: Built-in
 Popular Versions: Built-in
+
 Dependencies:
   - Built-in: None
+
 GitHub URL: No GitHub URL found.
-README (filtered, full content):
-  No README found.
+
+README (simplified):
+  The os module provides a way of using operating system dependent functionality like reading or writing to the file system, managing environment variables, and running shell commands. It is available in all standard Python distributions.
+  - Documentation: https://docs.python.org/3/library/os.html
+  - Common uses: os.path, os.environ, os.system, os.listdir, os.remove, os.makedirs
+  The os module is essential for file and directory management, process management, and environment variable access in Python scripts.
+
 Requirements.txt:
   No requirements.txt found.
 
@@ -18,13 +26,21 @@ Requirements.txt:
 --- sys ---
 Package: sys
 Description: This is a built-in Python module for system-specific parameters and functions. (Note: Not available on PyPI)
+
 Latest Version: Built-in
 Popular Versions: Built-in
+
 Dependencies:
   - Built-in: None
+
 GitHub URL: No GitHub URL found.
-README (filtered, full content):
-  No README found.
+
+README (simplified):
+  The sys module provides access to variables and functions that interact closely with the Python interpreter. It is used for manipulating the Python runtime environment.
+  - Documentation: https://docs.python.org/3/library/sys.html
+  - Common uses: sys.argv, sys.exit, sys.path, sys.version, sys.stdin/stdout/stderr
+  The sys module is crucial for command-line argument parsing, interpreter control, and runtime introspection.
+
 Requirements.txt:
   No requirements.txt found.
 
@@ -33,12 +49,20 @@ Requirements.txt:
 --- math ---
 Package: math
 Description: This is a built-in Python module for mathematical functions. (Note: Not available on PyPI)
+
 Latest Version: Built-in
 Popular Versions: Built-in
+
 Dependencies:
   - Built-in: None
+
 GitHub URL: No GitHub URL found.
-README (filtered, full content):
-  No README found.
+
+README (simplified):
+  The math module provides mathematical functions like trigonometric, logarithmic, exponential, and other numeric operations. It is implemented in C for performance and is available in all standard Python distributions.
+  - Documentation: https://docs.python.org/3/library/math.html
+  - Common uses: math.sqrt, math.pi, math.sin, math.log, math.factorial
+  The math module is essential for scientific, engineering, and financial calculations in Python.
+
 Requirements.txt:
   No requirements.txt found. 
