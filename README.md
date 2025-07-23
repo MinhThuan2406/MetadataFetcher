@@ -7,10 +7,10 @@
 ## 🚀 Tính năng nổi bật
 - **Tự động lấy metadata từ PyPI, GitHub, Google Search**
 - **Hỗ trợ cả tool ngoài PyPI** (ví dụ: milvus, postgresql, redis, elastic, nats...)
-- **Trích xuất hướng dẫn cài đặt** (pip, docker, build from source, package manager...)
+- **Trích xuất hướng dẫn cài đặt** (pip, docker, docker compose, build from source, package manager...)
 - **Tìm và lưu link tài liệu, hướng dẫn setup**
 - **Lưu dữ liệu thô (HTML/text) để phân tích sâu hơn**
-- **Có thể lưu output mẫu ra file JSON**
+- **Lưu output mẫu dạng JSON tóm tắt, ngắn gọn**
 
 ---
 
@@ -26,7 +26,7 @@
    GOOGLE_CSE_API_KEY=your_google_api_key
    GOOGLE_CSE_ID=your_cse_id
    ```
-   > Đăng ký Google Custom Search API và CSE ID theo hướng dẫn trong docs.
+   > Đăng ký Google Custom Search API và CSE ID theo hướng dẫn bên dưới.
 
 ### 🔑 Hướng dẫn lấy Google Custom Search API Key & CSE ID
 
@@ -58,15 +58,15 @@
 ## 💡 Cách sử dụng nhanh
 
 > **Lưu ý:**
-> - Với **package PyPI** (ví dụ: flask, numpy), nên dùng API Python để lấy metadata đầy đủ nhất. API hiện đã lấy link tài liệu (documentation) chính xác hơn cho các package PyPI.
-> - CLI phù hợp nhất cho **tool ngoài PyPI** (ví dụ: milvus, postgresql, redis). Nếu dùng CLI cho package PyPI, kết quả có thể không đầy đủ.
+> - Với **package PyPI** (ví dụ: flask, numpy), nên dùng API Python để lấy metadata đầy đủ nhất. API hiện đã lấy link tài liệu (documentation) và hướng dẫn cài đặt chính xác hơn cho các package PyPI.
+> - CLI phù hợp nhất cho **tool ngoài PyPI** (ví dụ: milvus, postgresql, redis). Nếu dùng CLI cho package PyPI, kết quả có thể không đầy đủ và sẽ có cảnh báo nên dùng API.
 
 ### 1. Lấy metadata cho package PyPI (khuyến nghị)
 ```python
 from metadata_fetcher import fetch_package_metadata
 metadata = fetch_package_metadata("flask")
 print(metadata)
-# Trường 'documentation' sẽ được điền nếu có trong metadata của PyPI.
+# Trường 'documentation' và hướng dẫn cài đặt sẽ được điền nếu có trong metadata của PyPI.
 ```
 
 ### 2. Lấy metadata cho tool ngoài PyPI hoặc bất kỳ tool nào (CLI)
@@ -78,7 +78,7 @@ python -m metadata_fetcher.generic_fetcher
 > ⚠️ Nếu nhập tên package PyPI vào CLI, bạn có thể thấy cảnh báo nên dùng API Python để có metadata đầy đủ hơn.
 
 ### 3. Lưu output mẫu ra file JSON
-Sau khi chạy, chọn lưu output khi được hỏi. File sẽ nằm trong thư mục `SampleOutputs/`.
+Sau khi chạy, chọn lưu output khi được hỏi. File sẽ nằm trong thư mục `SampleOutputs/metadata/PyPI/` hoặc `SampleOutputs/metadata/Non-PyPI/`. Output là JSON tóm tắt ngắn gọn (xem bên dưới).
 
 ---
 
@@ -94,10 +94,12 @@ Sau khi chạy, chọn lưu output khi được hỏi. File sẽ nằm trong th�
   "readme_content": str | None,
   "requirements": str | None,
   "installation": {
-    "pip": str | None,
-    "from_source": str | None,
-    "docker": str | None,
-    "other": str | None
+    "pip": List[dict],
+    "from_source": List[dict],
+    "docker": List[dict],
+    "docker_compose": List[dict],
+    "other": List[dict],
+    "platforms": Dict[str, List[dict]]
   },
   "homepage": str | None,
   "documentation": str | None,
@@ -108,24 +110,26 @@ Sau khi chạy, chọn lưu output khi được hỏi. File sẽ nằm trong th�
   "source": "pypi" | "manual + google"
 }
 ```
+- **Lưu ý:** File JSON tóm tắt chỉ hiển thị các trường quan trọng và link liên quan, không phải toàn bộ chi tiết dài dòng.
 
 ---
 
 ## 📋 Ví dụ output mẫu (milvus)
 ```json
 {
-  "name": "milvus",
-  "homepage": "https://milvus.io/",
-  "documentation": "https://milvus.io/docs",
-  "documentation_links": ["https://milvus.io/docs", ...],
-  "installation_links": ["https://milvus.io/docs/quickstart.md", ...],
-  "installation": {
-    "pip": "pip install -U pymilvus",
-    "docker": null,
-    "from_source": null,
-    "other": null
-  },
-  ...
+  "Name": "milvus",
+  "Homepage": "https://milvus.io/",
+  "Documentation": "https://milvus.io/docs",
+  "Source": "manual + google",
+  "Documentation Links": ["https://milvus.io/docs", ...],
+  "Installation Summary": {
+    "pip": {
+      "command": "pip install -U pymilvus",
+      "explanation": "Install a Python package using pip.",
+      "note": "Run in your terminal or command prompt."
+    },
+    ...
+  }
 }
 ```
 
@@ -135,4 +139,7 @@ Sau khi chạy, chọn lưu output khi được hỏi. File sẽ nằm trong th�
 - **Modular:** Tách riêng fetcher cho PyPI, GitHub, Google, parser cài đặt...
 - **Dễ mở rộng:** Thêm nguồn mới, parser mới dễ dàng
 - **Có thể tích hợp chatbot, API, UI...**
+- **Parser cài đặt:** Nhận diện pip, docker, docker compose, conda, npm, các trình quản lý gói hệ điều hành, v.v., kèm giải thích và gợi ý nền tảng.
+- **Google Search:** Yêu cầu `.env` với API key và CSE ID; sẽ báo lỗi nếu thiếu.
+- **Phụ thuộc:** `requests`, `packaging`, `beautifulsoup4`, `python-dotenv`.
 
