@@ -1,16 +1,16 @@
-# 📦 Yêu cầu Prototype: Thu thập Metadata Package Python
+# Yêu cầu Prototype: Thu thập Metadata Package Python
 
-## 📂 Tên file Python
+## Tên file Python
 `package_metadata_fetcher.py`
 
 ---
 
-## 🎯 Mục tiêu tổng thể
-Viết một hàm thu thập thông tin chi tiết về một app/module/package bất kỳ (ví dụ: `"numpy"`) từ các nguồn phổ biến như PyPI và GitHub, phục vụ phát triển chatbot kỹ thuật.
+## Mục tiêu tổng thể
+Viết một hàm thu thập thông tin chi tiết về một app/module/package bất kỳ (ví dụ: "numpy") từ các nguồn phổ biến như PyPI và GitHub, phục vụ phát triển chatbot kỹ thuật.
 
 ---
 
-## ✅ Chức năng chính
+## Chức năng chính
 
 | Yêu cầu                | Diễn giải cụ thể                                                                 |
 |------------------------|----------------------------------------------------------------------------------|
@@ -25,7 +25,7 @@ Viết một hàm thu thập thông tin chi tiết về một app/module/package
 
 ---
 
-## 📥 Input
+## Input
 
 ```python
 fetch_package_metadata(app_name: str)
@@ -34,7 +34,7 @@ fetch_package_metadata(app_name: str)
 
 ---
 
-## 📤 Output
+## Output
 
 ```python
 {
@@ -50,7 +50,7 @@ fetch_package_metadata(app_name: str)
 
 ---
 
-## 🔍 Yêu cầu chi tiết & Kỳ vọng
+## Yêu cầu chi tiết & Kỳ vọng
 
 | Hạng mục                | Chi tiết                                                                                 |
 |-------------------------|-----------------------------------------------------------------------------------------|
@@ -62,7 +62,7 @@ fetch_package_metadata(app_name: str)
 
 ---
 
-## 🧠 Mentor kiểm tra các năng lực sau
+## Mentor kiểm tra các năng lực sau
 
 | Kỹ năng                | Vì sao mentor nhắm tới                                      |
 |------------------------|-------------------------------------------------------------|
@@ -74,7 +74,7 @@ fetch_package_metadata(app_name: str)
 
 ---
 
-## 📌 Checklist mentor muốn bạn đạt được
+## Checklist 
 
 - [x] Lấy mô tả và version từ PyPI
 - [x] Lấy dependency của các version chính

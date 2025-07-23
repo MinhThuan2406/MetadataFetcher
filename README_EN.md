@@ -1,16 +1,16 @@
-# 📦 Prototype Requirements: Python Package Metadata Fetcher
+# Prototype Requirements: Python Package Metadata Fetcher
 
-## 📂 Python File Name
+## Python File Name
 `package_metadata_fetcher.py`
 
 ---
 
-## 🎯 Overall Objective
+## Overall Objective
 Write a function that collects detailed information about any app/module/package (e.g., `"numpy"`) from popular sources like PyPI and GitHub, to support the development of a technical chatbot.
 
 ---
 
-## ✅ Main Features
+## Main Features
 
 | Requirement            | Detailed Description                                                                |
 |------------------------|-----------------------------------------------------------------------------------|
@@ -25,7 +25,7 @@ Write a function that collects detailed information about any app/module/package
 
 ---
 
-## 📥 Input
+## Input
 
 ```python
 fetch_package_metadata(app_name: str)
@@ -34,7 +34,7 @@ fetch_package_metadata(app_name: str)
 
 ---
 
-## 📤 Output
+## Output
 
 ```python
 {
@@ -50,7 +50,7 @@ fetch_package_metadata(app_name: str)
 
 ---
 
-## 🔍 Detailed Requirements & Expectations
+## Detailed Requirements & Expectations
 
 | Item                   | Details                                                                              |
 |------------------------|-------------------------------------------------------------------------------------|
@@ -62,7 +62,7 @@ fetch_package_metadata(app_name: str)
 
 ---
 
-## 🧠 Mentor is Assessing These Skills
+## Mentor is Assessing These Skills
 
 | Skill                  | Why the mentor focuses on it                                 |
 |------------------------|--------------------------------------------------------------|
@@ -74,7 +74,7 @@ fetch_package_metadata(app_name: str)
 
 ---
 
-## 📌 Mentor's Completion Checklist
+## Checklist
 
 - [x] Can fetch description and versions from PyPI
 - [x] Can get dependencies for main versions
