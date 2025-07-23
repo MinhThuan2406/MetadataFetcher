@@ -1,10 +1,3 @@
-# Yêu cầu Prototype: Thu thập Metadata Package Python
-
-## Tên file Python
-`package_metadata_fetcher.py`
-
----
-
 ## Mục tiêu tổng thể
 Viết một hàm thu thập thông tin chi tiết về một app/module/package bất kỳ (ví dụ: "numpy") từ các nguồn phổ biến như PyPI và GitHub, phục vụ phát triển chatbot kỹ thuật.
 
