@@ -1,0 +1,23 @@
+{
+  "Name": "nodejs",
+  "Homepage": "https://nodejs.org/",
+  "Documentation": "https://nodejs.org/docs/latest/api/",
+  "Source": "manual + google",
+  "Homepage HTML length": 227261,
+  "Documentation HTML length": 13957,
+  "Documentation Links": [
+    "https://nodejs.org/docs/latest/api/",
+    "https://nodejs.org/docs/latest-v24.x/api/index.html",
+    "https://nodejs.org/docs/latest-v23.x/api/index.html",
+    "https://nodejs.org/docs/latest-v22.x/api/index.html",
+    "https://nodejs.org/docs/latest-v21.x/api/index.html",
+    "..."
+  ],
+  "Installation Links": [],
+  "Installation (pip)": null,
+  "Installation (docker)": null,
+  "Installation (docker_compose)": null,
+  "Installation (from_source)": null,
+  "Installation (other)": null,
+  "Installation (platforms)": null
+}

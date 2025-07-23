@@ -3,26 +3,43 @@
   "Homepage": "https://milvus.io/",
   "Documentation": "https://milvus.io/docs",
   "Source": "manual + google",
-  "Homepage HTML length": 92978,
-  "Documentation HTML length": 215012,
   "Documentation Links": [
     "https://milvus.io/docs",
-    "https://milvus.io/docs",
-    "https://milvus.io/docs/quickstart.md",
-    "https://milvus.io/docs/milvus_lite.md",
-    "https://milvus.io/docs/install-overview.md#Milvus-Lite",
-    "..."
-  ],
-  "Installation Links": [
     "https://milvus.io/docs/quickstart.md",
     "https://milvus.io/docs/milvus_lite.md",
     "https://milvus.io/docs/install-overview.md#Milvus-Lite",
     "https://milvus.io/docs/prerequisite-docker.md",
-    "https://milvus.io/docs/install-overview.md#Milvus-Standalone",
     "..."
   ],
-  "Installation (pip)": "pip install -U pymilvus",
-  "Installation (docker)": null,
-  "Installation (from_source)": null,
-  "Installation (other)": null
+  "Installation Summary": {
+    "pip": {
+      "command": "pip install -U pymilvus",
+      "explanation": "Install a Python package using pip.",
+      "note": "Run in your terminal or command prompt.",
+      "when_to_use": "Use to upgrade to the latest version.",
+      "more_info": "https://milvus.io/docs/quickstart.md"
+    },
+    "docker": {
+      "command": "standalone.bat",
+      "explanation": "Docker command.",
+      "note": "Run in your terminal with Docker installed.",
+      "when_to_use": null,
+      "platform": "windows",
+      "more_info": "https://milvus.io/docs/prerequisite-docker.md"
+    },
+    "docker_compose": {
+      "command": "# Download the configuration file and rename it as docker-compose.yml\nC:\\>Invoke-WebRequest https://github.com/milvus-io/milvus/releases/download/v2.4.15/milvus-standalone-docker-compose.yml -OutFile docker-compose.yml\n# Start Milvus\nC:\\>docker compose up -d\nCreating milvus-etcd  ... done\nCreating milvus-minio ... done\nCreating milvus-standalone ... done",
+      "explanation": "Multi-step Docker Compose installation (download + up/down).",
+      "note": "Run these commands in order in your terminal or PowerShell. Make sure Docker Compose is installed.",
+      "when_to_use": "Use to set up Milvus with Docker Compose.",
+      "platform": "windows",
+      "more_info": "https://milvus.io/docs/quickstart.md"
+    },
+    "other": {
+      "command": "brew install minikube",
+      "explanation": "Install a package using Homebrew (macOS/Linux).",
+      "note": "Run in your terminal.",
+      "more_info": "https://milvus.io/docs/quickstart.md"
+    }
+  }
 }

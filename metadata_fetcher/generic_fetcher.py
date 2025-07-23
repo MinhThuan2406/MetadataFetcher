@@ -43,7 +43,41 @@ def find_links(homepage_url: str, keywords: List[str]) -> List[str]:
                 elif href.startswith('/'):
                     from urllib.parse import urljoin
                     links.append(urljoin(homepage_url, href))
-        return links
+        # Special case for nginx: add known official install pages
+        if 'nginx.org' in homepage_url:
+            base = 'https://nginx.org/en/'
+            for extra in ['linux_packages.html', 'download.html', 'docs/']:
+                extra_url = base + extra
+                if extra_url not in links:
+                    links.append(extra_url)
+        # Also scan documentation pages for more links
+        doc_links = []
+        for doc_link in links:
+            try:
+                doc_res = requests.get(doc_link, timeout=10)
+                if doc_res.status_code != 200:
+                    continue
+                doc_soup = BeautifulSoup(doc_res.text, 'html.parser')
+                for a in doc_soup.find_all('a', href=True):
+                    href = ''
+                    if isinstance(a, Tag) and 'href' in a.attrs:
+                        href_val = a.attrs['href']
+                        if isinstance(href_val, str):
+                            href = href_val
+                        elif href_val is not None:
+                            href = str(href_val)
+                    text = a.get_text().lower() if hasattr(a, 'get_text') else ''
+                    if any(kw in href.lower() or kw in text for kw in keywords):
+                        if href.startswith('http'):
+                            doc_links.append(href)
+                        elif href.startswith('/'):
+                            from urllib.parse import urljoin
+                            doc_links.append(urljoin(doc_link, href))
+            except Exception as e:
+                print(f"[ERROR] Failed to fetch or parse documentation page: {e}")
+        # Merge and deduplicate
+        all_links = list(dict.fromkeys(links + doc_links))
+        return all_links
     except Exception as e:
         print(f"[ERROR] Failed to fetch or parse homepage: {e}")
         return links
@@ -97,22 +131,21 @@ def fetch_generic_tool_metadata(app_name: str, homepage_override: Optional[str] 
     installation_links = find_links(homepage, INSTALL_KEYWORDS)
     documentation = documentation_links[0] if documentation_links else None
     documentation_html = fetch_html(documentation) if documentation else None
-    install_htmls = [fetch_html(link) for link in installation_links[:3] if link]
-    install_cmds = [extract_installation_commands(html) for html in install_htmls if html]
-    def pick_first(attr):
-        for cmd in install_cmds:
-            val = getattr(cmd, attr, None)
-            if val:
-                return val
-        return None
-    installation = InstallationInfo(
-        pip=pick_first('pip'),
-        docker=pick_first('docker'),
-        from_source=pick_first('from_source'),
-        other=pick_first('other')
-    )
+    # Fetch all installation HTMLs (not just first 3)
+    install_htmls = [fetch_html(link) for link in installation_links if link]
+    # Use new extraction logic (list of HTMLs)
+    installation = extract_installation_commands(install_htmls)
+    # Fallback: if no Docker command, try Google search for '[tool] docker install'
+    if not installation.docker:
+        docker_url = google_search(f"{app_name} docker install")
+        docker_html = fetch_html(docker_url) if docker_url else None
+        if docker_html:
+            docker_installation = extract_installation_commands([docker_html])
+            if docker_installation.docker:
+                installation.docker = docker_installation.docker
     if not (installation.pip or installation.docker or installation.from_source or installation.other):
-        installation = extract_installation_commands(documentation_html) if documentation_html else extract_installation_commands(homepage_html)
+        # Fallback: try documentation and homepage HTMLs
+        installation = extract_installation_commands([documentation_html, homepage_html])
     return PackageMetadata(
         name=app_name,
         homepage=homepage,
@@ -133,54 +166,106 @@ def save_metadata_json(metadata: PackageMetadata, tool_name: str):
         subfolder = os.path.join("SampleOutputs", "metadata", "Non-PyPI")
     os.makedirs(subfolder, exist_ok=True)
     output_path = os.path.join(subfolder, f"{tool_name}.json")
-    # Create a summary dict similar to the terminal output
+    # Only keep summary and relevant links
     summary = {
         "Name": metadata.name,
         "Homepage": metadata.homepage,
         "Documentation": metadata.documentation,
         "Source": metadata.source,
-        "Homepage HTML length": len(metadata.homepage_html) if metadata.homepage_html else 0,
-        "Documentation HTML length": len(metadata.documentation_html) if metadata.documentation_html else 0,
         "Documentation Links": metadata.documentation_links[:5] + (["..."] if len(metadata.documentation_links) > 5 else []),
-        "Installation Links": metadata.installation_links[:5] + (["..."] if len(metadata.installation_links) > 5 else []),
-        "Installation (pip)": metadata.installation.pip,
-        "Installation (docker)": metadata.installation.docker,
-        "Installation (from_source)": metadata.installation.from_source,
-        "Installation (other)": metadata.installation.other,
     }
+    # Add Installation Summary
+    def pick_first(cmds):
+        return cmds[0] if cmds and isinstance(cmds, list) and len(cmds) > 0 else None
+    def pick_relevant_link(install_type):
+        links = metadata.installation_links if metadata.installation_links else []
+        for link in links:
+            if install_type in link:
+                return link
+        return links[0] if links else None
+    def add_summary(key, cmds):
+        first = pick_first(cmds)
+        if first:
+            entry = dict(first)
+            link = pick_relevant_link(key)
+            if link:
+                entry["more_info"] = link
+            return entry
+        return None
+    installation_summary = {}
+    for key, cmds in [
+        ("pip", metadata.installation.pip),
+        ("docker", metadata.installation.docker),
+        ("docker_compose", metadata.installation.docker_compose),
+        ("from_source", metadata.installation.from_source),
+        ("other", metadata.installation.other)
+    ]:
+        entry = add_summary(key, cmds)
+        if entry:
+            installation_summary[key] = entry
+    summary["Installation Summary"] = installation_summary
+    if not installation_summary:
+        summary["note"] = "No installation commands found. Please refer to the documentation links."
     with open(output_path, "w", encoding="utf-8") as f:
         import json
         json.dump(summary, f, ensure_ascii=False, indent=2)
     print(f"Saved summary metadata to {output_path}")
 
+def print_installation_summary(metadata):
+    summary = {}
+    install_links = metadata.installation_links if metadata.installation_links else []
+    def pick_first(cmds):
+        return cmds[0] if cmds and isinstance(cmds, list) and len(cmds) > 0 else None
+    def add_summary(key, cmds):
+        first = pick_first(cmds)
+        if first:
+            entry = dict(first)
+            if install_links:
+                entry["more_info"] = install_links[0]
+            summary[key] = entry
+    add_summary("pip", metadata.installation.pip)
+    add_summary("docker", metadata.installation.docker)
+    add_summary("docker_compose", metadata.installation.docker_compose)
+    add_summary("from_source", metadata.installation.from_source)
+    add_summary("other", metadata.installation.other)
+    print("\nInstallation Summary:")
+    for k, v in summary.items():
+        print(f"- {k}: {v['command']}")
+        if v.get('explanation'):
+            print(f"    Explanation: {v['explanation']}")
+        if v.get('note'):
+            print(f"    Note: {v['note']}")
+        if v.get('when_to_use'):
+            print(f"    When to use: {v['when_to_use']}")
+        if v.get('more_info'):
+            print(f"    More info: {v['more_info']}")
+
 if __name__ == "__main__":
-    tool_name = input("Enter a tool or package name to fetch metadata (e.g., flask, milvus, postgresql): ").strip()
+    tool_name = input("Enter the name of a PyPI package or any other software/tool to fetch metadata (e.g., PyPI: flask, numpy, pandas | Non-PyPI: milvus, nginx, redis, nodejs): ").strip()
+    print("Note: PyPI (Python Package Index) is the official repository for Python packages. If you enter a PyPI package name, the tool will fetch metadata directly from PyPI. For other software/tools, it will use web and documentation sources.")
     homepage_override = input("(Optional) Enter homepage override URL (or leave blank): ").strip() or None
 
     # Try PyPI fetch first
     metadata = fetch_package_metadata(tool_name)
-    if metadata and is_likely_real_pypi(metadata):
-        print("\nFetched Metadata (PyPI):")
+    is_pypi = metadata is not None and metadata.source == "pypi"
+    if metadata and (is_pypi and is_likely_real_pypi(metadata)):
+        print("\nFetched Metadata:")
         print(f"Name: {metadata.name}")
-        print(f"Description: {metadata.description}")
-        print(f"Latest Version: {metadata.latest_version}")
-        print(f"Popular Versions: {metadata.popular_versions}")
-        print(f"Dependencies: {metadata.dependencies}")
-        print(f"GitHub URL: {metadata.github_url}")
         print(f"Homepage: {metadata.homepage}")
         print(f"Documentation: {metadata.documentation}")
         print(f"Source: {metadata.source}")
-        print(f"Installation (pip): {metadata.installation.pip}")
-        print(f"Installation (docker): {metadata.installation.docker}")
-        print(f"Installation (from_source): {metadata.installation.from_source}")
-        print(f"Installation (other): {metadata.installation.other}")
+        print(f"Homepage HTML length: {len(metadata.homepage_html) if metadata.homepage_html else 0}")
+        print(f"Documentation HTML length: {len(metadata.documentation_html) if metadata.documentation_html else 0}")
+        print(f"Documentation Links: {metadata.documentation_links}")
+        print(f"Installation Links: {metadata.installation_links}")
+        print_installation_summary(metadata)
         save = input("Save this metadata as JSON in SampleOutputs/? (y/n): ").strip().lower()
         if save == 'y':
             save_metadata_json(metadata, tool_name)
     else:
         metadata = fetch_generic_tool_metadata(tool_name, homepage_override)
         if metadata:
-            print("\nFetched Metadata (manual + google):")
+            print("\nFetched Metadata:")
             print(f"Name: {metadata.name}")
             print(f"Homepage: {metadata.homepage}")
             print(f"Documentation: {metadata.documentation}")
@@ -189,12 +274,7 @@ if __name__ == "__main__":
             print(f"Documentation HTML length: {len(metadata.documentation_html) if metadata.documentation_html else 0}")
             print(f"Documentation Links: {metadata.documentation_links}")
             print(f"Installation Links: {metadata.installation_links}")
-            print(f"Installation (pip): {metadata.installation.pip}")
-            print(f"Installation (docker): {metadata.installation.docker}")
-            print(f"Installation (from_source): {metadata.installation.from_source}")
-            print(f"Installation (other): {metadata.installation.other}")
-            # Warn if likely a PyPI package but only generic metadata found
-            print("\n[NOTE] If this is a PyPI package, you may get more complete metadata by using the Python API: from metadata_fetcher import fetch_package_metadata")
+            print_installation_summary(metadata)
             save = input("Save this metadata as JSON in SampleOutputs/? (y/n): ").strip().lower()
             if save == 'y':
                 save_metadata_json(metadata, tool_name)

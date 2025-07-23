@@ -1,0 +1,20 @@
+{
+  "Name": "beautifulsoup4",
+  "Homepage": "https://www.crummy.com/software/BeautifulSoup/bs4/doc/",
+  "Documentation": "http://www.crummy.com/software/BeautifulSoup/bs3/documentation.html",
+  "Source": "manual + google",
+  "Homepage HTML length": 378267,
+  "Documentation HTML length": 123874,
+  "Documentation Links": [
+    "http://www.crummy.com/software/BeautifulSoup/bs3/documentation.html",
+    "http://www.crummy.com/software/BeautifulSoup/bs3/documentation.html",
+    "https://facelessuser.github.io/soupsieve/",
+    "http://www.crummy.com/software/BeautifulSoup/bs3/documentation.html",
+    "https://alabaster.readthedocs.io"
+  ],
+  "Installation Links": [],
+  "Installation (pip)": null,
+  "Installation (docker)": null,
+  "Installation (from_source)": null,
+  "Installation (other)": null
+}
