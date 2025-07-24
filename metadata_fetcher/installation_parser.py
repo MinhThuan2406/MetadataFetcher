@@ -171,9 +171,9 @@ def extract_multiline_install_blocks(soup: BeautifulSoup) -> dict:
         if ("docker compose" in block or "docker-compose" in block) and ("up" in block or "down" in block):
             lines = [l.strip() for l in block.splitlines() if l.strip()]
             if len(lines) > 1:
-                # Group as a multi-step install
+                # Group as a multi-step install (as a list)
                 docker_compose_cmds.append({
-                    "command": "\n".join(lines),
+                    "commands": lines,
                     "explanation": "Multi-step Docker Compose installation (download + up/down).",
                     "note": "Run these commands in order in your terminal or PowerShell. Make sure Docker Compose is installed.",
                     "when_to_use": "Use to set up Milvus with Docker Compose."
@@ -191,7 +191,7 @@ def extract_multiline_install_blocks(soup: BeautifulSoup) -> dict:
             lines = [l.strip() for l in block.splitlines() if l.strip()]
             if len(lines) > 1:
                 docker_cmds.append({
-                    "command": "\n".join(lines),
+                    "commands": lines,
                     "explanation": "Multi-step Docker installation (script-based).",
                     "note": "Run these commands in order in your terminal or PowerShell. Make sure Docker is installed.",
                     "when_to_use": "Use to set up Milvus with Docker scripts."
