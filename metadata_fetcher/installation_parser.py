@@ -139,6 +139,8 @@ def group_and_clean_docker_commands(cmds: List[dict], method: str) -> List[dict]
     # Group by platform/use-case and deduplicate by normalized command
     unique = {}
     for entry in cmds:
+        if "command" not in entry or not entry["command"]:
+            continue
         cmd = entry["command"].strip()
         # Heuristic: label platform
         if "standalone.bat" in cmd or "Invoke-WebRequest" in cmd:

@@ -1,0 +1,19 @@
+Package Troubleshooting
+python -m pip show python-dotenv
+python -m pip uninstall python-dotenv
+python -m pip install python-dotenv
+
+Extract metadata
+python -m metadata_fetcher.generic_fetcher
+
+Export single metadata JSON to Word
+python export_to_word.py SampleOutputs/metadata/Non-PyPI/python.json
+
+Export all metadata files to Word
+python export_all_to_word.py
+python export_all_to_word.py path/to/your/jsons
+
+Run tests
+./run_tests.bat      # Windows
+./run_tests.sh       # Linux/macOS
+

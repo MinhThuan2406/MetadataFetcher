@@ -1,0 +1,1320 @@
+{
+  "General Info": {
+    "Name": "pytorch",
+    "Use Case": "AI/ML Development Tools",
+    "Homepage": "https://pytorch.org/",
+    "Description": "PyTorch is an open-source machine learning library based on the Torch library, used for applications such as computer vision, deep learning research and natural language processing, originally developed by Meta AI and now part of the Linux Foundation umbrella. It is one of the most popular deep learning frameworks, alongside others such as TensorFlow, offering free and open-source software released under the modified BSD license. Although the Python interface is more polished and the primary focus of development, PyTorch also has a C++ interface."
+  },
+  "Documentation": {
+    "Main Documentation": "https://pytorch.org/docs/stable/index.html",
+    "Top Links": [
+      "https://pytorch.org/docs/stable/index.html",
+      "https://pytorch.org/blog/torch-compile-and-diffusers-a-hands-on-guide-to-peak-performance/",
+      "https://pytorch.org/get-started/previous-versions"
+    ]
+  },
+  "Installation": {
+    "Links": [
+      "https://pytorch.org/get-started/locally/",
+      "https://pytorch.org/get-started/previous-versions",
+      "https://pytorch.org/get-started/previous-versions/",
+      "https://cloud.google.com/deep-learning-vm/docs/pytorch_start_instance",
+      "https://pytorch.org/get-started/pytorch-2-x/",
+      "https://pytorch.org/get-started/cloud-partners/",
+      "https://pytorch.org/get-started/executorch/",
+      "https://pytorch.org/get-started/locally?__hstc=76629258.724dacd2270c1ae797f3a62ecd655d50.1746547368336.1746547368336.1746547368336.1&__hssc=76629258.9.1746547368336&__hsfp=2230748894",
+      "https://console.cloud.google.com/freetrial",
+      "https://cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance",
+      "https://cloud.google.com/sdk/downloads",
+      "https://cloud.google.com/shell/docs/starting-cloud-shell",
+      "https://cloud.google.com/startup/",
+      "https://cloud.google.com/docs/get-started/"
+    ],
+    "Summary": {
+      "pip": [
+        {
+          "command": "pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/rocm6.3",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu126",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cu128",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.7.0 torchvision==0.22.0 torchaudio==2.7.0 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/rocm6.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/rocm6.2.4",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu124",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cu126",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.6.0 torchvision==0.21.0 torchaudio==2.6.0 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/rocm6.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/rocm6.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu124",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/rocm6.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/rocm6.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/cu124",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.5.0 torchvision==0.20.0 torchaudio==2.5.0 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/rocm6.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cu124",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/rocm6.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cu124",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.4.0 torchvision==0.19.0 torchaudio==2.4.0 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/rocm6.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/rocm6.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/rocm5.7",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/rocm5.7",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 --index-url https://download.pytorch.org/whl/rocm5.6",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/rocm5.6",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/rocm5.6",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/rocm5.6",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cu121",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/rocm5.4.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.0.0 torchvision==0.15.1 torchaudio==2.0.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==2.0.0 torchvision==0.15.1 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/rocm5.4.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.0.0 torchvision==0.15.1 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cu118",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==2.0.0 torchvision==0.15.1 torchaudio==2.0.1 --index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.13.1+rocm5.2 torchvision==0.14.1+rocm5.2 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/rocm5.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.13.1+cu117 torchvision==0.14.1+cu117 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu117",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.13.1+cpu torchvision==0.14.1+cpu torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.13.0 torchvision==0.14.0 torchaudio==0.13.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.13.0+rocm5.2 torchvision==0.14.0+rocm5.2 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/rocm5.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.13.0+cu116 torchvision==0.14.0+cu116 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu116",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cu117",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.13.0+cpu torchvision==0.14.0+cpu torchaudio==0.13.0 --extra-index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.12.1+rocm5.1.1 torchvision==0.13.1+rocm5.1.1 torchaudio==0.12.1 --extra-index-url  https://download.pytorch.org/whl/rocm5.1.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.12.1+cu102 torchvision==0.13.1+cu102 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu102",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.12.1+cpu torchvision==0.13.1+cpu torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.12.0 torchvision==0.13.0 torchaudio==0.12.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.12.0+rocm5.1.1 torchvision==0.13.0+rocm5.1.1 torchaudio==0.12.0 --extra-index-url  https://download.pytorch.org/whl/rocm5.1.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.12.0+cu116 torchvision==0.13.0+cu116 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu116",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.12.0+cu113 torchvision==0.13.0+cu113 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu113",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.12.0+cu102 torchvision==0.13.0+cu102 torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cu102",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.12.0+cpu torchvision==0.13.0+cpu torchaudio==0.12.0 --extra-index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.11.0+rocm4.5.2 torchvision==0.12.0+rocm4.5.2 torchaudio==0.11.0 --extra-index-url  https://download.pytorch.org/whl/rocm4.5.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.11.0+cu102 torchvision==0.12.0+cu102 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu102",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.11.0+cpu torchvision==0.12.0+cpu torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cpu",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "Use to upgrade to the latest version."
+        },
+        {
+          "command": "pip install torch==1.10.1 torchvision==0.11.2 torchaudio==0.10.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.1+rocm4.2 torchvision==0.11.2+rocm4.2 torchaudio==0.10.1 -f https://download.pytorch.org/whl/rocm4.2/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.1+rocm4.1 torchvision==0.11.2+rocm4.1 torchaudio==0.10.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.1+rocm4.0.1 torchvision==0.10.2+rocm4.0.1 torchaudio==0.10.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.1+cu111 torchvision==0.11.2+cu111 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu111/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.1+cu102 torchvision==0.11.2+cu102 torchaudio==0.10.1 -f https://download.pytorch.org/whl/cu102/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.1+cpu torchvision==0.11.2+cpu torchaudio==0.10.1 -f https://download.pytorch.org/whl/cpu/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.0 torchvision==0.11.0 torchaudio==0.10.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.0+rocm4.2 torchvision==0.11.0+rocm4.2 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.0+rocm4.1 torchvision==0.11.0+rocm4.1 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.0+rocm4.0.1 torchvision==0.10.1+rocm4.0.1 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.0+cu102 torchvision==0.11.0+cu102 torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.10.0+cpu torchvision==0.11.0+cpu torchaudio==0.10.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.1 torchvision==0.10.1 torchaudio==0.9.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.1+rocm4.2 torchvision==0.10.1+rocm4.2 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.1+rocm4.1 torchvision==0.10.1+rocm4.1 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.1+rocm4.0.1 torchvision==0.10.1+rocm4.0.1 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.1+cu102 torchvision==0.10.1+cu102 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.1+cpu torchvision==0.10.1+cpu torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.0+rocm4.2 torchvision==0.10.0+rocm4.2 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.0+rocm4.1 torchvision==0.10.0+rocm4.1 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.0+rocm4.0.1 torchvision==0.10.0+rocm4.0.1 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.0+cu102 torchvision==0.10.0+cu102 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.9.0+cpu torchvision==0.10.0+cpu torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.8.1 torchvision==0.9.1 torchaudio==0.8.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.8.1+rocm4.0.1 torchvision==0.9.1+rocm4.0.1 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.8.1+rocm3.10 torchvision==0.9.1+rocm3.10 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.8.1+cu102 torchvision==0.9.1+cu102 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.8.1+cu101 torchvision==0.9.1+cu101 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.8.1+cpu torchvision==0.9.1+cpu torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch -f https://download.pytorch.org/whl/rocm4.0.1/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install ninja",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install 'git+https://github.com/pytorch/vision.git@v0.9.0'",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.8.0+cu111 torchvision==0.9.0+cu111 torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.8.0+cpu torchvision==0.9.0+cpu torchaudio==0.8.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.7.1+cu110 torchvision==0.8.2+cu110 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.7.1+cu101 torchvision==0.8.2+cu101 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.7.1+cu92 torchvision==0.8.2+cu92 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.7.1+cpu torchvision==0.8.2+cpu torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.7.0 torchvision==0.8.0 torchaudio==0.7.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.7.0+cu110 torchvision==0.8.0+cu110 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.7.0+cu101 torchvision==0.8.0+cu101 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.7.0+cu92 torchvision==0.8.0+cu92 torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.7.0+cpu torchvision==0.8.0+cpu torchaudio==0.7.0 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.6.0 torchvision==0.7.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.6.0+cu101 torchvision==0.7.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.6.0+cu92 torchvision==0.7.0+cu92 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.6.0+cpu torchvision==0.7.0+cpu -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.5.1 torchvision==0.6.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.5.1+cu101 torchvision==0.6.1+cu101 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.5.1+cu92 torchvision==0.6.1+cu92 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.5.1+cpu torchvision==0.6.1+cpu -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.5.0 torchvision==0.6.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.5.0+cu101 torchvision==0.6.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.5.0+cu92 torchvision==0.6.0+cu92 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.5.0+cpu torchvision==0.6.0+cpu -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.4.0 torchvision==0.5.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.4.0+cu92 torchvision==0.5.0+cu92 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.4.0+cpu torchvision==0.5.0+cpu -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.2.0 torchvision==0.4.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.2.0+cu92 torchvision==0.4.0+cu92 -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.2.0+cpu torchvision==0.4.0+cpu -f https://download.pytorch.org/whl/torch_stable.html",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.1.0 torchvision==0.3.0",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.0.1 torchvision==0.2.2",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install torch==1.0.0 torchvision==0.2.1",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install [downloaded file]",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip install downloaded_file",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        },
+        {
+          "command": "pip installed popular libraries like",
+          "explanation": "Install a Python package using pip.",
+          "note": "Run in your terminal or command prompt.",
+          "when_to_use": "General pip install command."
+        }
+      ],
+      "from_source": [
+        {
+          "command": "git clone https://github.com/pytorch/pytorch",
+          "explanation": "Clone a repository using git.",
+          "note": "Run in your terminal."
+        }
+      ],
+      "docker": [
+        {
+          "command": "docker run --gpus all -it ghcr.io/pytorch/pytorch-nightly:latest /bin/bash",
+          "explanation": "Docker command.",
+          "note": "Run in your terminal with Docker installed.",
+          "when_to_use": null,
+          "platform": "any"
+        },
+        {
+          "command": "docker pull ghcr.io/pytorch/pytorch-nightly",
+          "platform": "any"
+        }
+      ],
+      "docker_compose": [],
+      "other": [
+        {
+          "command": "apt-get install google-cloud-cli=123.0.0-0",
+          "explanation": "Install a package using apt (Debian/Ubuntu).",
+          "note": "Run in your Linux terminal."
+        },
+        {
+          "command": "https://dl.google.com/dl/cloudsdk/channels/rapid/GoogleCloudSDKInstaller.exe",
+          "explanation": "Direct download link for an installer or archive.",
+          "note": "Download and follow platform-specific install instructions."
+        }
+      ],
+      "platforms": {
+        "linux": [
+          {
+            "command": "apt-get install google-cloud-cli=123.0.0-0",
+            "explanation": "Install a package using apt (Debian/Ubuntu).",
+            "note": "Run in your Linux terminal."
+          }
+        ]
+      }
+    }
+  },
+  "Other Links": {
+    "All Documentation Links": [
+      "https://pytorch.org/docs/stable/index.html",
+      "https://pytorch.org/blog/torch-compile-and-diffusers-a-hands-on-guide-to-peak-performance/",
+      "https://pytorch.org/get-started/previous-versions",
+      "https://docs.aws.amazon.com/deep-learning-containers/latest/devguide/deep-learning-containers-ec2-tutorials-training.html#deep-learning-containers-ec2-tutorials-training-pytorch",
+      "https://docs.aws.amazon.com/dlami/latest/devguide/tutorial-pytorch.html",
+      "https://cloud.google.com/deep-learning-vm/docs/pytorch_start_instance",
+      "https://docs.microsoft.com/en-us/azure/machine-learning/how-to-train-pytorch",
+      "https://docs.microsoft.com/en-us/azure/azure-functions/machine-learning-pytorch?tabs=bash",
+      "https://pytorch.org/docs",
+      "https://discuss.pytorch.org/",
+      "https://pytorch.org/executorch/stable/index.html",
+      "https://pytorch.org/pytorch-domains",
+      "https://pytorch.org/docs/versions.html",
+      "https://readthedocs.org",
+      "https://pytorch.org/assets/brand-guidelines/PyTorch-Brand-Guidelines.pdf",
+      "https://pytorch.org/blog/torch-compile-and-diffusers-a-hands-on-guide-to-peak-performance/#respond",
+      "https://docs.pytorch.org/tutorials/intermediate/torch_compile_tutorial.html",
+      "https://docs.pytorch.org/docs/stable/torch.compiler_dynamic_shapes.html#abridged-public-api",
+      "https://docs.pytorch.org/docs/stable/torch.compiler_troubleshooting.html",
+      "https://docs.google.com/document/d/1y5CRfMLdwEoF1nTk9q8qEu1mgMUuUtvhklPKJ2emLU8/edit?tab=t.0",
+      "https://docs.pytorch.org/tutorials/recipes/regional_compilation.html",
+      "https://docs.pytorch.org/tutorials/recipes/torch_compile_caching_tutorial.html",
+      "https://huggingface.co/docs/diffusers/main/en/optimization/memory#offloading",
+      "https://huggingface.co/docs/peft/en/index",
+      "https://huggingface.co/docs/diffusers/main/en/tutorials/using_peft_for_inference#hotswapping",
+      "https://docs.google.com/document/d/1y5CRfMLdwEoF1nTk9q8qEu1mgMUuUtvhklPKJ2emLU8/edit?tab=t.0#heading=h.ivdr7fmrbeab",
+      "https://huggingface.co/docs/diffusers/main/en/optimization/fp16#torchcompile",
+      "https://docs.aws.amazon.com/pdfs/deep-learning-containers/latest/devguide/dlc-guide.pdf.pdf#deep-learning-containers-ec2-tutorials-training",
+      "https://docs.aws.amazon.com/index.html",
+      "https://docs.aws.amazon.com/pdfs/dlami/latest/devguide/dlami-dg.pdf#tutorial-pytorch",
+      "http://pytorch.org/docs/master/",
+      "https://cloud.google.com/docs",
+      "https://cloud.google.com/docs/tech-area-overviews",
+      "https://cloud.google.com/docs/ai-ml",
+      "https://cloud.google.com/docs/application-development",
+      "https://cloud.google.com/docs/application-hosting",
+      "https://cloud.google.com/docs/compute-area",
+      "https://cloud.google.com/docs/data",
+      "https://cloud.google.com/docs/databases",
+      "https://cloud.google.com/docs/dhm-cloud",
+      "https://cloud.google.com/docs/generative-ai",
+      "https://cloud.google.com/docs/industry",
+      "https://cloud.google.com/docs/networking",
+      "https://cloud.google.com/docs/observability",
+      "https://cloud.google.com/docs/security",
+      "https://cloud.google.com/docs/storage",
+      "https://cloud.google.com/docs/cross-product-overviews",
+      "https://cloud.google.com/docs/access-resources",
+      "https://cloud.google.com/docs/costs-usage",
+      "https://cloud.google.com/docs/devtools",
+      "https://cloud.google.com/docs/iac",
+      "https://cloud.google.com/docs/migration",
+      "https://cloud.google.com/marketplace/docs",
+      "https://cloud.google.com/deep-learning-vm/docs",
+      "https://cloud.google.com/deep-learning-vm/docs/introduction",
+      "https://cloud.google.com/deep-learning-vm/docs/troubleshooting",
+      "https://cloud.google.com/deep-learning-vm/docs/release-notes",
+      "https://cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud",
+      "https://cloud.google.com/deep-learning-vm/docs/create-vm-instance-console",
+      "https://cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance",
+      "https://cloud.google.com/deep-learning-vm/docs/cli",
+      "https://cloud.google.com/deep-learning-vm/docs/cloud-marketplace",
+      "https://cloud.google.com/deep-learning-vm/docs/concepts-images",
+      "https://cloud.google.com/deep-learning-vm/docs/images",
+      "https://cloud.google.com/deep-learning-vm/docs/creating-images",
+      "https://cloud.google.com/deep-learning-vm/docs/jupyter",
+      "https://cloud.google.com/billing/docs/how-to/verify-billing-enabled#confirm_billing_is_enabled_on_a_project",
+      "https://cloud.google.com/compute/docs/machine-types",
+      "https://cloud.google.com/compute/docs/gpus",
+      "https://cloud.google.com/sdk/docs",
+      "https://cloud.google.com/sdk/downloads",
+      "https://cloud.google.com/sdk/docs/initializing",
+      "https://cloud.google.com/shell/docs/starting-cloud-shell",
+      "https://cloud.google.com/compute/docs/gpus#restrictions",
+      "https://cloud.google.com/compute/docs/gpus#other_available_nvidia_gpu_models",
+      "https://cloud.google.com/compute/docs/gpus/gpu-regions-zones",
+      "https://cloud.google.com/compute/docs/instances/preemptible",
+      "https://cloud.google.com/compute/docs/instances/connecting-to-instance",
+      "https://cloud.google.com/docs/get-started/",
+      "https://cloud.google.com/docs/",
+      "https://cloud.google.com/docs/samples",
+      "https://github.com/MicrosoftDocs/azure-ai-docs/blob/main/articles/machine-learning/how-to-train-pytorch.md",
+      "https://aka.ms/sdk-v2-install",
+      "https://github.com/MicrosoftDocs/azure-docs/blob/main/articles/azure-functions/machine-learning-pytorch.md",
+      "https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio",
+      "https://code.visualstudio.com/docs/python/tutorial-azure-functions"
+    ],
+    "All Installation Links": [
+      "https://pytorch.org/get-started/locally/",
+      "https://pytorch.org/get-started/previous-versions",
+      "https://pytorch.org/get-started/previous-versions/",
+      "https://cloud.google.com/deep-learning-vm/docs/pytorch_start_instance",
+      "https://pytorch.org/get-started/pytorch-2-x/",
+      "https://pytorch.org/get-started/cloud-partners/",
+      "https://pytorch.org/get-started/executorch/",
+      "https://pytorch.org/get-started/locally?__hstc=76629258.724dacd2270c1ae797f3a62ecd655d50.1746547368336.1746547368336.1746547368336.1&__hssc=76629258.9.1746547368336&__hsfp=2230748894",
+      "https://console.cloud.google.com/freetrial",
+      "https://cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance",
+      "https://cloud.google.com/sdk/downloads",
+      "https://cloud.google.com/shell/docs/starting-cloud-shell",
+      "https://cloud.google.com/startup/",
+      "https://cloud.google.com/docs/get-started/"
+    ]
+  }
+}
