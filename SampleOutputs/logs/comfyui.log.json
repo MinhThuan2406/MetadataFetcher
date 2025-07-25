@@ -1,0 +1,19 @@
+{
+  "tool": "comfyui",
+  "type": "software",
+  "sources": {
+    "Documentation": "Google Search",
+    "Installation": "Google Search",
+    "Support/Reviews": "Google Search"
+  },
+  "filled_fields": [
+    "Versions",
+    "Compatibility",
+    "License",
+    "Typical Use Cases",
+    "Key Features",
+    "Installation",
+    "Documentation",
+    "Support/Reviews"
+  ]
+}

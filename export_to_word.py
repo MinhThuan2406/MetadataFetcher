@@ -281,11 +281,14 @@ def json_to_professional_word(json_path):
     tool_name = data.get('Name')
     if not tool_name and 'General Info' in data:
         tool_name = data['General Info'].get('Name', 'output')
+    if not tool_name and 'General Information' in data:
+        tool_name = data['General Information'].get('Name', 'output')
     if not tool_name:
         tool_name = 'output'
-    output_dir = os.path.join('SampleOutputs', 'docs')
-    os.makedirs(output_dir, exist_ok=True)
-    word_path = os.path.join(output_dir, f"{tool_name}.docx")
+    # Save DOCX in subfolder
+    docx_dir = os.path.join('SampleOutputs', 'docs', 'docx')
+    os.makedirs(docx_dir, exist_ok=True)
+    word_path = os.path.join(docx_dir, f"{tool_name}.docx")
 
     doc = Document()
     # Set narrow margins (1.27 cm)
@@ -306,16 +309,17 @@ def json_to_professional_word(json_path):
     # 1. General Information
     add_numbered_section_heading(doc, 1, 'General Information')
     gen_info = data.get('General Info', {})
+    use_case = gen_info.get('Use Case', 'N/A')
     gen_rows = [
         ["Name", gen_info.get("Name", "N/A")],
-        ["Use Case", gen_info.get("Use Case", "N/A")],
+        ["Use Case", use_case],
         ["Homepage", gen_info.get("Homepage", "N/A")],
         ["Description", gen_info.get("Description", "N/A")],
     ]
     add_blue_left_col_table(doc, gen_rows, left_col_width_cm=3.2, border_color='4F81BD', blue=True)
-    add_section_spacing(doc)
 
     # 2. Documentation
+    add_section_spacing(doc)
     add_numbered_section_heading(doc, 2, 'Documentation')
     doc_info = data.get('Documentation', {})
     doc_rows = [
@@ -323,83 +327,34 @@ def json_to_professional_word(json_path):
         ["Top Documentation Links", '\n'.join(doc_info.get('Top Links', [])) if doc_info.get('Top Links') else 'N/A']
     ]
     add_blue_left_col_table(doc, doc_rows, left_col_width_cm=5.2, border_color='4F81BD', blue=True)
-    add_section_spacing(doc)
 
     # 3. Installation
+    add_section_spacing(doc)
     add_numbered_section_heading(doc, 3, 'Installation')
     install = data.get('Installation', {})
     install_links = install.get('Links', [])
     install_summary = install.get('Summary', {})
     install_links_str = '\n'.join(install_links) if install_links else 'N/A'
-    # Installation Summary as a single cell (key: value, newline separated), show None for [] or None, and pretty-print commands
+    # Format installation summary as in the sample
     def pretty_install_summary(summary):
-        from docx.shared import Pt
-        from docx.oxml.ns import qn
-        from docx.shared import RGBColor
-        import io
         lines = []
-        for k, v in summary.items():
+        for k in ["pip", "from_source", "docker", "docker_compose", "other", "platforms"]:
+            v = summary.get(k)
+            if isinstance(v, list):
+                v = v[0] if v else None
             if v is None or v == []:
-                lines.append((k, None))
-            elif isinstance(v, list):
-                if not v:
-                    lines.append((k, None))
-                else:
-                    for item in v:
-                        if isinstance(item, dict):
-                            # Bold method name
-                            lines.append((k, 'BOLD'))
-                            if 'command' in item:
-                                lines.append((None, f"  Command: {item['command']}"))
-                            if 'explanation' in item and item['explanation']:
-                                lines.append((None, f"  Explanation: {item['explanation']}"))
-                            if 'note' in item and item['note']:
-                                lines.append((None, f"  Note: {item['note']}"))
-                            if 'when_to_use' in item and item['when_to_use']:
-                                lines.append((None, f"  When to use: {item['when_to_use']}"))
-                            if 'platform' in item and item['platform']:
-                                lines.append((None, f"  Platform: {item['platform']}"))
-                            if 'more_info' in item and item['more_info']:
-                                lines.append((None, f"  Link for Reference: {item['more_info']}"))
-                        else:
-                            lines.append((k, f"{item}"))
-            elif isinstance(v, dict):
-                lines.append((k, 'BOLD'))
-                for subk, subv in v.items():
-                    lines.append((None, f"  {subk}: {subv}"))
+                lines.append(f"{k.replace('_', ' ')}: None")
+            elif isinstance(v, dict) and 'command' in v:
+                lines.append(f"{k.replace('_', ' ')}: {v['command']}")
             else:
-                lines.append((k, f"{v}"))
-        # Now, build a string for the cell, but return a list of (label, value) for custom rendering
-        return lines if lines else [(None, 'None')]
-
-    if install_summary:
-        install_summary_lines = pretty_install_summary(install_summary)
-    else:
-        install_summary_lines = [(None, 'N/A')]
-
-    # Instead of install_summary_str, build the cell with runs for bold method names
+                lines.append(f"{k.replace('_', ' ')}: {v}")
+        return '\n'.join(lines)
+    install_summary_str = pretty_install_summary(install_summary) if install_summary else 'N/A'
     install_rows = [
         ["Installation Links", install_links_str],
-        ["Installation Summary", None]  # We'll fill this cell below
+        ["Installation Summary", install_summary_str]
     ]
-    table = add_blue_left_col_table(doc, install_rows, left_col_width_cm=3.8, border_color='4F81BD', blue=False)
-    # Fill the Installation Summary cell with formatted content
-    summary_cell = table.rows[1].cells[1]
-    summary_cell.text = ''  # Clear default
-    for label, value in install_summary_lines:
-        p = summary_cell.add_paragraph()
-        if label and value == 'BOLD':
-            run = p.add_run(f"{label}:")
-            run.bold = True
-            run.font.name = 'Times New Roman'
-            run.font.size = Pt(11)
-        elif value:
-            run = p.add_run(value)
-            run.font.name = 'Times New Roman'
-            run.font.size = Pt(11)
-        p.paragraph_format.line_spacing = 1
-        p.paragraph_format.space_before = 0
-        p.paragraph_format.space_after = 0
+    add_blue_left_col_table(doc, install_rows, left_col_width_cm=3.8, border_color='4F81BD', blue=False)
     add_section_spacing(doc)
 
     # 4. Other Links
@@ -418,7 +373,6 @@ def json_to_professional_word(json_path):
             set_paragraph_format(p)
     all_install_links = other.get('All Installation Links', [])
     if all_install_links:
-        # Add a single blank line between the two subsections if both exist
         if all_doc_links:
             blank = doc.add_paragraph()
             set_paragraph_format(blank)
@@ -438,21 +392,18 @@ def export_product_docx(json_path):
     import os
     with open(json_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    tool_name = data.get('Name', 'output')
-    tool_type = data.get('Type', 'software').lower()
-    output_dir = os.path.join('SampleOutputs', 'docs')
-    os.makedirs(output_dir, exist_ok=True)
-    word_path = os.path.join(output_dir, f"{tool_name}.docx")
-
+    tool_name = data.get('Name') or data.get('General Information', {}).get('Name', 'output') or 'output'
+    tool_type = data.get('Type') or data.get('General Information', {}).get('Type', 'software') or 'software'
+    tool_type = tool_type.lower()
+    docx_dir = os.path.join('SampleOutputs', 'docs', 'docx')
+    os.makedirs(docx_dir, exist_ok=True)
+    word_path = os.path.join(docx_dir, f"{tool_name}.docx")
     doc = Document()
-    # Set narrow margins (1.27 cm)
     section = doc.sections[0]
     section.top_margin = Cm(1.27)
     section.bottom_margin = Cm(1.27)
     section.left_margin = Cm(1.27)
     section.right_margin = Cm(1.27)
-
-    # Title
     title = doc.add_paragraph()
     run = title.add_run(f"{tool_name} Metadata Report (by MetadataFetcher)")
     run.bold = True
@@ -462,79 +413,97 @@ def export_product_docx(json_path):
         run._element.rPr.rFonts.set(qn('w:eastAsia'), 'Times New Roman')
     title.alignment = WD_PARAGRAPH_ALIGNMENT.LEFT
     set_paragraph_format(title)
-
     # 1. General Information
     add_numbered_section_heading(doc, 1, 'General Information')
-    gen_rows = [
-        ["Name", data.get("Name", "N/A")],
-        ["Type", data.get("Type", "N/A")],
-        ["Description", data.get("Description", "N/A")],
-        ["Official Site", data.get("Official Site", "N/A")],
-    ]
+    fields = ["Name", "Type", "Description", "Official Site"]
+    gen_rows = []
+    for field in fields:
+        value = data.get('General Information', {}).get(field) or data.get(field, "")
+        gen_rows.append([field, value if value is not None else ""])
     add_general_info_table(doc, [' ', ' '], gen_rows, border_color='4F81BD')
     add_section_spacing(doc)
-
     # 2. Product Details
     add_numbered_section_heading(doc, 2, 'Product Details')
+    details_fields = ["Versions", "Compatibility", "License", "Latest Version", "Latest Release Date", "Programming Languages", "Programming Language", "Supported Platforms", "Supported File Formats", "File Formats", "System Requirements"]
     details_rows = []
-    if tool_type == 'hardware':
-        details_rows.extend([
-            ["Versions", data.get("Versions", "N/A")],
-            ["Price Range", data.get("Price Range", "N/A")],
-            ["Color Options", data.get("Color Options", "N/A")],
-            ["Compatibility", data.get("Compatibility", "N/A")],
-            ["Accessories", data.get("Accessories", "N/A")],
-        ])
-    else:  # software
-        details_rows.extend([
-            ["Versions", data.get("Versions", "N/A")],
-            ["Compatibility", data.get("Compatibility", "N/A")],
-        ])
-    # Only show if at least one field is not N/A
-    if any(val and val != "N/A" for _, val in details_rows):
-        add_general_info_table(doc, [' ', ' '], details_rows, border_color='4F81BD')
-    else:
-        p = doc.add_paragraph("N/A")
-        set_paragraph_format(p)
+    for field in details_fields:
+        value = data.get('Product Details', {}).get(field)
+        if value is None:
+            value = data.get(field, "")
+        details_rows.append([field, value if value is not None else ""])
+    add_general_info_table(doc, [' ', ' '], details_rows, border_color='4F81BD')
     add_section_spacing(doc)
-
     # 3. Key Features
     add_numbered_section_heading(doc, 3, 'Key Features')
-    features = data.get("Key Features", "N/A")
-    if features and features != "N/A":
-        for feat in features.split(','):
+    features = data.get('Key Features', "")
+    if features:
+        for feat in str(features).split(','):
             p = doc.add_paragraph(feat.strip())
             set_paragraph_format(p)
-    else:
-        p = doc.add_paragraph("N/A")
+    add_section_spacing(doc)
+    # 4. Integrations/Plugins
+    add_numbered_section_heading(doc, 4, 'Integrations/Plugins')
+    integrations = data.get('Integrations/Plugins', "")
+    if integrations:
+        p = doc.add_paragraph(integrations)
         set_paragraph_format(p)
     add_section_spacing(doc)
-
-    # 4. Where to Buy (hardware only)
-    if tool_type == 'hardware':
-        add_numbered_section_heading(doc, 4, 'Where to Buy')
-        where = data.get("Where to Buy", "N/A")
-        if where and where != "N/A":
-            for w in where.split(','):
-                p = doc.add_paragraph(w.strip())
-                set_paragraph_format(p)
-        else:
-            p = doc.add_paragraph("N/A")
-            set_paragraph_format(p)
-        add_section_spacing(doc)
-
-    # 5. Support/Reviews
-    add_numbered_section_heading(doc, 5, 'Support/Reviews')
-    support = data.get("Support/Reviews", "N/A")
-    if support and support != "N/A":
-        for s in support.split(','):
-            p = doc.add_paragraph(s.strip())
-            set_paragraph_format(p)
-    else:
-        p = doc.add_paragraph("N/A")
+    # 5. Installation & Documentation
+    add_numbered_section_heading(doc, 5, 'Installation & Documentation')
+    install = data.get('Installation & Documentation', "") or data.get('Installation', "")
+    if install:
+        p = doc.add_paragraph(install)
         set_paragraph_format(p)
     add_section_spacing(doc)
-
+    # 6. Support/Reviews
+    add_numbered_section_heading(doc, 6, 'Support/Reviews')
+    support = data.get('Support/Reviews', "") or data.get('Support', "")
+    if support:
+        p = doc.add_paragraph(support)
+        set_paragraph_format(p)
+    add_section_spacing(doc)
+    # 7. Community & Ecosystem
+    add_numbered_section_heading(doc, 7, 'Community & Ecosystem')
+    community = data.get('Community & Ecosystem', "") or data.get('Community', "")
+    if community:
+        p = doc.add_paragraph(community)
+        set_paragraph_format(p)
+    add_section_spacing(doc)
+    # 8. Awards/Recognition
+    add_numbered_section_heading(doc, 8, 'Awards/Recognition')
+    awards = data.get('Awards/Recognition', "")
+    if awards:
+        p = doc.add_paragraph(awards)
+        set_paragraph_format(p)
+    add_section_spacing(doc)
+    # 9. Pricing/Cost
+    add_numbered_section_heading(doc, 9, 'Pricing/Cost')
+    pricing = data.get('Pricing/Cost', "")
+    if pricing:
+        p = doc.add_paragraph(pricing)
+        set_paragraph_format(p)
+    add_section_spacing(doc)
+    # 10. Security/Privacy
+    add_numbered_section_heading(doc, 10, 'Security/Privacy')
+    security = data.get('Security/Privacy', "")
+    if security:
+        p = doc.add_paragraph(security)
+        set_paragraph_format(p)
+    add_section_spacing(doc)
+    # 11. Roadmap/Future Plans
+    add_numbered_section_heading(doc, 11, 'Roadmap/Future Plans')
+    roadmap = data.get('Roadmap/Future Plans', "")
+    if roadmap:
+        p = doc.add_paragraph(roadmap)
+        set_paragraph_format(p)
+    add_section_spacing(doc)
+    # 12. Known Issues/Limitations
+    add_numbered_section_heading(doc, 12, 'Known Issues/Limitations')
+    issues = data.get('Known Issues/Limitations', "")
+    if issues:
+        p = doc.add_paragraph(issues)
+        set_paragraph_format(p)
+    add_section_spacing(doc)
     doc.save(word_path)
     print(f"Exported to {word_path}")
 
@@ -546,9 +515,10 @@ def export_borderline_docx(json_path):
     technical = data.get('Technical Info', {})
     tool_name = product.get('Name', 'output')
     tool_type = product.get('Type', 'software').lower()
-    output_dir = os.path.join('SampleOutputs', 'docs')
-    os.makedirs(output_dir, exist_ok=True)
-    word_path = os.path.join(output_dir, f"{tool_name}.docx")
+    # Save DOCX in subfolder
+    docx_dir = os.path.join('SampleOutputs', 'docs', 'docx')
+    os.makedirs(docx_dir, exist_ok=True)
+    word_path = os.path.join(docx_dir, f"{tool_name}.docx")
 
     doc = Document()
     # Set narrow margins (1.27 cm)
@@ -709,6 +679,141 @@ def add_bold_label(doc, text):
     p.paragraph_format.space_after = 0
     return p
 
+def add_section_header(doc, text):
+    p = doc.add_paragraph()
+    run = p.add_run(text)
+    run.font.name = 'Times New Roman'
+    run.font.size = Pt(11)
+    run.bold = True
+    run.font.color.rgb = RGBColor(0, 0, 0)
+    p.paragraph_format.space_after = Pt(0)
+    p.paragraph_format.space_before = Pt(0)
+    return p
+
+def export_metadata_to_word(metadata, output_path):
+    from docx.shared import Cm
+    doc = Document()
+    section = doc.sections[0]
+    section.top_margin = Cm(1.27)
+    section.bottom_margin = Cm(1.27)
+    section.left_margin = Cm(1.27)
+    section.right_margin = Cm(1.27)
+    def set_cell_style(cell, is_header=False):
+        for paragraph in cell.paragraphs:
+            for run in paragraph.runs:
+                run.font.name = 'Times New Roman'
+                run.font.size = Pt(11)
+                if is_header:
+                    run.bold = True
+                    run.font.color.rgb = RGBColor(255,255,255)
+            paragraph.paragraph_format.line_spacing = 1
+            paragraph.paragraph_format.space_before = 0
+            paragraph.paragraph_format.space_after = 0
+        if is_header:
+            set_cell_background(cell, '4F81BD')
+    def set_paragraph_style(paragraph):
+        for run in paragraph.runs:
+            run.font.name = 'Times New Roman'
+            run.font.size = Pt(11)
+        paragraph.paragraph_format.line_spacing = 1
+        paragraph.paragraph_format.space_before = 0
+        paragraph.paragraph_format.space_after = 0
+    add_section_header(doc, '1. General Information')
+    add_section_spacing(doc)
+    table = doc.add_table(rows=1, cols=2)
+    table.style = 'Table Grid'
+    hdr_cells = table.rows[0].cells
+    hdr_cells[0].text = 'General Information'
+    hdr_cells[1].text = ''
+    set_cell_style(hdr_cells[0], is_header=True)
+    set_cell_style(hdr_cells[1], is_header=True)
+    for field in ['Name', 'Type', 'Description', 'Official Site']:
+        value = metadata.get('General Information', {}).get(field) or metadata.get(field, "")
+        row = table.add_row().cells
+        row[0].text = field
+        row[1].text = str(value if value is not None else "")
+        set_cell_style(row[0])
+        set_cell_style(row[1])
+    add_section_header(doc, '2. Product Details')
+    add_section_spacing(doc)
+    table = doc.add_table(rows=1, cols=2)
+    table.style = 'Table Grid'
+    hdr_cells = table.rows[0].cells
+    hdr_cells[0].text = 'Product Details'
+    hdr_cells[1].text = ''
+    set_cell_style(hdr_cells[0], is_header=True)
+    set_cell_style(hdr_cells[1], is_header=True)
+    for field in ['Versions', 'Compatibility', 'License', 'Latest Version', 'Latest Release Date', 'Programming Languages', 'Programming Language', 'Supported Platforms', 'Supported File Formats', 'File Formats', 'System Requirements']:
+        value = metadata.get(field)
+        if value is None or value == 'N/A':
+            value = metadata.get('Product Details', {}).get(field, "")
+        row = table.add_row().cells
+        row[0].text = field
+        row[1].text = str(value if value is not None else "")
+        set_cell_style(row[0])
+        set_cell_style(row[1])
+    add_section_header(doc, '3. Key Features')
+    add_section_spacing(doc)
+    features = metadata.get('Key Features', "")
+    if features:
+        p = doc.add_paragraph(features)
+        set_paragraph_style(p)
+    add_section_header(doc, '4. Integrations/Plugins')
+    add_section_spacing(doc)
+    integrations = metadata.get('Integrations/Plugins', "")
+    if integrations:
+        p = doc.add_paragraph(integrations)
+        set_paragraph_style(p)
+    add_section_header(doc, '5. Installation & Documentation')
+    add_section_spacing(doc)
+    install = metadata.get('Installation & Documentation', "") or metadata.get('Installation', "")
+    if install:
+        p = doc.add_paragraph(install)
+        set_paragraph_style(p)
+    add_section_header(doc, '6. Support/Reviews')
+    add_section_spacing(doc)
+    support = metadata.get('Support/Reviews', "") or metadata.get('Support', "")
+    if support:
+        p = doc.add_paragraph(support)
+        set_paragraph_style(p)
+    add_section_header(doc, '7. Community & Ecosystem')
+    add_section_spacing(doc)
+    community = metadata.get('Community & Ecosystem', "") or metadata.get('Community', "")
+    if community:
+        p = doc.add_paragraph(community)
+        set_paragraph_style(p)
+    add_section_header(doc, '8. Awards/Recognition')
+    add_section_spacing(doc)
+    awards = metadata.get('Awards/Recognition', "")
+    if awards:
+        p = doc.add_paragraph(awards)
+        set_paragraph_style(p)
+    add_section_header(doc, '9. Pricing/Cost')
+    add_section_spacing(doc)
+    pricing = metadata.get('Pricing/Cost', "")
+    if pricing:
+        p = doc.add_paragraph(pricing)
+        set_paragraph_style(p)
+    add_section_header(doc, '10. Security/Privacy')
+    add_section_spacing(doc)
+    security = metadata.get('Security/Privacy', "")
+    if security:
+        p = doc.add_paragraph(security)
+        set_paragraph_style(p)
+    add_section_header(doc, '11. Roadmap/Future Plans')
+    add_section_spacing(doc)
+    roadmap = metadata.get('Roadmap/Future Plans', "")
+    if roadmap:
+        p = doc.add_paragraph(roadmap)
+        set_paragraph_style(p)
+    add_section_header(doc, '12. Known Issues/Limitations')
+    add_section_spacing(doc)
+    issues = metadata.get('Known Issues/Limitations', "")
+    if issues:
+        p = doc.add_paragraph(issues)
+        set_paragraph_style(p)
+    doc.save(output_path)
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) < 2:
@@ -718,4 +823,12 @@ if __name__ == "__main__":
     if not os.path.exists(json_path):
         print(f"Input file {json_path} does not exist.")
         sys.exit(1)
-    json_to_professional_word(json_path) 
+    # Load metadata
+    with open(json_path, 'r', encoding='utf-8') as f:
+        metadata = json.load(f)
+    tool_name = metadata.get('General Information', {}).get('Name') or metadata.get('Name', 'output')
+    docx_dir = os.path.join('SampleOutputs', 'docs', 'docx')
+    os.makedirs(docx_dir, exist_ok=True)
+    output_path = os.path.join(docx_dir, f"{tool_name}.docx")
+    export_metadata_to_word(metadata, output_path)
+    print(f"Exported to {output_path}") 

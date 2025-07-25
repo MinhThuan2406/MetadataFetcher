@@ -1,10 +1,11 @@
 {
-  "tool": "python",
+  "tool": "pycharm",
   "type": "software",
   "sources": {
     "Description": "Wikipedia",
     "Official Site": "Wikipedia",
     "Versions": "Official Site",
+    "Compatibility": "Official Site",
     "Key Features": "Official Site",
     "Installation": "Official Site",
     "Support/Reviews": "Official Site",

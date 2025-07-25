@@ -1,68 +1,22 @@
 {
-  "Product Info": {
-    "Name": "blender",
-    "Type": "Software",
-    "Description": "A blender is a kitchen and laboratory appliance used to mix, crush, purée or emulsify food and other substances. A stationary blender consists of a blender container with a rotating metal or plastic blade at the bottom, powered by an electric motor that is in the base. Some powerful models can also crush ice and other frozen foods. The newer immersion blender configuration has a motor on top connected by a shaft to a rotating blade at the bottom, which can be used with any container.",
-    "Official Site": "https://en.wikipedia.org/wiki/Blender",
-    "Versions": "In other projects",
-    "Price Range": "Free",
-    "Color Options": "N/A",
-    "Compatibility": "N/A",
-    "Accessories": "N/A",
-    "Key Features": "N/A",
-    "Where to Buy": "N/A",
-    "Support/Reviews": "N/A"
-  },
-  "Technical Info": {
-    "General Info": {
-      "Name": "blender",
-      "Use Case": "Creative and Media Tools",
-      "Homepage": "https://www.blender.org/",
-      "Description": null
-    },
-    "Documentation": {
-      "Main Documentation": "https://www.blender.org/get-involved/documenters/",
-      "Top Links": [
-        "https://www.blender.org/get-involved/documenters/",
-        "https://docs.blender.org/manual/?utm_medium=www-footer",
-        "https://developer.blender.org/docs/?utm_medium=www-footer"
-      ]
-    },
-    "Installation": {
-      "Links": [
-        "https://developer.blender.org/?utm_medium=www-footer",
-        "https://developer.blender.org/docs/handbook/new_developers/"
-      ],
-      "Summary": {
-        "pip": [],
-        "from_source": [],
-        "docker": [],
-        "docker_compose": [],
-        "other": [],
-        "platforms": null
-      }
-    },
-    "Other Links": {
-      "All Documentation Links": [
-        "https://www.blender.org/get-involved/documenters/",
-        "https://docs.blender.org/manual/?utm_medium=www-footer",
-        "https://developer.blender.org/docs/?utm_medium=www-footer",
-        "https://docs.blender.org/api/current/?utm_medium=www-footer",
-        "https://docs.blender.org/manual/en/latest/versions.html",
-        "https://projects.blender.org/blender/documentation/issues/new?template=.gitea/issue_template/bug.yaml&field:body=%2A%2APage+Information%2A%2A%0D%0AFile%3A+%60manual%2Fcontribute/index.rst%60%0D%0ABlender+Version%3A+%604.5%60%0D%0ADocumentation+Language%3A+%60en%60%0D%0A%5BPermanent+Link%5D%28https%3A%2F%2Fdocs.blender.org%2Fmanual%2Fen%2F4.5%2Fcontribute/index.html%29%0D%0A%0D%0A%2A%2AShort+description+of+error%2A%2A%0D%0A%5BPlease+fill+out+a+short+description+of+the+error+here%5D%0D%0A",
-        "https://projects.blender.org/blender/documentation/issues/new?template=.gitea/issue_template/bug.yaml&field:body=%2A%2APage+Information%2A%2A%0D%0AFile%3A+%60manual%2Findex.rst%60%0D%0ABlender+Version%3A+%604.5%60%0D%0ADocumentation+Language%3A+%60en%60%0D%0A%5BPermanent+Link%5D%28https%3A%2F%2Fdocs.blender.org%2Fmanual%2Fen%2F4.5%2Findex.html%29%0D%0A%0D%0A%2A%2AShort+description+of+error%2A%2A%0D%0A%5BPlease+fill+out+a+short+description+of+the+error+here%5D%0D%0A",
-        "https://developer.blender.org/docs/",
-        "https://docs.blender.org/manual/en/latest/?utm_medium=nav-global",
-        "https://developer.blender.org/docs/?utm_medium=nav-global",
-        "https://projects.blender.org/blender/blender-developer-docs",
-        "https://projects.blender.org/blender/blender-developer-docs/_edit/main/docs/index.md",
-        "https://developer.blender.org/docs/license",
-        "https://projects.blender.org/blender/blender/issues/new?template=.gitea/issue_template/api_docs.yaml&field:body=%2A%2APage+Information%2A%2A%0D%0AFile%3A+%60index.rst%60%0D%0ABlender+Version%3A+%604.5%60%0D%0A%5BPermanent+Link%5D%28https%3A%2F%2Fdocs.blender.org%2Fapi%2F4.5%2Findex.html%29%0D%0A%0D%0A%2A%2AShort+description+of+error%2A%2A%0D%0A%5BPlease+fill+out+a+short+description+of+the+error+here%5D%0D%0A"
-      ],
-      "All Installation Links": [
-        "https://developer.blender.org/?utm_medium=www-footer",
-        "https://developer.blender.org/docs/handbook/new_developers/"
-      ]
-    }
-  }
+  "Name": "blender",
+  "Type": "software",
+  "Description": "Blender is a free and open-source 3D computer graphics software tool set that runs on Windows, macOS, BSD, Haiku, IRIX and Linux. It is used for creating animated films, visual effects, art, 3D-printed models, motion graphics, interactive 3D applications, and virtual reality. It is also used in creating video games.",
+  "Official Site": "https://www.blender.org/",
+  "Versions": "Experimental Builds",
+  "Compatibility": "Linux",
+  "License": "GNU General Public License (GPL-2.0 or later)",
+  "Typical Use Cases": "3D modeling, animation, VFX, video editing, game asset creation, 3D printing, simulation, rendering, storyboarding, education",
+  "Key Features": "animation, customize, interface, model, open source, python, render, sculpt, vfx",
+  "Installation": "https://www.blender.org/download/",
+  "Documentation": "https://www.blender.org/get-involved/documenters/",
+  "Support/Reviews": "https://www.blender.org/support/",
+  "Latest Version": "4.5 (July 2025)",
+  "Programming Languages": "C++, Python",
+  "Supported Platforms": "Windows, macOS, Linux, BSD, Haiku, IRIX",
+  "System Requirements": "64-bit dual core 2Ghz CPU with SSE2 support, 8 GB RAM, Full HD display, Mouse, Trackpad or Pen+Tablet, Graphics card with 2 GB RAM, OpenGL 4.3 support",
+  "File Formats": "Import: .blend, .3ds, .fbx, .obj, .stl, .dae, .abc, .usd, .gltf, .svg, .jpg, .png, .tiff, .avi, .mp4, .mov, and more. Export: .blend, .fbx, .obj, .stl, .dae, .abc, .usd, .gltf, .svg, .jpg, .png, .tiff, .avi, .mp4, .mov, and more.",
+  "Support": "Support: https://www.blender.org/support/",
+  "Community": "https://blender.stackexchange.com/, https://devtalk.blender.org/",
+  "Reviews": "https://www.g2.com/products/blender/reviews"
 }

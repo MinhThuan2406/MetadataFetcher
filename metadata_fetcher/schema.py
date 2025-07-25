@@ -35,6 +35,7 @@ class PackageMetadata:
     documentation_html: Optional[str] = None
     documentation_links: List[str] = field(default_factory=list)
     installation_links: List[str] = field(default_factory=list)
+    use_case: Optional[str] = None
 
 """
 PackageMetadata schema:
@@ -54,4 +55,29 @@ PackageMetadata schema:
 - documentation_html: Raw HTML/text of the documentation page (if fetched)
 - documentation_links: List of all discovered documentation/setup links
 - installation_links: List of all discovered installation-related links
-""" 
+"""
+
+# Expanded metadata schema for creative/media tools
+CREATIVE_MEDIA_SCHEMA = {
+    'Name': str,
+    'Type': str,
+    'Description': str,
+    'Official Site': str,
+    'Versions': str,
+    'Compatibility': str,
+    'Key Features': str,
+    'Installation & Documentation': str,
+    'Support/Reviews': str,
+    'License': str,  # e.g., GPL, MIT, proprietary
+    'Latest Release Date': str,  # e.g., '2024-05-01'
+    'Programming Language': str,  # e.g., 'C++', 'Python'
+    'Supported File Formats': str,  # e.g., '.blend, .obj, .fbx'
+    'System Requirements': str,  # e.g., 'Windows 10+, 8GB RAM, GPU'
+    'Integrations/Plugins': str,  # e.g., 'Unity, Unreal, Adobe Suite'
+    'Community & Ecosystem': str,  # e.g., forum links, Discord, Stack Overflow
+    'Awards/Recognition': str,  # e.g., 'Academy Award for Technical Achievement'
+    'Pricing/Cost': str,  # e.g., 'Free, Commercial licenses available'
+    'Security/Privacy': str,  # e.g., 'GDPR compliant, sandboxed'
+    'Roadmap/Future Plans': str,  # e.g., roadmap link or summary
+    'Known Issues/Limitations': str,  # e.g., 'No native Apple Silicon support'
+} 

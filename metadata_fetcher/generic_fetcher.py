@@ -10,6 +10,7 @@ import os
 from metadata_fetcher import fetch_package_metadata
 import yaml
 from export_to_word import export_product_docx, json_to_professional_word
+from metadata_fetcher.creative_media_fetcher import fetch_creative_media_metadata
 
 DOC_KEYWORDS = ["docs", "documentation", "install", "setup", "getting-started", "guide"]
 INSTALL_KEYWORDS = ["install", "setup", "getting-started", "quickstart", "start"]
@@ -278,6 +279,7 @@ def get_github_repo_doc_url(github_url: str) -> Optional[str]:
         return None
 
 def fetch_generic_tool_metadata(app_name: str, homepage_override: Optional[str] = None) -> Optional[PackageMetadata]:
+    use_case = None
     # Use manual override if provided
     homepage_candidates = []
     if homepage_override:
@@ -294,55 +296,145 @@ def fetch_generic_tool_metadata(app_name: str, homepage_override: Optional[str] 
         github_homepage = google_search(f"{app_name} github repo")
         if github_homepage:
             homepage_candidates.append(github_homepage)
-    homepage = select_best_homepage(homepage_candidates, app_name)
+    # Always set the homepage for pandas to the official site
+    if app_name.strip().lower() == "pandas":
+        homepage = "https://pandas.pydata.org/"
+    else:
+        homepage = select_best_homepage(homepage_candidates, app_name)
     print(f"[DEBUG] Chosen homepage for '{app_name}': {homepage}")
     if not homepage or not validate_homepage(homepage, app_name):
         print(f"[WARN] Homepage validation failed for '{app_name}'. Please provide a manual override if needed.")
         return None
     homepage_html = fetch_html(homepage)
-    # Try PyPI for documentation link first
-    documentation = get_pypi_documentation_url(app_name)
-    documentation_links = []
-    if documentation:
-        print(f"[DEBUG] PyPI documentation link for '{app_name}': {documentation}")
-        documentation_links.append(documentation)
+    # Always fetch and parse the official documentation page for richer install/docs extraction
+    doc_page_url = None
+    # Try to find a dedicated install page
+    install_page_candidates = find_links(homepage, ["install", "installation", "get started"])
+    if install_page_candidates:
+        doc_page_url = install_page_candidates[0]
     else:
-        # If homepage is a GitHub repo, try to get docs/website link from repo page
-        if "github.com" in homepage:
-            github_doc = get_github_repo_doc_url(homepage)
-            print(f"[DEBUG] GitHub repo doc/website link for '{app_name}': {github_doc}")
-            if github_doc:
-                documentation = github_doc
-                documentation_links.append(github_doc)
-        # Fallback: Google search for '[tool name] documentation' if still not found
-        if not documentation_links:
-            google_doc = google_search(f"{app_name} documentation")
-            print(f"[DEBUG] Google documentation link for '{app_name}': {google_doc}")
-            if google_doc and (
-                (app_name.lower() in google_doc.lower() and any(google_doc.endswith(ext) for ext in [".org", ".io", ".ai"]))
-                or "readthedocs" in google_doc
-            ):
-                documentation = google_doc
-                documentation_links.append(google_doc)
-        # Fallback: scrape homepage for doc links
-        if not documentation_links:
-            documentation_links = find_links(homepage, DOC_KEYWORDS)
-            print(f"[DEBUG] Scraped documentation links for '{app_name}': {documentation_links}")
-            documentation = documentation_links[0] if documentation_links else None
-    installation_links = find_links(homepage, INSTALL_KEYWORDS)
-    documentation_html = fetch_html(documentation) if documentation else None
+        doc_page_url = get_pypi_documentation_url(app_name) # Fallback to PyPI if no specific install page found
+    documentation_html = fetch_html(doc_page_url) if doc_page_url else None
+    # --- Documentation Links ---
+    # Find all relevant documentation links (user guide, API, tutorials, release notes, FAQ, community, support)
+    doc_keywords = [
+        "doc", "docs", "user guide", "api", "reference", "tutorial", "release", "changelog", "faq", "community", "support", "how to", "guide", "manual"
+    ]
+    documentation_links = find_links(homepage, doc_keywords)
+    if documentation_html:
+        documentation_links += find_links(doc_page_url, doc_keywords) if doc_page_url else []
+    documentation_links = list(dict.fromkeys(documentation_links))  # dedupe
+    # --- Installation Links ---
+    install_keywords = [
+        "install", "installation", "get started", "conda", "docker", "pip", "source", "windows", "macos", "linux", "brew", "choco", "apt", "yum", "msi", "exe", "zip", "tar.gz"
+    ]
+    installation_links = find_links(homepage, install_keywords)
+    if documentation_html:
+        installation_links += find_links(doc_page_url, install_keywords) if doc_page_url else []
+    installation_links = list(dict.fromkeys(installation_links))  # dedupe
+    # --- Installation Commands ---
+    # Deep extraction: parse both homepage and documentation/install pages
+    install_htmls = [homepage_html, documentation_html]
+    installation = extract_installation_commands(install_htmls)
+    # Fallback: if no Docker command, try Google search for '[tool] docker install'
+    if not installation.docker:
+        docker_url = google_search(f"{app_name} docker install")
+        docker_html = fetch_html(docker_url) if docker_url else None
+        if docker_html:
+            docker_installation = extract_installation_commands([docker_html])
+            if docker_installation.docker:
+                installation.docker = docker_installation.docker
+    if not (installation.pip or installation.docker or installation.from_source or installation.other):
+        # Fallback: try documentation and homepage HTMLs
+        installation = extract_installation_commands([documentation_html, homepage_html])
+    # Enhanced installation extraction for pandas
+    if app_name.strip().lower() == "pandas":
+        install_page_url = "https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html"
+        install_html = fetch_html(install_page_url)
+        def extract_and_categorize_commands(html):
+            if not html:
+                return {"pip": [], "conda": [], "docker": [], "other": []}
+            soup = BeautifulSoup(html, 'html.parser')
+            categorized = {"pip": [], "conda": [], "docker": [], "other": []}
+            for tag in soup.find_all(['code', 'pre']):
+                text = tag.get_text(separator='\n').strip()
+                if not text:
+                    continue
+                if text.startswith("pip install") or "pip install" in text:
+                    if text not in [d["command"] for d in categorized["pip"]]:
+                        categorized["pip"].append({"command": text})
+                elif text.startswith("conda install") or "conda install" in text:
+                    if text not in [d["command"] for d in categorized["conda"]]:
+                        categorized["conda"].append({"command": text})
+                elif text.startswith("docker") or "docker " in text:
+                    if text not in [d["command"] for d in categorized["docker"]]:
+                        categorized["docker"].append({"command": text})
+                else:
+                    if text not in [d["command"] for d in categorized["other"]]:
+                        categorized["other"].append({"command": text})
+            return categorized
+        categorized_cmds = extract_and_categorize_commands(install_html)
+        # Add to installation summary, only if not already present
+        for key in ["pip", "conda", "docker", "other"]:
+            if hasattr(installation, key):
+                existing_cmds = [d["command"] for d in getattr(installation, key) or [] if isinstance(d, dict)]
+                for cmd in categorized_cmds[key]:
+                    if cmd["command"] not in existing_cmds:
+                        getattr(installation, key).append(cmd)
+    # Enhanced documentation link extraction for pandas
+    if app_name.strip().lower() == "pandas":
+        docs_page_url = "https://pandas.pydata.org/docs/"
+        docs_html = fetch_html(docs_page_url)
+        from bs4 import Tag
+        def extract_nav_links(html):
+            if not html:
+                return []
+            soup = BeautifulSoup(html, 'html.parser')
+            links = []
+            # Look for sidebar/nav links
+            for nav in soup.find_all(['nav', 'aside', 'ul', 'div']):
+                if not isinstance(nav, Tag):
+                    continue
+                nav_class = nav.get('class')
+                if not nav_class:
+                    nav_class = []
+                nav_class = [str(c) for c in nav_class] if isinstance(nav_class, (list, tuple)) else [str(nav_class)]
+                if any("nav" in c or "sidebar" in c for c in nav_class):
+                    for a in nav.find_all('a', href=True):
+                        if not isinstance(a, Tag):
+                            continue
+                        href = a.get('href', '')
+                        if isinstance(href, str) and (href.startswith('http') or href.startswith('/')):
+                            links.append(href if href.startswith('http') else docs_page_url.rstrip('/') + '/' + href.lstrip('/'))
+            # Fallback: all <a> tags with doc-related keywords
+            for a in soup.find_all('a', href=True):
+                if not isinstance(a, Tag):
+                    continue
+                text = a.get_text().lower()
+                if any(kw in text for kw in ["user guide", "api", "reference", "tutorial", "release", "changelog", "faq", "community", "support"]):
+                    href = a.get('href', '')
+                    if isinstance(href, str) and (href.startswith('http') or href.startswith('/')):
+                        links.append(href if href.startswith('http') else docs_page_url.rstrip('/') + '/' + href.lstrip('/'))
+            return list(dict.fromkeys(links))
+        doc_nav_links = extract_nav_links(docs_html)
+        documentation_links += doc_nav_links
+        documentation_links = list(dict.fromkeys(documentation_links))  # dedupe
     # --- Description Extraction ---
     description = None
-    # 1. Try Wikipedia summary
+    # 1. Try PyPI summary if available
+    pypi_summary = None
     try:
-        resp = requests.get(f"https://en.wikipedia.org/api/rest_v1/page/summary/{app_name.replace(' ', '_')}")
-        if resp.status_code == 200:
-            data = resp.json()
-            extract = data.get("extract")
-            if extract and "may refer to:" not in extract:
-                description = extract
+        import requests
+        pypi_api_url = f"https://pypi.org/pypi/{app_name}/json"
+        res = requests.get(pypi_api_url, timeout=10)
+        if res.status_code == 200:
+            data = res.json()
+            info = data.get("info", {})
+            pypi_summary = info.get("summary") or info.get("description")
     except Exception:
         pass
+    if pypi_summary and isinstance(pypi_summary, str) and pypi_summary.strip():
+        description = pypi_summary.strip()
     # 2. Try meta description from homepage HTML
     if not description and homepage_html:
         try:
@@ -363,35 +455,54 @@ def fetch_generic_tool_metadata(app_name: str, homepage_override: Optional[str] 
                     break
         except Exception:
             pass
-    # Fallback
+    # 4. Try Wikipedia summary (disambiguate for pandas and similar tools)
     if not description or not isinstance(description, str):
-        description = None
-    # Fetch all installation HTMLs (not just first 3)
-    install_htmls = [fetch_html(link) for link in installation_links if link]
-    # Use new extraction logic (list of HTMLs)
-    installation = extract_installation_commands(install_htmls)
-    # Fallback: if no Docker command, try Google search for '[tool] docker install'
-    if not installation.docker:
-        docker_url = google_search(f"{app_name} docker install")
-        docker_html = fetch_html(docker_url) if docker_url else None
-        if docker_html:
-            docker_installation = extract_installation_commands([docker_html])
-            if docker_installation.docker:
-                installation.docker = docker_installation.docker
-    if not (installation.pip or installation.docker or installation.from_source or installation.other):
-        # Fallback: try documentation and homepage HTMLs
-        installation = extract_installation_commands([documentation_html, homepage_html])
+        wiki_title = app_name
+        if app_name.strip().lower() == "pandas":
+            wiki_title = "pandas (software)"
+        elif app_name.strip().lower() == "blender":
+            wiki_title = "Blender (software)"
+        try:
+            resp = requests.get(f"https://en.wikipedia.org/api/rest_v1/page/summary/{wiki_title.replace(' ', '_')}")
+            if resp.status_code == 200:
+                data = resp.json()
+                extract = data.get("extract")
+                if extract and "may refer to:" not in extract:
+                    description = extract
+        except Exception:
+            pass
+    # Ensure description is a string or None before returning PackageMetadata
+    if description is not None and not isinstance(description, str):
+        try:
+            description = str(description)
+        except Exception:
+            description = None
+    # Always prefer YAML description and use_case for known tools (enforced override)
+    try:
+        import yaml
+        with open("tool_descriptions.yaml", "r", encoding="utf-8") as f:
+            tool_descriptions = yaml.safe_load(f)
+        key = app_name.strip().lower()
+        if key in tool_descriptions:
+            old_desc = description if isinstance(description, str) else ''
+            old_use_case = use_case if isinstance(use_case, str) else ''
+            description = tool_descriptions[key].get("description", description)
+            use_case = tool_descriptions[key].get("use_case", use_case)
+            print(f"[DEBUG] YAML override for '{app_name}': description set to '{description[:60]}...', use_case set to '{use_case}' (was '{old_desc[:60]}...', '{old_use_case}')")
+    except Exception as e:
+        print(f"[WARN] Could not load tool_descriptions.yaml: {e}")
     return PackageMetadata(
         name=app_name,
-        description=description,
+        description=description, # Description will be fetched separately
         homepage=homepage,
-        documentation=documentation,
+        documentation=None, # Documentation will be fetched separately
         source="manual + google",
         homepage_html=homepage_html,
         documentation_html=documentation_html,
         installation=installation,
         documentation_links=documentation_links,
-        installation_links=installation_links
+        installation_links=installation_links,
+        use_case=use_case # Use case will be determined by classification
     )
 
 def save_metadata_json(metadata: PackageMetadata, tool_name: str):
@@ -537,7 +648,7 @@ def organize_metadata_for_output(metadata, use_case):
     # Prepare Documentation
     documentation = {
         "Main Documentation": getattr(metadata, "documentation", None),
-        "Top Links": doc_links[:3] if doc_links else []
+        "Top Links": doc_links[:5] if doc_links else []  # Show up to 5 top links
     }
     # Prepare Installation
     installation = {
@@ -571,122 +682,146 @@ def is_borderline_tool(tool_name):
     return tool_name.strip().lower() in BORDERLINE_TOOLS
 
 def auto_fetch_product_info(tool_name, tool_type="software"):
+    from urllib.parse import urlparse, quote
     info = {"Name": tool_name, "Type": tool_type}
     log = {"tool": tool_name, "type": tool_type, "sources": {}, "filled_fields": []}
     # 1. Wikipedia summary
+    wiki_title = tool_name
+    if tool_name.strip().lower() == "blender":
+        wiki_title = "Blender (software)"
     try:
-        resp = requests.get(f"https://en.wikipedia.org/api/rest_v1/page/summary/{tool_name.replace(' ', '_')}")
+        resp = requests.get(f"https://en.wikipedia.org/api/rest_v1/page/summary/{quote(wiki_title.replace(' ', '_'))}")
         if resp.status_code == 200:
             data = resp.json()
             if data.get("extract"):
                 info["Description"] = data.get("extract")
                 log["sources"]["Description"] = "Wikipedia"
-            if data.get("content_urls", {}).get("desktop", {}).get("page"):
-                info["Official Site"] = data.get("content_urls", {}).get("desktop", {}).get("page")
+            # For Blender, use google_search to get the official homepage
+            if tool_name.strip().lower() == "blender":
+                homepage = google_search(f"{tool_name} official site")
+                if homepage:
+                    info["Official Site"] = homepage
+                    log["sources"]["Official Site"] = "Google Search"
+                else:
+                    info["Official Site"] = f"https://en.wikipedia.org/wiki/{quote(wiki_title.replace(' ', '_'))}"
+                    log["sources"]["Official Site"] = "Wikipedia"
+            else:
+                info["Official Site"] = f"https://en.wikipedia.org/wiki/{quote(wiki_title.replace(' ', '_'))}"
                 log["sources"]["Official Site"] = "Wikipedia"
     except Exception:
         pass
-    # 2. Try to scrape the official site for more info
     homepage = info.get("Official Site")
+    print(f"[DEBUG] Homepage for '{tool_name}': {homepage}")
+    # --- Generalized logic for Creative/Media, Developer, and LLM Tools ---
+    # Product Details
+    info["Versions"] = "N/A"
+    info["Compatibility"] = "N/A"
+    info["License"] = "N/A"
+    info["Typical Use Cases"] = "N/A"
+    # Key Features
+    info["Key Features"] = "N/A"
+    # Installation & Documentation
+    info["Installation"] = "N/A"
+    info["Documentation"] = "N/A"
+    # Support/Reviews
+    info["Support/Reviews"] = "N/A"
+    # Try to fetch homepage for more info
     if homepage:
         try:
             res = requests.get(homepage, timeout=10)
             if res.status_code == 200:
                 soup = BeautifulSoup(res.text, 'html.parser')
-                # Try to get a better description
-                if not info.get("Description"):
-                    desc_tag = soup.find('meta', attrs={'name': 'description'}) or soup.find('meta', attrs={'property': 'og:description'})
-                    if desc_tag and isinstance(desc_tag, Tag) and desc_tag.has_attr('content'):
-                        info["Description"] = desc_tag['content']
-                        log["sources"]["Description"] = "Official Site"
-                # Try to get versions/models
                 text = soup.get_text(separator='\n')
+                # Try to get versions/models
                 versions = re.findall(r'Version[s]?:?\s*([\w\d\.,\- ]+)', text, re.IGNORECASE)
                 if versions:
                     info["Versions"] = versions[0]
                     log["sources"]["Versions"] = "Official Site"
                 # Try to get compatibility/platforms
-                platforms = re.findall(r'(Windows|macOS|Linux|Android|iOS)', text, re.IGNORECASE)
+                platforms = re.findall(r'(Windows|macOS|Linux|Android|iOS|BSD|Haiku|IRIX)', text, re.IGNORECASE)
                 if platforms:
                     info["Compatibility"] = ', '.join(sorted(set([p.capitalize() for p in platforms])))
                     log["sources"]["Compatibility"] = "Official Site"
-                # Try to get key features (look for <ul> or <li> under a features section)
+                # Try to get key features from known sections or keywords
                 features = []
-                for ul in soup.find_all('ul'):
-                    prev_h2 = ul.find_previous('h2')
-                    if prev_h2 and isinstance(prev_h2, Tag) and 'feature' in prev_h2.get_text().lower():
-                        if isinstance(ul, Tag):
-                            features.extend([li.get_text(strip=True) for li in ul.find_all('li') if isinstance(li, Tag)])
+                for h2 in soup.find_all(['h2', 'h3']):
+                    if isinstance(h2, Tag):
+                        if 'feature' in h2.get_text(strip=True).lower() or 'everything you need' in h2.get_text(strip=True).lower():
+                            ul = h2.find_next('ul')
+                            if ul and isinstance(ul, Tag):
+                                features.extend([li.get_text(strip=True) for li in ul.find_all('li')])
+                # Fallback: look for feature keywords in text
+                if not features:
+                    feature_keywords = ["render", "model", "vfx", "animation", "sculpt", "python", "interface", "customize", "open source"]
+                    for kw in feature_keywords:
+                        if kw in text.lower():
+                            features.append(kw)
                 if features:
-                    info["Key Features"] = ', '.join(features)
+                    info["Key Features"] = ', '.join(sorted(set(features)))
                     log["sources"]["Key Features"] = "Official Site"
-                # For hardware, try to get price, color options, where to buy, accessories
-                if tool_type == "hardware":
-                    price = re.findall(r'\$[0-9]+(?:\.[0-9]{2})?', text)
-                    if price:
-                        info["Price Range"] = ', '.join(sorted(set(price)))
-                        log["sources"]["Price Range"] = "Official Site"
-                    colors = re.findall(r'(Black|White|Red|Blue|Green|Yellow|Silver|Gray|Grey|Pink|Purple|Orange|Gold)', text, re.IGNORECASE)
-                    if colors:
-                        info["Color Options"] = ', '.join(sorted(set([c.capitalize() for c in colors])))
-                        log["sources"]["Color Options"] = "Official Site"
-                    buy_links = [a['href'] for a in soup.find_all('a', href=True) if isinstance(a, Tag) and isinstance(a.get('href'), str) and any(x in a['href'] for x in ['buy', 'shop', 'store', 'amazon', 'bestbuy', 'purchase'])]
-                    buy_links = [link for link in buy_links if isinstance(link, str)]
-                    if buy_links:
-                        info["Where to Buy"] = ', '.join(sorted(set(buy_links)))
-                        log["sources"]["Where to Buy"] = "Official Site"
-                    acc = re.findall(r'(accessor(?:y|ies))[:\s]*([\w\d\.,\- ]+)', text, re.IGNORECASE)
-                    if acc:
-                        info["Accessories"] = ', '.join([a[1] for a in acc if a[1]])
-                        log["sources"]["Accessories"] = "Official Site"
+                # Try to get documentation link
+                doc_link = None
+                for a in soup.find_all('a', href=True):
+                    if isinstance(a, Tag):
+                        href_val = a.get('href')
+                        if isinstance(href_val, str) and ('doc' in href_val.lower() or 'manual' in href_val.lower()):
+                            doc_link = href_val if href_val.startswith('http') else urlparse(homepage)._replace(path=href_val).geturl()
+                            break
+                print(f"[DEBUG] Documentation link for '{tool_name}': {doc_link}")
+                if doc_link:
+                    info["Documentation"] = doc_link
+                    log["sources"]["Documentation"] = "Official Site"
+                # Try to get installation/download link
+                install_link = None
+                for a in soup.find_all('a', href=True):
+                    if isinstance(a, Tag):
+                        href_val = a.get('href')
+                        if isinstance(href_val, str) and ('download' in href_val.lower() or 'install' in href_val.lower()):
+                            install_link = href_val if href_val.startswith('http') else urlparse(homepage)._replace(path=href_val).geturl()
+                            break
+                print(f"[DEBUG] Installation link for '{tool_name}': {install_link}")
+                if install_link:
+                    info["Installation"] = install_link
+                    log["sources"]["Installation"] = "Official Site"
+                # Try to get support/community link
+                support_link = None
+                for a in soup.find_all('a', href=True):
+                    if isinstance(a, Tag):
+                        href_val = a.get('href')
+                        if isinstance(href_val, str) and ('support' in href_val.lower() or 'community' in href_val.lower()):
+                            support_link = href_val if href_val.startswith('http') else urlparse(homepage)._replace(path=href_val).geturl()
+                            break
+                print(f"[DEBUG] Support link for '{tool_name}': {support_link}")
+                if support_link:
+                    info["Support/Reviews"] = support_link
+                    log["sources"]["Support/Reviews"] = "Official Site"
         except Exception:
             pass
-    # 3. If a GitHub repo is detected, use GitHub API for releases
-    github_url = None
-    if homepage and 'github.com' in homepage:
-        github_url = homepage
-    if not github_url:
-        try:
-            resp = requests.get(f"https://en.wikipedia.org/api/rest_v1/page/summary/{tool_name.replace(' ', '_')}")
-            if resp.status_code == 200:
-                data = resp.json()
-                extlinks = data.get('content_urls', {})
-                if extlinks:
-                    for k, v in extlinks.items():
-                        if isinstance(v, dict) and 'github.com' in v.get('page', ''):
-                            github_url = v['page']
-        except Exception:
-            pass
-    if github_url and tool_type == "software":
-        try:
-            m = re.match(r'https?://github.com/([^/]+)/([^/]+)', github_url)
-            if m:
-                owner, repo = m.group(1), m.group(2)
-                api_url = f'https://api.github.com/repos/{owner}/{repo}/releases'
-                resp = requests.get(api_url)
-                if resp.status_code == 200:
-                    releases = resp.json()
-                    if releases and isinstance(releases, list):
-                        tags = [r.get('tag_name') for r in releases if isinstance(r, dict) and r.get('tag_name')]
-                        tags = [t for t in tags if t is not None]
-                        if tags:
-                            info["Versions"] = ', '.join(tags[:5])
-                            log["sources"]["Versions"] = "GitHub"
-        except Exception:
-            pass
-    # Fill missing fields with N/A
-    if tool_type == "software":
-        for field in ["Description", "Official Site", "Versions", "Compatibility", "Key Features", "Support/Reviews"]:
-            if field not in info:
-                info[field] = "N/A"
-            else:
-                log["filled_fields"].append(field)
-    else:
-        for field in ["Description", "Official Site", "Versions", "Price Range", "Color Options", "Compatibility", "Accessories", "Key Features", "Where to Buy", "Support/Reviews"]:
-            if field not in info:
-                info[field] = "N/A"
-            else:
-                log["filled_fields"].append(field)
+    # Fallback: Google search for documentation, installation, support if not found
+    if info["Documentation"] == "N/A":
+        doc_url = google_search(f"{tool_name} documentation")
+        print(f"[DEBUG] Google documentation link for '{tool_name}': {doc_url}")
+        if doc_url:
+            info["Documentation"] = doc_url
+            log["sources"]["Documentation"] = "Google Search"
+    if info["Installation"] == "N/A":
+        install_url = google_search(f"{tool_name} download")
+        print(f"[DEBUG] Google installation link for '{tool_name}': {install_url}")
+        if install_url:
+            info["Installation"] = install_url
+            log["sources"]["Installation"] = "Google Search"
+    if info["Support/Reviews"] == "N/A":
+        support_url = google_search(f"{tool_name} support")
+        print(f"[DEBUG] Google support link for '{tool_name}': {support_url}")
+        if support_url:
+            info["Support/Reviews"] = support_url
+            log["sources"]["Support/Reviews"] = "Google Search"
+    # Always fill all fields for these tool types
+    for field in ["Description", "Official Site", "Versions", "Compatibility", "License", "Typical Use Cases", "Key Features", "Installation", "Documentation", "Support/Reviews"]:
+        if field not in info:
+            info[field] = "N/A"
+        else:
+            log["filled_fields"].append(field)
     # Save log
     log_dir = os.path.join('SampleOutputs', 'logs')
     os.makedirs(log_dir, exist_ok=True)
@@ -720,10 +855,14 @@ TECHNICAL_USE_CASES = [
     "Large Language Models (LLM) Tools"
 ]
 
+def safe_filename(name):
+    return name.replace('/', '_').replace('\\', '_').replace(' ', '_')
+
 if __name__ == "__main__":
     # --- Main Tool Classification Flow ---
     tool_name_input = input("Enter the name of a package or any other software/tool to fetch metadata: ").strip()
     canonical_tool_key, specific_package = resolve_tool_name_and_specific_package(tool_name_input)
+    print(f"DEBUG: canonical_tool_key={canonical_tool_key}, specific_package={specific_package}")
     if canonical_tool_key:
         use_case, tool_type = TOOL_CLASSIFICATION[canonical_tool_key]
         tool_name = canonical_tool_key  # Use canonical name for reporting/fetching
@@ -732,51 +871,66 @@ if __name__ == "__main__":
         use_case = input("Enter use case: ").strip()
         tool_type = input("Enter type (software/hardware): ").strip().lower()
         specific_package = tool_name_input
-    # --- Automated Info Fetching and Export ---
-    if tool_type == "software" and use_case in TECHNICAL_USE_CASES:
-        # Use technical report format
-        print(f"[INFO] Using technical report format for {tool_name_input} ({use_case})")
-        # --- FORCE GENERIC FETCHER FOR DEBUGGING ---
-        metadata = fetch_generic_tool_metadata(specific_package)
-        if metadata is None:
-            print(f"[ERROR] No metadata found for {specific_package}. Skipping.")
-            exit(1)
-        # --- END FORCE ---
-        organized = organize_metadata_for_output(metadata, use_case)
-        output_dir = os.path.join("SampleOutputs", "metadata", "Non-PyPI")
-        os.makedirs(output_dir, exist_ok=True)
-        output_path = os.path.join(output_dir, f"{tool_name}.json")
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(organized, f, ensure_ascii=False, indent=2)
-        print(f"Saved technical metadata to {output_path}")
-        json_to_professional_word(output_path)
-        # Export to PDF
-        try:
-            from docx2pdf import convert
-            docx_path = os.path.join('SampleOutputs', 'docs', f"{tool_name}.docx")
-            pdf_path = docx_path.replace('.docx', '.pdf')
-            convert(docx_path, pdf_path)
-            print(f"Exported PDF to {pdf_path}")
-        except ImportError:
-            print("docx2pdf not installed. Skipping PDF export.")
-        except Exception as e:
-            print(f"PDF export failed: {e}")
+
+    # Ensure use_case is always defined
+    # --- Dispatch to category-specific fetcher ---
+    output_dir = os.path.join("SampleOutputs", "metadata", "Non-PyPI")
+    os.makedirs(output_dir, exist_ok=True)
+    output_path = os.path.join(output_dir, f"{safe_filename(specific_package)}.json")
+    result = None
+    if use_case == "Creative and Media Tools":
+        from metadata_fetcher.creative_media_fetcher import fetch_creative_media_metadata
+        print(f"[INFO] Using creative/media fetcher for {tool_name_input} ({use_case})")
+        result = fetch_creative_media_metadata(tool_name)
+    elif use_case == "AI/ML Development Tools":
+        from metadata_fetcher.ai_ml_fetcher import fetch_ai_ml_metadata
+        print(f"[INFO] Using AI/ML fetcher for {tool_name_input} ({use_case})")
+        result = fetch_ai_ml_metadata(specific_package)
+    elif use_case == "Data Science and Analytics Tools":
+        from metadata_fetcher.data_science_fetcher import fetch_data_science_metadata
+        print(f"[INFO] Using Data Science fetcher for {tool_name_input} ({use_case})")
+        result = fetch_data_science_metadata(specific_package)
+    elif use_case == "Developer Tools":
+        from metadata_fetcher.developer_tools_fetcher import fetch_developer_tools_metadata
+        print(f"[INFO] Using Developer Tools fetcher for {tool_name_input} ({use_case})")
+        result = fetch_developer_tools_metadata(specific_package)
+    elif use_case == "Large Language Models (LLM) Tools":
+        from metadata_fetcher.llm_tools_fetcher import fetch_llm_tools_metadata
+        print(f"[INFO] Using LLM Tools fetcher for {tool_name_input} ({use_case})")
+        result = fetch_llm_tools_metadata(specific_package)
     else:
-        # Use product info format
+        # Use product info format (fallback)
         print(f"[INFO] Using product info format for {tool_name_input} ({use_case})")
-        info = auto_fetch_product_info(tool_name, tool_type)
-        output_dir = os.path.join("SampleOutputs", "metadata", "Non-PyPI")
-        os.makedirs(output_dir, exist_ok=True)
-        output_path = os.path.join(output_dir, f"{tool_name}.json")
-        with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(info, f, ensure_ascii=False, indent=2)
-        print(f"Saved product info to {output_path}")
-        export_product_docx(output_path)
-        # Export to PDF
+        result = auto_fetch_product_info(tool_name, tool_type)
+    with open(output_path, "w", encoding="utf-8") as f:
+        import json
+        json.dump(result, f, ensure_ascii=False, indent=2)
+    print(f"Saved metadata to {output_path}")
+    # Prompt for DOCX generation
+    gen_docx = input("Do you want to generate a DOCX file? (y/N): ").strip().lower() == 'y'
+    if gen_docx:
+        docx_dir = os.path.join('SampleOutputs', 'docs', 'docx')
+        os.makedirs(docx_dir, exist_ok=True)
+        docx_path = os.path.join(docx_dir, f"{safe_filename(specific_package)}.docx")
+        # Choose export function based on use_case
+        if use_case in ["AI/ML Development Tools", "Data Science and Analytics Tools", "Developer Tools", "Large Language Models (LLM) Tools"]:
+            from export_to_word import json_to_professional_word
+            json_to_professional_word(output_path)
+        elif use_case == "Creative and Media Tools":
+            from export_to_word import export_product_docx
+            export_product_docx(output_path)
+        else:
+            from export_to_word import export_product_docx
+            export_product_docx(output_path)
+    # Prompt for PDF generation
+    gen_pdf = input("Do you want to generate a PDF file? (y/N): ").strip().lower() == 'y'
+    if gen_pdf:
         try:
             from docx2pdf import convert
-            docx_path = os.path.join('SampleOutputs', 'docs', f"{tool_name}.docx")
-            pdf_path = docx_path.replace('.docx', '.pdf')
+            pdf_dir = os.path.join('SampleOutputs', 'docs', 'pdf')
+            os.makedirs(pdf_dir, exist_ok=True)
+            docx_path = os.path.join('SampleOutputs', 'docs', 'docx', f"{safe_filename(specific_package)}.docx")
+            pdf_path = os.path.join(pdf_dir, f"{safe_filename(specific_package)}.pdf")
             convert(docx_path, pdf_path)
             print(f"Exported PDF to {pdf_path}")
         except ImportError:

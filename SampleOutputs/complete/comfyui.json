@@ -1,0 +1,19 @@
+{
+  "Name": "ComfyUI",
+  "Type": "Stable Diffusion GUI and backend",
+  "Description": "ComfyUI is a powerful, modular, and extensible graphical user interface and backend for Stable Diffusion and AI image generation workflows. It provides a node-based workflow editor, plugin support, and a cross-platform desktop application for Windows, macOS, and Linux. ComfyUI is designed for both beginners and advanced users, offering automation, customization, and integration with various AI models.",
+  "Official Site": "https://comfy-ui.org/",
+  "Latest Version": "v1 (2025, Desktop Beta)",
+  "License": "Open Source (varies by component, core is GPL-3.0)",
+  "Programming Languages": "Python",
+  "Supported Platforms": "Windows, macOS (Apple Silicon), Linux",
+  "System Requirements": "Windows, macOS, or Linux; Python 3.12+; NVIDIA/AMD/Intel GPU recommended; 8 GB RAM minimum; 200 MB disk space; Internet connection for updates and plugins",
+  "Typical Use Cases": "AI image generation, workflow automation, model management, plugin development, creative experimentation, batch processing",
+  "Key Features": "Node-based workflow editor, plugin and custom node support, cross-platform desktop app, automatic updates, integrated log viewer, model library, workflow browser, tabbed interface, resource import/export, Python scripting, open-source community",
+  "File Formats": "Workflows: .json, Images: .png, .jpg, .webp, Models: .ckpt, .safetensors, .onnx, Plugins: .py, .zip",
+  "Installation": "Installation: https://comfy-ui.org/v1/",
+  "Documentation": "Documentation: https://docs.comfy.org/",
+  "Support": "Support: https://github.com/comfyanonymous/ComfyUI, https://discord.gg/comfyui",
+  "Community": "https://discord.gg/comfyui, https://github.com/comfyanonymous/ComfyUI",
+  "Reviews": "https://www.reddit.com/r/StableDiffusion/comments/1d3k4w2/comfyui_v1_review/"
+}

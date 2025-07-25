@@ -1,0 +1,14 @@
+{
+  "Name": "pycharm",
+  "Type": "software",
+  "Description": "PyCharm is an integrated development environment (IDE) used for programming in Python. It provides code analysis, a graphical debugger, an integrated unit tester, integration with version control systems, and supports web development with Django. PyCharm is developed by the Czech company JetBrains and built on their IntelliJ platform.",
+  "Official Site": "https://en.wikipedia.org/wiki/pycharm",
+  "Versions": "1.2",
+  "Compatibility": "Linux, Macos, Windows",
+  "License": "N/A",
+  "Typical Use Cases": "N/A",
+  "Key Features": "Docker support, Embeddedterminaland Python console, HTML,[7]XML,JSON,YAML,Markdownsupport, Integrated Pythondebugger, Integratedunit testing, with line-by-linecoverage, Project and code navigation: specialized project views, file structure views and quick jumping between files,classes,methodsand usages, Python coding assistance andanalysis, withcode completion,syntaxand error highlighting,linterintegration, and quick fixes, Pythoncode refactoring: including rename, update function signature, extract method, introduce variable, introduce constant, pull up, push down and others, Spell- and grammar-checking[8], Virtual environment, build tool and package management",
+  "Installation": "https://en.wikipedia.org/w/index.php?title=Special:DownloadAsPdf&page=PyCharm&action=show-download-screen",
+  "Documentation": "https://www.jetbrains.com/help/pycharm/getting-started.html",
+  "Support/Reviews": "https://en.wikipedia.org/wiki/Wikipedia:Community_portal"
+}

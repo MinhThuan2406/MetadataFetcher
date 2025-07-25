@@ -1,11 +1,10 @@
 {
-  "tool": "python",
+  "tool": "gimp",
   "type": "software",
   "sources": {
     "Description": "Wikipedia",
     "Official Site": "Wikipedia",
     "Versions": "Official Site",
-    "Key Features": "Official Site",
     "Installation": "Official Site",
     "Support/Reviews": "Official Site",
     "Documentation": "Google Search"
