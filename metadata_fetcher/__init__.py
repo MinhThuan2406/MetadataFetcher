@@ -1,6 +1,6 @@
 from metadata_fetcher.schema import PackageMetadata, InstallationInfo
-from metadata_fetcher.pypi_fetcher import fetch_pypi_metadata
-from metadata_fetcher.github_fetcher import enrich_with_github_data
+from metadata_fetcher.fetchers.pypi_fetcher import fetch_pypi_metadata
+from metadata_fetcher.fetchers.github_fetcher import enrich_with_github_data
 
 def fetch_package_metadata(app_name: str) -> PackageMetadata | None:
     """

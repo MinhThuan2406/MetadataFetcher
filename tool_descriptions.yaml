@@ -1,54 +1,91 @@
-python:
-  description: "Primary programming language (Python 3.x) with cross-platform support, package management (pip, conda), virtual environments, and essential libraries (NumPy, SciPy, Pandas, etc.). GPU support via CUDA."
-  use_case: "Developing and training AI models using frameworks like TensorFlow, PyTorch, and Scikit-learn, data preprocessing and automation tasks."
-pytorch:
-  description: "Open-source deep learning framework with GPU acceleration support. Designed for flexibility and speed in research and production."
-  use_case: "Training, deploying, and fine-tuning deep learning models, especially in research and production environments."
-tensorflow:
-  description: "Comprehensive ML framework for building models across desktop, cloud, and mobile platforms with GPU and TPU support."
-  use_case: "AI model training and inference at scale; compatible with TensorBoard for monitoring."
-anaconda:
-  description: "Python distribution with 1,500+ data science and ML libraries. Simplifies environment and package management."
-  use_case: "Environment isolation, dependency management, and reproducible AI/ML workflows."
-pandas:
-  description: "High-performance, easy-to-use data analysis and data manipulation library built on top of NumPy."
-  use_case: "Data transformation, wrangling, pre-processing, and time series analysis."
-jupyterlab / jupyter notebook:
-  description: "Browser-based IDE for interactive data science and ML development. Supports markdown, visualization, and inline code execution."
-  use_case: "Rapid prototyping, experimentation, education, and exploratory data analysis."
-r:
-  description: "Programming language focused on statistical computing and graphics. Popular in academic and data analysis settings."
-  use_case: "Statistical analysis, visualization, and predictive modeling."
-blender:
-  description: "GPU-accelerated 3D creation suite with support for AI plugins that enable features like style transfer, image upscaling, and video synthesis."
-  use_case: "AI-enhanced 3D modeling, animation, rendering, and creative workflows."
-gimp:
-  description: "Free and open-source image editor with support for AI-based plugins such as background removal, denoising, and upscaling."
-  use_case: "Photo manipulation, graphic design, and content creation with AI assisted tools."
-elgato stream deck:
-  description: "Tool for automating creative workflows. Supports AI and software integrations for enhanced productivity."
-  use_case: "Workflow automation and quick-access controls in creative, AI, and streaming projects."
-comfyui:
-  description: "Graph-based UI for composing image generation pipelines using diffusion models like Stable Diffusion."
-  use_case: "Local sandbox for building and experimenting with text-to-image generation pipelines."
-visual studio code:
-  description: "Lightweight, cross-platform code editor with extensive language support, Git integration, debugging, and plugin ecosystem."
-  use_case: "ML/AI development, debugging, version control, notebook-based prototyping, and plugin-enhanced workflows."
-git (version control):
-  description: "Source control management tool for versioning code and tracking collaborative changes."
-  use_case: "Managing ML experiments, tracking changes to code/data, and enforcing reproducible software development practices."
-pycharm:
-  description: "Advanced Python IDE with built-in tools for scientific development, debugging, and testing."
-  use_case: "AI/ML research, refactoring ML codebases, and improving developer productivity in large Python projects."
-github desktop:
-  description: "Graphical interface for managing Git repositories locally and syncing with GitHub."
-  use_case: "Simplifying version control tasks for beginners or those preferring GUI over CLI."
-langchain:
-  description: "Modular framework for building applications powered by language models using chains, agents, memory, and tools."
-  use_case: "Creating LLM-powered applications such as chatbots, search agents, and automation tools with persistent memory."
-ollama:
-  description: "Local runtime and environment manager for running open-source LLMs entirely offline, bundled with all required components."
-  use_case: "Run large LLMs locally for inference, evaluation, or prototyping without using cloud resources."
-hugging face transformers:
-  description: "Popular Python library with thousands of pre-trained models for natural language understanding and generation tasks."
-  use_case: "NLP tasks like translation, classification, summarization, fine-tuning, and zero-shot learning." 
+# Tool Report Field Templates by Category
+
+AI_ML_Development_Tools:
+  fields:
+    - Tool Name
+    - Overview / Description
+    - Primary Use Cases
+    - Supported Platforms (OS)
+    - Installation Methods
+    - Key Features
+    - Integration with Other Tools
+    - Documentation & Tutorials
+    - Community & Support
+    - Licensing
+    - Latest Version / Release Date
+    - Example Projects / Notebooks
+    - Performance Considerations
+    - References (Official Website, Docs, etc.)
+    - Other Supporting Links (Github, etc.)
+
+Data_Science_and_Analytics_Tools:
+  fields:
+    - Tool Name
+    - Overview / Description
+    - Typical Applications
+    - Data Formats Supported
+    - Visualization Capabilities
+    - Integration with Other Libraries
+    - Installation & Setup
+    - Key Features
+    - Community & Ecosystem
+    - Documentation & Learning Resources
+    - Licensing
+    - Latest Version / Release Date
+    - Example Use Cases
+    - References (Official Website, Docs, etc.)
+    - Other Supporting Links (Github, etc.)
+
+Creative_and_Media_Tools:
+  fields:
+    - Tool Name
+    - Overview / Description
+    - Main Functions
+    - Supported File Formats
+    - System Requirements
+    - Installation & Setup
+    - Key Features
+    - Plugin/Extension Support
+    - User Interface Overview
+    - Community & Tutorials
+    - Licensing
+    - Latest Version / Release Date
+    - Example Projects / Outputs
+    - References (Official Website, Docs, etc.)
+    - Other Supporting Links (Github, etc.)
+
+Developer_Tools:
+  fields:
+    - Tool Name
+    - Overview / Description
+    - Supported Languages/Technologies
+    - Key Features
+    - System Requirements
+    - Installation & Setup
+    - Integration Capabilities
+    - Version Control Support
+    - Extensions/Plugins
+    - Documentation & Tutorials
+    - Community & Support
+    - Licensing
+    - Latest Version / Release Date
+    - References (Official Website, Docs, etc.)
+    - Other Supporting Links (Github, etc.)
+
+LLM_Tools:
+  fields:
+    - Tool Name
+    - Overview / Description
+    - Supported Model Types
+    - Key Features
+    - Installation & Setup
+    - Integration with Other Tools/Frameworks
+    - Model Deployment Options
+    - API/SDK Availability
+    - Documentation & Tutorials
+    - Community & Support
+    - Licensing
+    - Latest Version / Release Date
+    - Example Use Cases / Demos
+    - References (Official Website, Docs, etc.) 
+    - Other Supporting Links (Github, etc.)

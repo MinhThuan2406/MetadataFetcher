@@ -1,0 +1,20 @@
+{
+  "General Information": {
+    "Name": "blender",
+    "Type": "software",
+    "Description": "Blender is a free and open-source 3D creation suite supporting the entirety of the 3D pipeline: modeling, rigging, animation, simulation, rendering, compositing, motion tracking, video editing, and 2D animation.",
+    "Official Site": "https://www.blender.org/"
+  },
+  "Product Details": {
+    "Versions": "4.5 LTS (latest), Experimental Builds",
+    "Compatibility": "Windows, macOS, Linux"
+  },
+  "Key Features": "Cycles Render Engine, Real-time viewport preview, CPU & GPU rendering, PBR shaders & HDR lighting support, Modeling, Sculpt, UV, Advanced sculpting tools and brushes, Multi-resolution and Dynamic subdivision, 3D painting with textured brushes and masking, Python scripting for custom tools and add-ons, VFX: camera and object tracking, Animation & Rigging, Story Art, Drawing 2D in 3D, Customizable interface, Add-on ecosystem, VR rendering support",
+  "Installation & Documentation": "Installation: https://www.blender.org/download/\nDocumentation: https://docs.blender.org/manual/en/latest/",
+  "Support/Reviews": "https://www.blender.org/support/",
+  "License": "GNU General Public License (GPL)",
+  "Latest Release Date": "N/A",
+  "Programming Language": "C, C++, Python",
+  "Supported File Formats": ".blend, .obj, .fbx, .gltf, .dae, .abc, .usd, .stl, .ply, .3ds, .x3d, .svg, .dxf, .png, .jpg, .tiff, .exr, .mp4, .avi, .mov, .wav, .ogg, .flac, .mp3",
+  "System Requirements": "Windows 8.1/10/11, macOS 10.13+, Linux; 8GB RAM (16GB recommended); OpenGL 4.3+ compatible GPU"
+}

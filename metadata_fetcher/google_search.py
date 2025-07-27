@@ -1,13 +1,7 @@
 import os
 import requests
-from dotenv import load_dotenv
 from typing import Optional
-
-load_dotenv()  # Load environment variables from .env if present
-
-GOOGLE_CSE_API_KEY = os.getenv('GOOGLE_CSE_API_KEY')
-GOOGLE_CSE_ID = os.getenv('GOOGLE_CSE_ID')
-GOOGLE_CSE_URL = 'https://www.googleapis.com/customsearch/v1'
+from metadata_fetcher.config import GOOGLE_CSE_API_KEY, GOOGLE_CSE_ID, GOOGLE_CSE_URL
 
 
 def google_search(query: str) -> Optional[str]:

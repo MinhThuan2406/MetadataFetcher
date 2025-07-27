@@ -36,28 +36,37 @@ class PackageMetadata:
     documentation_links: List[str] = field(default_factory=list)
     installation_links: List[str] = field(default_factory=list)
     use_case: Optional[str] = None
+    # --- New fields for richer metadata ---
+    features: Optional[List[str]] = field(default_factory=list)  # Key features of the tool
+    license: Optional[str] = None  # License type (e.g., MIT, BSD, GPL)
+    license_url: Optional[str] = None  # URL to license text
+    compatibility: Optional[List[str]] = field(default_factory=list)  # Compatible OS/platforms
+    platforms: Optional[List[str]] = field(default_factory=list)  # Supported platforms (e.g., Windows, Linux, macOS)
+    use_cases: Optional[List[str]] = field(default_factory=list)  # Typical use cases
+    community_links: Optional[Dict[str, str]] = field(default_factory=dict)  # Community/support links (forum, chat, social)
+    citation: Optional[str] = None  # Citation info or BibTeX
+    benchmarks: Optional[List[str]] = field(default_factory=list)  # Benchmarks or performance links
+    logo_url: Optional[str] = None  # URL to logo or image
+    release_dates: Optional[Dict[str, str]] = field(default_factory=dict)  # Version -> release date
+    project_status: Optional[str] = None  # Project status (active, maintenance, etc.)
+    author: Optional[str] = None  # Author or maintainer
+    maintainer: Optional[str] = None  # Maintainer
+    changelog_url: Optional[str] = None  # Changelog or release notes URL
+    api_reference_url: Optional[str] = None  # API reference URL
+    tutorials_url: Optional[str] = None  # Tutorials or guides URL
+    faq_url: Optional[str] = None  # FAQ URL
+    contributing_url: Optional[str] = None  # Contributing guide URL
+    code_of_conduct_url: Optional[str] = None  # Code of conduct URL
+    development_status: Optional[str] = None  # Development status/classifier
+    topics: Optional[List[str]] = field(default_factory=list)  # Tags or topics
+    awards: Optional[List[str]] = field(default_factory=list)  # Awards or recognition
+    integrations: Optional[List[str]] = field(default_factory=list)  # Integrations/plugins
+    system_requirements: Optional[str] = None  # System requirements
+    pricing: Optional[str] = None  # Pricing/cost info
+    security: Optional[str] = None  # Security/privacy info
+    roadmap_url: Optional[str] = None  # Roadmap/future plans URL
+    known_issues_url: Optional[str] = None  # Known issues/limitations URL
 
-"""
-PackageMetadata schema:
-- name: Name of the package/tool
-- description: Short description
-- latest_version: Latest version (from PyPI or GitHub)
-- popular_versions: List of popular versions
-- dependencies: Dict of version -> list of dependencies
-- github_url: GitHub repository URL (if any)
-- readme_content: Content of the README file (if any)
-- requirements: Content of requirements.txt (if any)
-- installation: InstallationInfo object with pip, from_source, docker, docker_compose, other, platforms
-- homepage: Official homepage URL
-- documentation: Documentation/setup guide URL (if found)
-- source: 'pypi' or 'manual + google' (data origin)
-- homepage_html: Raw HTML/text of the homepage (if fetched)
-- documentation_html: Raw HTML/text of the documentation page (if fetched)
-- documentation_links: List of all discovered documentation/setup links
-- installation_links: List of all discovered installation-related links
-"""
-
-# Expanded metadata schema for creative/media tools
 CREATIVE_MEDIA_SCHEMA = {
     'Name': str,
     'Type': str,

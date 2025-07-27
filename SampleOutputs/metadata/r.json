@@ -1,0 +1,64 @@
+{
+  "General Info": {
+    "Name": "r",
+    "Use Case": "Statistical analysis, visualization, and predictive modeling.",
+    "Homepage": "https://www.r-project.org/",
+    "Description": "Programming language focused on statistical computing and graphics. Popular in academic and data analysis settings."
+  },
+  "Documentation": {
+    "Main Documentation": "https://cran.r-project.org/manuals.html",
+    "Top Links": [
+      "https://cran.r-project.org/manuals.html",
+      "https://cran.r-project.org/faqs.html",
+      "https://www.r-project.org/doc/bib/R-books.html",
+      "https://www.r-project.org/other-docs.html",
+      "https://cran.R-project.org/faqs.html"
+    ]
+  },
+  "Installation": {
+    "Links": [],
+    "Summary": {
+      "pip": [],
+      "from_source": [],
+      "docker": [],
+      "docker_compose": [],
+      "other": [],
+      "platforms": null
+    }
+  },
+  "Other Links": {
+    "All Documentation Links": [
+      "https://cran.r-project.org/manuals.html",
+      "https://cran.r-project.org/faqs.html",
+      "https://www.r-project.org/doc/bib/R-books.html",
+      "https://www.r-project.org/other-docs.html",
+      "https://cran.R-project.org/faqs.html",
+      "https://www.r-project.org/foundation/donations.html",
+      "http://r.research.att.com/man/RMacOSX-FAQ.html",
+      "https://www.taylorfrancis.com/books/dynamic-documents-knitr-yihui-xie/10.1201/b15166",
+      "https://hbiostat.org/doc/rms/",
+      "https://cran.r-project.org/doc/Rnews/",
+      "http://stat.ethz.ch/R-manual/",
+      "https://cran.r-project.org/other-docs.html",
+      "http://www.css.cornell.edu/faculty/dgr2/tutorials/index.html",
+      "https://umaine.edu/mathematics/david-hiebeler/computing-software/matlab-r-reference/",
+      "https://a-little-book-of-r-for-biomedical-statistics.readthedocs.io/",
+      "https://a-little-book-of-r-for-time-series.readthedocs.io/",
+      "https://little-book-of-r-for-multivariate-analysis.readthedocs.io/",
+      "https://github.com/dingguohui",
+      "http://herba.msu.ru/shipunov/software/r/r-ru.htm"
+    ],
+    "All Installation Links": []
+  },
+  "Support": "https://cran.r-project.org/web/views/FAQ.html",
+  "Richer Metadata": {
+    "compatibility": [
+      "Windows",
+      "Macos"
+    ],
+    "community_links": {
+      "supporting\nmember": "https://www.r-project.org/foundation/donations.html"
+    },
+    "logo_url": "https://www.r-project.org/Rlogo.png"
+  }
+}

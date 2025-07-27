@@ -1,4 +1,6 @@
 requests>=2.25
 packaging>=20.0
 beautifulsoup4>=4.9
-python-dotenv>=0.19 
+python-dotenv>=0.19
+python-docx>=0.8.11
+PyYAML>=5.4

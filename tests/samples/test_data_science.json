@@ -1,0 +1,50 @@
+{
+    "General Information": {
+        "Name": "pandas",
+        "Use Case": "Data Science and Analytics Tools",
+        "Homepage": "https://pandas.pydata.org/",
+        "Description": "pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language."
+    },
+    "Documentation": {
+        "Main Documentation": "https://pandas.pydata.org/docs/",
+        "Top Links": [
+            "https://pandas.pydata.org/docs/user_guide/",
+            "https://pandas.pydata.org/docs/reference/",
+            "https://pandas.pydata.org/docs/getting_started/"
+        ]
+    },
+    "Installation": {
+        "Links": [
+            "https://pandas.pydata.org/docs/getting_started/install.html"
+        ],
+        "Summary": {
+            "pip": [
+                {
+                    "command": "pip install pandas",
+                    "explanation": "Install pandas using pip",
+                    "note": "Recommended for most users",
+                    "platform": "Cross-platform"
+                }
+            ],
+            "conda": [
+                {
+                    "command": "conda install pandas",
+                    "explanation": "Install pandas using conda",
+                    "note": "Recommended for Anaconda users",
+                    "platform": "Cross-platform"
+                }
+            ]
+        }
+    },
+    "Other Links": {
+        "All Documentation Links": [
+            "https://pandas.pydata.org/docs/user_guide/",
+            "https://pandas.pydata.org/docs/reference/",
+            "https://pandas.pydata.org/docs/getting_started/",
+            "https://pandas.pydata.org/docs/development/"
+        ],
+        "All Installation Links": [
+            "https://pandas.pydata.org/docs/getting_started/install.html"
+        ]
+    }
+}

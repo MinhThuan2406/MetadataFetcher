@@ -4,7 +4,7 @@ python -m pip uninstall python-dotenv
 python -m pip install python-dotenv
 
 Extract metadata
-python -m metadata_fetcher.generic_fetcher
+python -m metadata_fetcher.fetchers.generic_fetcher
 
 Export single metadata JSON to Word
 python export_to_word.py SampleOutputs/metadata/Non-PyPI/python.json
@@ -17,3 +17,5 @@ Run tests
 ./run_tests.bat      # Windows
 ./run_tests.sh       # Linux/macOS
 
+python scripts/export_to_word.py SampleOutputs/google/pandas.json
+python -m docx2pdf SampleOutputs/docs/docx/pandas.docx SampleOutputs/docs/pdf/pandas.pdf

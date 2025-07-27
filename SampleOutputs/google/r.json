@@ -1,0 +1,82 @@
+{
+    "General Information": {
+        "Name": "R",
+        "Use Case": "Data Science and Analytics Tools",
+        "Homepage": "https://www.r-project.org/",
+        "Description": "R is a language and environment for statistical computing and graphics. It provides a wide range of statistical (linear and nonlinear modelling, classical statistical tests, time-series analysis, classification, clustering) and graphical techniques, and is highly extensible. R is an open-source project under the GNU General Public License, developed as an implementation of the S language, and is widely used among statisticians, data miners, and scientists for data analysis and visualization."
+    },
+    "Documentation": {
+        "Main Documentation": "https://cran.r-project.org/manuals.html",
+        "Top Links": [
+            "https://cran.r-project.org/doc/manuals/R-intro.html",
+            "https://cran.r-project.org/doc/manuals/R-lang.html",
+            "https://cran.r-project.org/doc/manuals/R-exts.html",
+            "https://cran.r-project.org/doc/manuals/R-admin.html",
+            "https://cran.r-project.org/doc/contrib/",
+            "https://www.rdocumentation.org/"
+        ]
+    },
+    "Installation": {
+        "Links": [
+            "https://cran.r-project.org/",
+            "https://cran.r-project.org/bin/windows/base/",
+            "https://cran.r-project.org/bin/macosx/",
+            "https://cran.r-project.org/bin/linux/",
+            "https://posit.co/download/rstudio-desktop/"
+        ],
+        "Summary": {
+            "Windows": [
+                "Go to https://cran.r-project.org/bin/windows/base/",
+                "Download and run the R installer (e.g., R-4.x.x-win.exe)",
+                "Follow installation prompts (default options recommended)"
+            ],
+            "macOS": [
+                "Go to https://cran.r-project.org/bin/macosx/",
+                "Download the latest R package for macOS (R-4.x.x.pkg)",
+                "Open the package and follow installation instructions"
+            ],
+            "Linux": [
+                "Go to https://cran.r-project.org/bin/linux/",
+                "Choose your distribution (e.g., Debian, Ubuntu, Fedora, Red Hat)",
+                "Follow platform-specific instructions or use package manager, e.g., sudo apt install r-base"
+            ],
+            "RStudio IDE": [
+                "Optional: Download RStudio Desktop from https://posit.co/download/rstudio-desktop/",
+                "RStudio provides a user-friendly interface for R"
+            ],
+            "other": [
+                "Precompiled binaries available for major platforms",
+                "Source builds available for advanced users; see manual for compilation instructions",
+                "CRAN hosts over 19,000 R packages"
+            ],
+            "platforms": [
+                "Windows (x86_64, ARM64 via experimental ports)",
+                "macOS (Intel & Apple Silicon)",
+                "Linux (multiple major distributions)",
+                "Source builds for additional UNIX variants"
+            ]
+        }
+    },
+    "Other Links": {
+        "All Documentation Links": [
+            "https://cran.r-project.org/manuals.html",
+            "https://cran.r-project.org/doc/manuals/R-intro.html",
+            "https://cran.r-project.org/doc/manuals/R-lang.html",
+            "https://cran.r-project.org/doc/manuals/R-exts.html",
+            "https://cran.r-project.org/doc/manuals/R-admin.html",
+            "https://cran.r-project.org/doc/contrib/",
+            "https://www.rdocumentation.org",
+            "https://www.r-project.org/about.html",
+            "https://www.r-project.org/other-projects.html",
+            "https://www.r-project.org/mail.html",
+            "https://csu-r.github.io/Module1/the-r-community.html",
+            "https://daily.dev/blog/r-community-and-resources",
+            "https://stackoverflow.com/questions/tagged/r",
+            "https://rweekly.org/",
+            "https://r-bloggers.com/",
+            "https://community.rstudio.com/",
+            "https://rforwards.github.io/",
+            "https://r-universe.dev/"
+        ]
+    }
+}

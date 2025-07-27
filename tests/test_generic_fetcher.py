@@ -1,5 +1,5 @@
 import pytest
-from metadata_fetcher.generic_fetcher import fetch_generic_tool_metadata
+from metadata_fetcher.fetchers.generic_fetcher import fetch_generic_tool_metadata
 
 def test_fetch_generic_tool_metadata_milvus():
     metadata = fetch_generic_tool_metadata("milvus")
