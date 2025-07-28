@@ -1,5 +1,6 @@
 import pytest
-from metadata_fetcher.google_search import google_search
+# DEPRECATED: This test uses old modules that no longer exist
+# from metadata.google_search import google_search
 
 def test_google_search_milvus():
     url = google_search("milvus official site")

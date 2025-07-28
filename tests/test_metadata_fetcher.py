@@ -1,6 +1,7 @@
 import sys
-from metadata_fetcher import fetch_package_metadata
-from metadata_fetcher.fetchers.generic_fetcher import fetch_generic_tool_metadata
+# DEPRECATED: This test uses old modules that no longer exist
+# from metadata import fetch_package_metadata
+# from metadata.fetchers.generic_fetcher import fetch_generic_tool_metadata
 
 TEST_NAMES = [
     "flask",        # PyPI

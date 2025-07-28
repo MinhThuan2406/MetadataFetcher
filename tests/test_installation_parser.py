@@ -1,5 +1,6 @@
 import pytest
-from metadata_fetcher.installation_parser import extract_installation_commands
+# DEPRECATED: This test uses old modules that no longer exist
+# from metadata.installation_parser import extract_installation_commands
 
 def test_extract_installation_commands_various():
     html = """

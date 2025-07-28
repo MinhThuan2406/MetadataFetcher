@@ -1,5 +1,6 @@
 import pytest
-from metadata_fetcher.fetchers.pypi_fetcher import fetch_pypi_metadata
+# DEPRECATED: This test uses old modules that no longer exist
+# from metadata.fetchers.pypi_fetcher import fetch_pypi_metadata
 
 def test_fetch_pypi_metadata_basic():
     metadata = fetch_pypi_metadata("requests")

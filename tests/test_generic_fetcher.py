@@ -1,5 +1,6 @@
 import pytest
-from metadata_fetcher.fetchers.generic_fetcher import fetch_generic_tool_metadata
+# DEPRECATED: This test uses old modules that no longer exist
+# from metadata.fetchers.generic_fetcher import fetch_generic_tool_metadata
 
 def test_fetch_generic_tool_metadata_milvus():
     metadata = fetch_generic_tool_metadata("milvus")

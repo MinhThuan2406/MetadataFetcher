@@ -1,0 +1,188 @@
+# Schema for dynamic field assignment based on tool categories
+# This schema allows flexible field mapping instead of hardcoded categories
+
+# Common fields that apply to all tool categories
+common_fields:
+  - tool_name
+  - overview_description
+  - key_features
+  - installation_setup
+  - documentation_tutorials
+  - community_support
+  - licensing
+  - latest_version_release_date
+  - references_official_website_docs
+  - other_supporting_links_github
+  - dependencies
+  - system_requirements
+  - performance_considerations
+
+# Category-specific fields
+category_fields:
+  "AI/ML Development Tools":
+    - primary_use_cases
+    - supported_platforms_os
+    - integration_with_other_tools
+    - example_projects_notebooks
+    - model_types_supported
+    - training_inference_capabilities
+    - hardware_acceleration_support
+
+  "Data Science and Analytics Tools":
+    - typical_applications
+    - data_formats_supported
+    - visualization_capabilities
+    - integration_with_other_libraries
+    - community_ecosystem
+    - example_use_cases
+    - statistical_analysis_features
+    - machine_learning_integration
+
+  "Creative and Media Tools":
+    - main_functions
+    - supported_file_formats
+    - plugin_extension_support
+    - user_interface_overview
+    - community_tutorials
+    - example_projects_outputs
+    - rendering_capabilities
+    - collaboration_features
+
+  "Developer Tools":
+    - supported_languages_technologies
+    - integration_capabilities
+    - version_control_support
+    - extensions_plugins
+    - debugging_features
+    - code_analysis_tools
+    - build_deployment_integration
+
+  "Large Language Models (LLM) Tools":
+    - supported_model_types
+    - integration_with_other_tools_frameworks
+    - model_deployment_options
+    - api_sdk_availability
+    - example_use_cases_demos
+    - fine_tuning_capabilities
+    - prompt_engineering_features
+    - model_management_tools
+
+# Field descriptions for validation and documentation
+field_descriptions:
+  tool_name: "Name of the tool/library/framework"
+  overview_description: "Brief description of what the tool does and its purpose"
+  key_features: "Main capabilities and features of the tool"
+  installation_setup: "How to install and configure the tool"
+  documentation_tutorials: "Available documentation, tutorials, and learning resources"
+  community_support: "Community size, forums, support channels"
+  licensing: "License type and terms"
+  latest_version_release_date: "Current version and release information"
+  references_official_website_docs: "Official website and documentation links"
+  other_supporting_links_github: "Additional links like GitHub repositories"
+  dependencies: "Required dependencies, libraries, or tools needed"
+  system_requirements: "Hardware and software requirements"
+  performance_considerations: "Performance characteristics and optimization notes"
+  
+  # AI/ML specific
+  primary_use_cases: "Main applications and use cases"
+  supported_platforms_os: "Operating systems and platforms supported"
+  integration_with_other_tools: "How it integrates with other AI/ML tools"
+  example_projects_notebooks: "Sample projects and Jupyter notebooks"
+  model_types_supported: "Types of models that can be used"
+  training_inference_capabilities: "Training and inference features"
+  hardware_acceleration_support: "GPU/TPU support and optimization"
+  
+  # Data Science specific
+  typical_applications: "Common applications and use cases"
+  data_formats_supported: "File formats and data types supported"
+  visualization_capabilities: "Charting and visualization features"
+  integration_with_other_libraries: "Compatibility with other data science libraries"
+  community_ecosystem: "Package ecosystem and community packages"
+  example_use_cases: "Real-world examples and case studies"
+  statistical_analysis_features: "Statistical analysis capabilities"
+  machine_learning_integration: "ML library integration and features"
+  
+  # Creative/Media specific
+  main_functions: "Primary functions and capabilities"
+  supported_file_formats: "Input and output file formats"
+  plugin_extension_support: "Available plugins and extensions"
+  user_interface_overview: "UI/UX description and workflow"
+  community_tutorials: "Community-created tutorials and resources"
+  example_projects_outputs: "Sample projects and output examples"
+  rendering_capabilities: "Rendering engine and performance"
+  collaboration_features: "Team collaboration and sharing features"
+  
+  # Developer Tools specific
+  supported_languages_technologies: "Programming languages and technologies supported"
+  integration_capabilities: "Integration with other development tools"
+  version_control_support: "Git and version control integration"
+  extensions_plugins: "Available extensions and plugins"
+  debugging_features: "Debugging tools and capabilities"
+  code_analysis_tools: "Code analysis and linting features"
+  build_deployment_integration: "CI/CD and deployment integration"
+  
+  # LLM Tools specific
+  supported_model_types: "Types of language models supported"
+  integration_with_other_tools_frameworks: "Integration with other LLM tools"
+  model_deployment_options: "Deployment and hosting options"
+  api_sdk_availability: "API and SDK availability"
+  example_use_cases_demos: "Example applications and demonstrations"
+  fine_tuning_capabilities: "Model fine-tuning and customization"
+  prompt_engineering_features: "Prompt engineering and optimization tools"
+  model_management_tools: "Model versioning and management features"
+
+# Validation rules for field types
+field_types:
+  tool_name: "string"
+  overview_description: "text"
+  key_features: "list"
+  installation_setup: "text"
+  documentation_tutorials: "list"
+  community_support: "text"
+  licensing: "string"
+  latest_version_release_date: "string"
+  references_official_website_docs: "list"
+  other_supporting_links_github: "list"
+  dependencies: "list"
+  system_requirements: "text"
+  performance_considerations: "text"
+  
+  # All category-specific fields default to text or list
+  primary_use_cases: "list"
+  supported_platforms_os: "list"
+  integration_with_other_tools: "text"
+  example_projects_notebooks: "list"
+  model_types_supported: "list"
+  training_inference_capabilities: "text"
+  hardware_acceleration_support: "text"
+  typical_applications: "list"
+  data_formats_supported: "list"
+  visualization_capabilities: "text"
+  integration_with_other_libraries: "text"
+  community_ecosystem: "text"
+  example_use_cases: "list"
+  statistical_analysis_features: "text"
+  machine_learning_integration: "text"
+  main_functions: "list"
+  supported_file_formats: "list"
+  plugin_extension_support: "text"
+  user_interface_overview: "text"
+  community_tutorials: "list"
+  example_projects_outputs: "list"
+  rendering_capabilities: "text"
+  collaboration_features: "text"
+  supported_languages_technologies: "list"
+  integration_capabilities: "text"
+  version_control_support: "text"
+  extensions_plugins: "text"
+  debugging_features: "text"
+  code_analysis_tools: "text"
+  build_deployment_integration: "text"
+  supported_model_types: "list"
+  integration_with_other_tools_frameworks: "text"
+  model_deployment_options: "text"
+  api_sdk_availability: "text"
+  example_use_cases_demos: "list"
+  fine_tuning_capabilities: "text"
+  prompt_engineering_features: "text"
+  model_management_tools: "text" 

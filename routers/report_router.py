@@ -55,28 +55,28 @@ class ReportRouter:
         return None
         
     def detect_category_from_json(self, json_path: str) -> Optional[str]:
-        """Detect category from JSON data structure"""
+        """Detect category from JSON file content"""
         try:
             with open(json_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 
-            # Check if General Info contains Use Case
-            general_info = data.get('General Info', {})
-            use_case = general_info.get('Use Case')
-            if use_case:
-                return use_case
-                
-            # Check tool name against classification
-            tool_name = general_info.get('Name')
-            if tool_name:
-                category = self.get_tool_category(tool_name)
-                if category:
-                    return category
+                # Check if General Information contains Use Case
+                general_info = data.get('General Information', {})
+                use_case = general_info.get('Use Case')
+                if use_case:
+                    return use_case
                     
-            # Check if it's creative media format
-            if 'General Information' in data and 'Product Details' in data:
-                return "Creative and Media Tools"
-                
+                # Check tool name against classification
+                tool_name = general_info.get('Name')
+                if tool_name:
+                    category = self.get_tool_category(tool_name)
+                    if category:
+                        return category
+                        
+                # Check if it's creative media format
+                if 'General Information' in data and 'Product Details' in data:
+                    return "Creative and Media Tools"
+                    
         except Exception as e:
             print(f"[WARN] Could not detect category from JSON: {e}")
             

@@ -1,21 +1,134 @@
-Package Troubleshooting
+# MetadataFetcher - Updated Commands (Post-Massive Update)
+# ========================================================
+
+# Package Troubleshooting
 python -m pip show python-dotenv
 python -m pip uninstall python-dotenv
 python -m pip install python-dotenv
 
-Extract metadata
-python -m metadata_fetcher.fetchers.generic_fetcher
+# ========================================================
+# PRIMARY CLI COMMANDS (RECOMMENDED)
+# ========================================================
 
-Export single metadata JSON to Word
-python export_to_word.py SampleOutputs/metadata/Non-PyPI/python.json
+# Fetch metadata for a single tool
+python cli/main.py fetch <tool_name>
+python cli/main.py fetch flask
+python cli/main.py fetch numpy --format yaml
+python cli/main.py fetch pandas --format docx
+python cli/main.py fetch tensorflow --format pdf
+python cli/main.py fetch redis --output-dir my_outputs
+python cli/main.py fetch postgresql --category database
 
-Export all metadata files to Word
-python export_all_to_word.py
-python export_all_to_word.py path/to/your/jsons
+# Fetch metadata for multiple tools (batch processing)
+python cli/main.py batch flask numpy pandas
+python cli/main.py batch --input-file tools.txt --format yaml
+python cli/main.py batch redis postgresql mysql --format json
 
-Run tests
-./run_tests.bat      # Windows
-./run_tests.sh       # Linux/macOS
+# Show available output formats
+python cli/main.py formats
 
-python scripts/export_to_word.py SampleOutputs/google/pandas.json
-python -m docx2pdf SampleOutputs/docs/docx/pandas.docx SampleOutputs/docs/pdf/pandas.pdf
+# Show system information
+python cli/main.py info
+
+# ========================================================
+# ALTERNATIVE MODULE-BASED COMMANDS
+# ========================================================
+
+# Using the metadata module directly
+python -c "from metadata import fetch_package_metadata; print(fetch_package_metadata('flask'))"
+python -c "from metadata import fetch_comprehensive_tool_metadata; print(fetch_comprehensive_tool_metadata('redis'))"
+
+# ========================================================
+# DEMO AND EXAMPLES
+# ========================================================
+
+# Run the demo example
+python examples/demo.py
+
+# ========================================================
+# TESTING COMMANDS
+# ========================================================
+
+# Run all tests
+python -m pytest tests/
+
+# Run specific test files
+python -m pytest tests/test_metadata_fetcher.py
+python -m pytest tests/test_pypi_fetcher.py
+python -m pytest tests/test_github_fetcher.py
+
+# Run tests with verbose output
+python -m pytest tests/ -v
+
+# ========================================================
+# SCRIPT-BASED COMMANDS (LEGACY - MAY NOT WORK)
+# ========================================================
+
+# Note: These scripts may be broken after the massive update
+# Use the CLI commands above instead
+
+# Export scripts (may need updates)
+python scripts/export.py
+python scripts/export_all.py
+python scripts/json2txt.py
+
+# Batch processing script (deprecated)
+python scripts/batch.py
+
+# ========================================================
+# OUTPUT FORMATS SUPPORTED
+# ========================================================
+# - json: JSON format (default)
+# - yaml: YAML format
+# - docx: Microsoft Word document
+# - pdf: PDF document
+
+# ========================================================
+# OUTPUT DIRECTORY STRUCTURE
+# ========================================================
+# outputs/
+# ├── json/
+# ├── yaml/
+# ├── docx/
+# └── pdf/
+
+# ========================================================
+# TOOL CATEGORIES SUPPORTED
+# ========================================================
+# - ai_ml: AI and Machine Learning tools
+# - database: Database systems
+# - web_framework: Web frameworks
+# - data_science: Data science tools
+# - dev_tools: Development tools
+# - creative_media: Creative and media tools
+# - system_tools: System administration tools
+# - other: Other tools
+
+# ========================================================
+# EXAMPLES WITH REAL TOOLS
+# ========================================================
+
+# AI/ML Tools
+python cli/main.py fetch tensorflow --format json
+python cli/main.py fetch pytorch --format yaml
+python cli/main.py fetch scikit-learn --format docx
+
+# Database Tools
+python cli/main.py fetch postgresql --category database
+python cli/main.py fetch redis --category database
+python cli/main.py fetch mysql --category database
+
+# Web Frameworks
+python cli/main.py fetch flask --category web_framework
+python cli/main.py fetch django --category web_framework
+python cli/main.py fetch fastapi --category web_framework
+
+# Data Science Tools
+python cli/main.py fetch pandas --category data_science
+python cli/main.py fetch numpy --category data_science
+python cli/main.py fetch matplotlib --category data_science
+
+# Batch Processing Examples
+python cli/main.py batch tensorflow pytorch scikit-learn --format json
+python cli/main.py batch postgresql redis mysql --format yaml
+python cli/main.py batch flask django fastapi --format docx
