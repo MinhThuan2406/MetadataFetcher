@@ -106,60 +106,60 @@
             "Live demos available on official website"
         ]
     },
+    "data_formats_supported": [],
+    "model_types_supported": [],
+    "reporting_features": "",
+    "collaboration_features": "",
+    "debugging_tools": "",
+    "inference_features": "",
+    "data_processing_features": "",
+    "training_capabilities": "",
+    "example_notebooks": [],
+    "visualization_capabilities": "",
+    "build_deployment": "",
+    "code_analysis": "",
+    "rendering_capabilities": "",
+    "language_support": [],
     "prompt_engineering_tools": "",
+    "performance_optimization": "",
+    "data_export_formats": [],
+    "version_control_integration": "",
+    "interactive_features": "",
+    "cost_optimization": "",
+    "fine_tuning_capabilities": "",
+    "hardware_acceleration": "",
+    "safety_features": "",
+    "testing_frameworks": "",
+    "deployment_options": "",
+    "data_quality_tools": "",
+    "pre_trained_models": [],
+    "extension_ecosystem": "",
+    "model_management": "",
+    "data_preprocessing_tools": "",
+    "statistical_analysis": "",
+    "refactoring_tools": "",
+    "api_sdk_availability": "",
     "data_import_tools": "",
+    "model_optimization": "",
+    "ml_library_integration": "",
+    "plugin_ecosystem": "",
+    "asset_management": "",
     "ide_integration": "",
     "supported_model_types": [],
-    "integration_frameworks": "",
-    "model_optimization": "",
-    "cost_optimization": "",
     "model_deployment_options": "",
-    "deployment_options": "",
-    "training_capabilities": "",
+    "ml_framework_integration": "",
+    "workflow_automation": "",
+    "evaluation_metrics": "",
+    "user_interface": "",
+    "real_time_features": "",
+    "integration_frameworks": "",
+    "code_generation": "",
+    "export_formats": [],
     "media_formats_supported": [
         "Python files (.py)",
         "Jupyter notebooks (.ipynb)",
         "Configuration files (.cfg, .ini)"
     ],
-    "refactoring_tools": "",
-    "model_types_supported": [],
-    "data_quality_tools": "",
-    "code_generation": "",
-    "statistical_analysis": "",
-    "fine_tuning_capabilities": "",
-    "export_formats": [],
-    "language_support": [],
-    "version_control_integration": "",
-    "ml_framework_integration": "",
-    "rendering_capabilities": "",
-    "data_export_formats": [],
-    "extension_ecosystem": "",
-    "api_sdk_availability": "",
-    "hardware_acceleration": "",
-    "code_analysis": "",
-    "data_preprocessing_tools": "",
-    "testing_frameworks": "",
-    "asset_management": "",
-    "safety_features": "",
-    "example_notebooks": [],
-    "debugging_tools": "",
-    "evaluation_metrics": "",
-    "pre_trained_models": [],
-    "interactive_features": "",
-    "visualization_capabilities": "",
-    "performance_optimization": "",
-    "collaboration_features": "",
-    "inference_features": "",
-    "data_processing_features": "",
-    "build_deployment": "",
-    "workflow_automation": "",
-    "real_time_features": "",
-    "ml_library_integration": "",
-    "model_management": "",
-    "reporting_features": "",
-    "plugin_ecosystem": "",
-    "data_formats_supported": [],
-    "user_interface": "",
     "supportive_links": [
         {
             "title": "Welcome toPython.org",
@@ -207,29 +207,19 @@
             "type": "documentation"
         },
         {
-            "title": "Python Packagist Package",
-            "url": "https://packagist.org/packages/python",
+            "title": "Python Hashnode Articles",
+            "url": "https://hashnode.com/search?q=python",
+            "type": "article"
+        },
+        {
+            "title": "Python Maven Repository",
+            "url": "https://mvnrepository.com/artifact/python",
             "type": "package"
         },
         {
-            "title": "Python Official Documentation",
-            "url": "https://docs.python.org",
-            "type": "documentation"
-        },
-        {
-            "title": "Python API Reference",
-            "url": "https://api.python.org",
-            "type": "documentation"
-        },
-        {
-            "title": "Python NPM Package",
-            "url": "https://www.npmjs.com/package/python",
-            "type": "package"
-        },
-        {
-            "title": "Python GitHub Repository",
-            "url": "https://github.com/python",
-            "type": "repository"
+            "title": "Python Stack Overflow Community",
+            "url": "https://stackoverflow.com/questions/tagged/python",
+            "type": "community"
         },
         {
             "title": "Python Community Forum",
@@ -237,19 +227,29 @@
             "type": "community"
         },
         {
-            "title": "Python Hashnode Articles",
-            "url": "https://hashnode.com/search?q=python",
+            "title": "Python Medium Articles",
+            "url": "https://medium.com/search?q=python",
             "type": "article"
         },
         {
-            "title": "Python RubyGems Package",
-            "url": "https://rubygems.org/gems/python",
+            "title": "Python PyPI Package",
+            "url": "https://pypi.org/project/python/",
             "type": "package"
         },
         {
-            "title": "Python NuGet Package",
-            "url": "https://www.nuget.org/packages/python",
-            "type": "package"
+            "title": "Python YouTube Tutorials",
+            "url": "https://www.youtube.com/results?search_query=python+tutorial",
+            "type": "tutorial"
+        },
+        {
+            "title": "Python Official Blog",
+            "url": "https://blog.python.org",
+            "type": "blog"
+        },
+        {
+            "title": "Python Reddit Discussions",
+            "url": "https://www.reddit.com/r/python/",
+            "type": "community"
         },
         {
             "title": "Python Documentation Wiki",
@@ -257,8 +257,8 @@
             "type": "documentation"
         },
         {
-            "title": "Python Maven Repository",
-            "url": "https://mvnrepository.com/artifact/python",
+            "title": "Python Packagist Package",
+            "url": "https://packagist.org/packages/python",
             "type": "package"
         }
     ]

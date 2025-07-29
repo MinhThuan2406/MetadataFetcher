@@ -530,7 +530,13 @@ def save_to_pdf(metadata: Union[UnifiedMetadata, dict], file_path: str) -> None:
                     ])
             
             if len(table_data) > 1:  # Has data beyond header
-                table = Table(table_data, colWidths=[2*inch, 4*inch])
+                # Calculate available width: A4 width (21cm) - 2*1.27cm margins = 18.46cm
+                available_width = 18.46 * cm
+                # Use 30% for field names, 70% for details
+                field_width = available_width * 0.3
+                details_width = available_width * 0.7
+                
+                table = Table(table_data, colWidths=[field_width, details_width])
                 table.setStyle(TableStyle([
                     ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#4F81BD')),
                     ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
@@ -578,7 +584,13 @@ def save_to_pdf(metadata: Union[UnifiedMetadata, dict], file_path: str) -> None:
                 ])
             
             if len(table_data) > 1:  # Has data beyond header
-                table = Table(table_data, colWidths=[2*inch, 4*inch])
+                # Calculate available width: A4 width (21cm) - 2*1.27cm margins = 18.46cm
+                available_width = 18.46 * cm
+                # Use 30% for field names, 70% for details
+                field_width = available_width * 0.3
+                details_width = available_width * 0.7
+                
+                table = Table(table_data, colWidths=[field_width, details_width])
                 table.setStyle(TableStyle([
                     ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#4F81BD')),
                     ('TEXTCOLOR', (0, 0), (-1, 0), colors.white),
