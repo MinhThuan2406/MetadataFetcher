@@ -1,0 +1,105 @@
+{
+  "total_tests": 95,
+  "successful_tests": 95,
+  "failed_tests": 0,
+  "tool_results": {
+    "python": {
+      "success": 5,
+      "failed": 0
+    },
+    "pytorch": {
+      "success": 5,
+      "failed": 0
+    },
+    "tensorflow": {
+      "success": 5,
+      "failed": 0
+    },
+    "anaconda": {
+      "success": 5,
+      "failed": 0
+    },
+    "pandas": {
+      "success": 5,
+      "failed": 0
+    },
+    "jupyterlab": {
+      "success": 5,
+      "failed": 0
+    },
+    "jupyternotebook": {
+      "success": 5,
+      "failed": 0
+    },
+    "r": {
+      "success": 5,
+      "failed": 0
+    },
+    "blender": {
+      "success": 5,
+      "failed": 0
+    },
+    "gimp": {
+      "success": 5,
+      "failed": 0
+    },
+    "elgato_stream_deck": {
+      "success": 5,
+      "failed": 0
+    },
+    "comfyui": {
+      "success": 5,
+      "failed": 0
+    },
+    "visual_studio_code": {
+      "success": 5,
+      "failed": 0
+    },
+    "git_version_control": {
+      "success": 5,
+      "failed": 0
+    },
+    "pycharm": {
+      "success": 5,
+      "failed": 0
+    },
+    "github_desktop": {
+      "success": 5,
+      "failed": 0
+    },
+    "langchain": {
+      "success": 5,
+      "failed": 0
+    },
+    "ollama": {
+      "success": 5,
+      "failed": 0
+    },
+    "hugging_face_transformers": {
+      "success": 5,
+      "failed": 0
+    }
+  },
+  "format_results": {
+    "json": {
+      "success": 19,
+      "failed": 0
+    },
+    "yaml": {
+      "success": 19,
+      "failed": 0
+    },
+    "txt": {
+      "success": 19,
+      "failed": 0
+    },
+    "docx": {
+      "success": 19,
+      "failed": 0
+    },
+    "pdf": {
+      "success": 19,
+      "failed": 0
+    }
+  }
+}

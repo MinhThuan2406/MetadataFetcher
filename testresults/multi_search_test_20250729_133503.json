@@ -1,0 +1,50 @@
+{
+  "python": {
+    "name": "python",
+    "description": "Documentation and information about python 21 thg 3, 2010\u00b7 There is no bitwise negation in Python (j...",
+    "category": "generic",
+    "urls_count": 5,
+    "sources_count": 3,
+    "metadata_source": "MultiSearchFetcher"
+  },
+  "pandas": {
+    "name": "pandas",
+    "description": "Documentation and information about pandas 7 thg 7, 2025\u00b7 pandas is an open source, BSD-licensed lib...",
+    "category": "data_science",
+    "urls_count": 5,
+    "sources_count": 3,
+    "metadata_source": "MultiSearchFetcher"
+  },
+  "tensorflow": {
+    "name": "tensorflow",
+    "description": "Documentation and information about tensorflow 29 thg 1, 2025\u00b7I want to install tensorflow in my mac...",
+    "category": "ai_ml",
+    "urls_count": 5,
+    "sources_count": 3,
+    "metadata_source": "MultiSearchFetcher"
+  },
+  "git": {
+    "name": "git",
+    "description": "Documentation and information about git Git is a distributed version control software. Version contr...",
+    "category": "developer_tools",
+    "urls_count": 5,
+    "sources_count": 3,
+    "metadata_source": "MultiSearchFetcher"
+  },
+  "docker": {
+    "name": "docker",
+    "description": "Documentation and information about docker \u041f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435 \u043f\u0440\u0435\u0434\u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u043e \u0434\u043b\u044f \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u0438 \u043f\u0440\u043e\u0435\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f...",
+    "category": "developer_tools",
+    "urls_count": 5,
+    "sources_count": 3,
+    "metadata_source": "MultiSearchFetcher"
+  },
+  "vscode": {
+    "name": "vscode",
+    "description": "Documentation and information about vscode Code anywhere Code wherever you're most productive, wheth...",
+    "category": "developer_tools",
+    "urls_count": 5,
+    "sources_count": 3,
+    "metadata_source": "MultiSearchFetcher"
+  }
+}

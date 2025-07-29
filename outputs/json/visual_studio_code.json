@@ -1,41 +1,51 @@
 {
     "basic_info": {
-        "tool_name": "Ollama",
-        "overview_description": "Ollama is an open-source tool for running large language models locally on your machine. It provides a simple way to download, run, and manage LLMs without requiring cloud services or complex setup.",
+        "tool_name": "Visual Studio Code (VSCode)",
+        "overview_description": "Visual Studio Code is a free, open-source code editor developed by Microsoft. It features IntelliSense code completion, debugging, Git integration, extensions, and support for multiple programming languages.",
         "key_features": [
-            "Local LLM deployment and management",
-            "Support for multiple model architectures",
-            "Simple API for model interaction",
-            "Model customization and fine-tuning",
-            "Cross-platform compatibility",
-            "Docker container support",
-            "REST API and client libraries",
-            "Model versioning and management",
-            "Resource optimization and caching",
-            "Integration with LangChain and other frameworks"
+            "IntelliSense code completion and syntax highlighting",
+            "Built-in Git version control integration",
+            "Extensive extension marketplace with thousands of extensions",
+            "Integrated terminal and debugging tools",
+            "Multi-language support with custom themes and syntax highlighting",
+            "Live Share for real-time collaboration",
+            "Integrated source control management",
+            "Customizable workspace and user interface",
+            "Extensive keyboard shortcuts and productivity features",
+            "Built-in support for TypeScript, JavaScript, and Node.js"
         ],
         "use_cases": [],
-        "supported_platforms": []
+        "supported_platforms": [
+            "Windows 10 and newer",
+            "macOS 10.15 (Catalina) and newer",
+            "Linux (Ubuntu, Debian, Red Hat, Fedora, SUSE)"
+        ]
     },
     "technical_specs": {
         "dependencies": {},
-        "system_requirements": "Windows 10+, macOS 10.14+, Linux, 8GB RAM for models",
-        "performance_considerations": "Local inference provides privacy but requires significant computational resources",
-        "supported_languages": [],
+        "system_requirements": "Windows 10+, macOS 10.14+, Linux, 4GB RAM",
+        "performance_considerations": "Lightweight editor with fast startup, extension ecosystem may impact performance",
+        "supported_languages": [
+            "JavaScript, TypeScript, Python, Java, C++, C#, PHP, Go, Rust, Ruby, Swift",
+            "HTML, CSS, JSON, XML, Markdown, SQL",
+            "Docker, Kubernetes, Azure, AWS, Google Cloud",
+            "React, Angular, Vue.js, Node.js, .NET"
+        ],
         "supported_file_formats": [
-            "Text files",
-            "Model files",
+            "All text files",
+            "Code files",
             "Configuration files"
         ],
-        "hardware_requirements": "8GB RAM for models, modern CPU, sufficient disk space for models",
-        "network_requirements": "Internet connection for model downloads, local inference"
+        "hardware_requirements": "4GB RAM minimum, modern CPU, sufficient disk space",
+        "network_requirements": "Internet connection for extensions and updates"
     },
     "setup_info": {
         "installation_setup": [
-            "Download Ollama from ollama.ai for your operating system",
-            "Start Ollama service: ollama serve",
-            "Pull a model: ollama pull llama2",
-            "Run a model: ollama run llama2"
+            "Download Visual Studio Code from the official website (code.visualstudio.com)",
+            "Install extensions from the marketplace for additional functionality",
+            "Configure settings and keyboard shortcuts for optimal workflow",
+            "Set up Git integration for version control",
+            "Install language-specific extensions for your development needs"
         ],
         "configuration_guide": "Comprehensive configuration guide available in official documentation",
         "quick_start_tutorial": "Quick start tutorial available in official documentation and tutorials",
@@ -52,7 +62,7 @@
             "Community tutorials available on GitHub, YouTube, and blogs"
         ],
         "api_reference": [
-            "https://ollama.ai/api"
+            "https://code.visualstudio.com/api"
         ],
         "video_tutorials": [
             "Video tutorials available on YouTube and official channels"
@@ -95,7 +105,7 @@
         "documentation_links": [],
         "additional_resources": [],
         "download_links": [
-            "https://ollama.ai/download"
+            "https://code.visualstudio.com/download"
         ],
         "demo_links": [
             "Live demos available on official website"
@@ -112,8 +122,8 @@
     "deployment_options": "",
     "training_capabilities": "",
     "media_formats_supported": [
-        "Text files",
-        "Model files",
+        "All text files",
+        "Code files",
         "Configuration files"
     ],
     "refactoring_tools": "",
@@ -123,7 +133,12 @@
     "statistical_analysis": "",
     "fine_tuning_capabilities": "",
     "export_formats": [],
-    "language_support": [],
+    "language_support": [
+        "JavaScript, TypeScript, Python, Java, C++, C#, PHP, Go, Rust, Ruby, Swift",
+        "HTML, CSS, JSON, XML, Markdown, SQL",
+        "Docker, Kubernetes, Azure, AWS, Google Cloud",
+        "React, Angular, Vue.js, Node.js, .NET"
+    ],
     "version_control_integration": "",
     "ml_framework_integration": "",
     "rendering_capabilities": "",
@@ -157,103 +172,78 @@
     "user_interface": "",
     "supportive_links": [
         {
-            "title": "Ollama",
-            "url": "https://ollama.com/",
-            "type": "documentation"
-        },
-        {
-            "title": "GitHub-ollama/ollama: Get up and running with Llama 3.3, …",
-            "url": "https://github.com/ollama/ollama",
-            "type": "documentation"
-        },
-        {
-            "title": "Ollama",
-            "url": "https://ollama.com/",
-            "type": "documentation"
-        },
-        {
-            "title": "GitHub-ollama/ollama: Get up and running with Llama 3.3, …",
-            "url": "https://github.com/ollama/ollama",
-            "type": "documentation"
-        },
-        {
-            "title": "Ollama",
-            "url": "https://ollama.com/",
-            "type": "documentation"
-        },
-        {
-            "title": "GitHub-ollama/ollama: Get up and running with Llama 3.3, …",
-            "url": "https://github.com/ollama/ollama",
-            "type": "documentation"
-        },
-        {
-            "title": "Ollama Maven Repository",
-            "url": "https://mvnrepository.com/artifact/ollama",
-            "type": "package"
-        },
-        {
-            "title": "Ollama Documentation Wiki",
-            "url": "https://wiki.ollama.org",
-            "type": "documentation"
-        },
-        {
-            "title": "Ollama Packagist Package",
-            "url": "https://packagist.org/packages/ollama",
-            "type": "package"
-        },
-        {
-            "title": "Ollama Official Blog",
-            "url": "https://blog.ollama.org",
-            "type": "blog"
-        },
-        {
-            "title": "Ollama Dev.to Posts",
-            "url": "https://dev.to/search?q=ollama",
+            "title": "Visual_Studio_Code Dev.to Posts",
+            "url": "https://dev.to/search?q=visual_studio_code",
             "type": "article"
         },
         {
-            "title": "Ollama NPM Package",
-            "url": "https://www.npmjs.com/package/ollama",
+            "title": "Visual_Studio_Code NPM Package",
+            "url": "https://www.npmjs.com/package/visual_studio_code",
             "type": "package"
         },
         {
-            "title": "Ollama Medium Articles",
-            "url": "https://medium.com/search?q=ollama",
-            "type": "article"
+            "title": "Visual_Studio_Code Official Documentation",
+            "url": "https://docs.visual_studio_code.org",
+            "type": "documentation"
         },
         {
-            "title": "Ollama Stack Overflow Community",
-            "url": "https://stackoverflow.com/questions/tagged/ollama",
+            "title": "Visual_Studio_Code API Reference",
+            "url": "https://api.visual_studio_code.org",
+            "type": "documentation"
+        },
+        {
+            "title": "Visual_Studio_Code Reddit Discussions",
+            "url": "https://www.reddit.com/r/visual_studio_code/",
             "type": "community"
         },
         {
-            "title": "Ollama Crates.io Package",
-            "url": "https://crates.io/crates/ollama",
+            "title": "Visual_Studio_Code NuGet Package",
+            "url": "https://www.nuget.org/packages/visual_studio_code",
             "type": "package"
         },
         {
-            "title": "Ollama API Reference",
-            "url": "https://api.ollama.org",
-            "type": "documentation"
+            "title": "Visual_Studio_Code Community Forum",
+            "url": "https://forum.visual_studio_code.org",
+            "type": "community"
         },
         {
-            "title": "Ollama NuGet Package",
-            "url": "https://www.nuget.org/packages/ollama",
+            "title": "Visual_Studio_Code Medium Articles",
+            "url": "https://medium.com/search?q=visual_studio_code",
+            "type": "article"
+        },
+        {
+            "title": "Visual_Studio_Code Crates.io Package",
+            "url": "https://crates.io/crates/visual_studio_code",
             "type": "package"
         },
         {
-            "title": "Ollama PyPI Package",
-            "url": "https://pypi.org/project/ollama/",
+            "title": "Visual_Studio_Code Stack Overflow Community",
+            "url": "https://stackoverflow.com/questions/tagged/visual_studio_code",
+            "type": "community"
+        },
+        {
+            "title": "Visual_Studio_Code RubyGems Package",
+            "url": "https://rubygems.org/gems/visual_studio_code",
             "type": "package"
         },
         {
-            "title": "Ollama GitHub Repository",
-            "url": "https://github.com/ollama",
-            "type": "repository"
+            "title": "Visual_Studio_Code PyPI Package",
+            "url": "https://pypi.org/project/visual_studio_code/",
+            "type": "package"
         },
         {
-            "title": "Ollama Examples Gallery",
-            "url": "https://examples.ollama.org",
+            "title": "Visual_Studio_Code YouTube Tutorials",
+            "url": "https://www.youtube.com/results?search_query=visual_studio_code+tutorial",
+            "type": "tutorial"
+        },
+        {
+            "title": "Visual_Studio_Code Hashnode Articles",
+            "url": "https://hashnode.com/search?q=visual_studio_code",
+            "type": "article"
+        },
+        {
+            "title": "Visual_Studio_Code Examples Gallery",
+            "url": "https://examples.visual_studio_code.org",
             "type": "tutorial"
         }
     ]

@@ -1,0 +1,324 @@
+{
+  "python": {
+    "is_comprehensive": true,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": true,
+    "is_generic": false,
+    "missing_fields": [],
+    "description_length": 297,
+    "features_count": 5,
+    "installation_count": 4,
+    "links_count": 9,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "pytorch": {
+    "is_comprehensive": true,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": true,
+    "is_generic": false,
+    "missing_fields": [],
+    "description_length": 266,
+    "features_count": 3,
+    "installation_count": 3,
+    "links_count": 9,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "tensorflow": {
+    "is_comprehensive": true,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": true,
+    "is_generic": false,
+    "missing_fields": [],
+    "description_length": 270,
+    "features_count": 10,
+    "installation_count": 4,
+    "links_count": 9,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "anaconda": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 263,
+    "features_count": 10,
+    "installation_count": 4,
+    "links_count": 0,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "pandas": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 218,
+    "features_count": 10,
+    "installation_count": 4,
+    "links_count": 0,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "jupyterlab": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": true,
+    "is_generic": true,
+    "missing_fields": [],
+    "description_length": 70,
+    "features_count": 3,
+    "installation_count": 3,
+    "links_count": 9,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "jupyternotebook": {
+    "is_comprehensive": true,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": true,
+    "is_generic": false,
+    "missing_fields": [],
+    "description_length": 243,
+    "features_count": 3,
+    "installation_count": 3,
+    "links_count": 9,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "r": {
+    "is_comprehensive": true,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": true,
+    "is_generic": false,
+    "missing_fields": [],
+    "description_length": 207,
+    "features_count": 3,
+    "installation_count": 4,
+    "links_count": 9,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "blender": {
+    "is_comprehensive": true,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": true,
+    "is_generic": false,
+    "missing_fields": [],
+    "description_length": 203,
+    "features_count": 5,
+    "installation_count": 4,
+    "links_count": 9,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "gimp": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 216,
+    "features_count": 10,
+    "installation_count": 4,
+    "links_count": 0,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "elgato_stream_deck": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 203,
+    "features_count": 10,
+    "installation_count": 4,
+    "links_count": 3,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "comfyui": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 187,
+    "features_count": 10,
+    "installation_count": 4,
+    "links_count": 3,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "visual_studio_code": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 207,
+    "features_count": 10,
+    "installation_count": 5,
+    "links_count": 0,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "git_version_control": {
+    "is_comprehensive": true,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": true,
+    "is_generic": false,
+    "missing_fields": [],
+    "description_length": 209,
+    "features_count": 3,
+    "installation_count": 5,
+    "links_count": 9,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "pycharm": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 193,
+    "features_count": 10,
+    "installation_count": 4,
+    "links_count": 0,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "github_desktop": {
+    "is_comprehensive": true,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": true,
+    "is_generic": false,
+    "missing_fields": [],
+    "description_length": 209,
+    "features_count": 10,
+    "installation_count": 4,
+    "links_count": 9,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "langchain": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 215,
+    "features_count": 10,
+    "installation_count": 4,
+    "links_count": 0,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "ollama": {
+    "is_comprehensive": true,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": true,
+    "is_generic": false,
+    "missing_fields": [],
+    "description_length": 198,
+    "features_count": 10,
+    "installation_count": 3,
+    "links_count": 9,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  },
+  "hugging_face_transformers": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 219,
+    "features_count": 10,
+    "installation_count": 4,
+    "links_count": 0,
+    "sources": [
+      "multisearchfetcher"
+    ]
+  }
+}

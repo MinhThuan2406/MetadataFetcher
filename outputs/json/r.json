@@ -1,44 +1,260 @@
 {
-    "tool_name": "R",
-    "overview_description": "R is a language and environment for statistical computing and graphics.",
-    "key_features": [
-        "Statistical computing and graphics",
-        "Extensive package ecosystem (CRAN)",
-        "Data manipulation and analysis",
-        "Machine learning capabilities",
-        "Reproducible research with R Markdown",
-        "Interactive visualizations",
-        "Cross-platform compatibility"
+    "basic_info": {
+        "tool_name": "R",
+        "overview_description": "R is a programming language and environment for statistical computing and graphics. It provides a wide variety of statistical and graphical techniques, and is highly extensible through its package ecosystem.",
+        "key_features": [
+            "Statistical computing and graphics",
+            "Comprehensive statistical analysis tools",
+            "Data manipulation and visualization",
+            "Machine learning and data mining capabilities",
+            "Extensive package ecosystem (CRAN)",
+            "Reproducible research with R Markdown",
+            "Integration with databases and big data tools",
+            "Interactive graphics and plotting",
+            "Time series analysis and forecasting",
+            "Bioinformatics and genomic analysis"
+        ],
+        "use_cases": [],
+        "supported_platforms": []
+    },
+    "technical_specs": {
+        "dependencies": {},
+        "system_requirements": "R 4.0+, 4GB RAM minimum, RStudio for IDE",
+        "performance_considerations": "Memory-intensive for large datasets, but excellent for statistical analysis",
+        "supported_languages": [],
+        "supported_file_formats": [
+            "R scripts (.R)",
+            "R Markdown (.Rmd)",
+            "RData files (.RData)"
+        ],
+        "hardware_requirements": "4GB RAM minimum, multi-core CPU, sufficient disk space for packages",
+        "network_requirements": "Internet connection for package installation and data access"
+    },
+    "setup_info": {
+        "installation_setup": [
+            "Download R from cran.r-project.org for your operating system",
+            "Install RStudio IDE for enhanced development experience",
+            "Install packages: install.packages('package_name')",
+            "Load packages: library(package_name)"
+        ],
+        "configuration_guide": "Comprehensive configuration guide available in official documentation",
+        "quick_start_tutorial": "Quick start tutorial available in official documentation and tutorials",
+        "environment_setup": "Environment setup instructions available in official documentation",
+        "dependency_management": "Dependency management tools and best practices available in documentation",
+        "installation_commands": "Installation commands available in official documentation and setup guides",
+        "setup_steps": "Detailed setup steps available in official documentation",
+        "verification_commands": "Verification commands available in official documentation"
+    },
+    "documentation": {
+        "official_documentation": [],
+        "tutorials_examples": [],
+        "community_tutorials": [
+            "Community tutorials available on GitHub, YouTube, and blogs"
+        ],
+        "api_reference": [
+            "https://www.r-project.org/api"
+        ],
+        "video_tutorials": [
+            "Video tutorials available on YouTube and official channels"
+        ],
+        "sample_projects": [
+            "Sample projects available on GitHub and official repositories"
+        ]
+    },
+    "community": {
+        "community_support": "Active community with forums, Discord, and GitHub discussions",
+        "forums_channels": [
+            "Official forums",
+            "Reddit communities",
+            "Discord servers",
+            "Stack Overflow"
+        ],
+        "ecosystem_packages": [],
+        "support_channels": [
+            "Official support channels",
+            "Community forums",
+            "GitHub issues"
+        ],
+        "user_groups": [
+            "Local user groups",
+            "Meetup communities",
+            "Professional networks"
+        ]
+    },
+    "legal_versioning": {
+        "licensing": "GPL License",
+        "latest_version": "",
+        "release_date": "",
+        "version_history": "Comprehensive version history and changelog available",
+        "update_policy": "Regular update schedule with security and feature updates",
+        "end_of_life": "Long-term support with clear end-of-life policies"
+    },
+    "references": {
+        "official_website": "",
+        "github_repository": "",
+        "documentation_links": [],
+        "additional_resources": [],
+        "download_links": [
+            "https://www.r-project.org/download"
+        ],
+        "demo_links": [
+            "Live demos available on official website"
+        ]
+    },
+    "prompt_engineering_tools": "",
+    "data_import_tools": "",
+    "ide_integration": "",
+    "supported_model_types": [],
+    "integration_frameworks": "",
+    "model_optimization": "",
+    "cost_optimization": "",
+    "model_deployment_options": "",
+    "deployment_options": "",
+    "training_capabilities": "",
+    "media_formats_supported": [
+        "R scripts (.R)",
+        "R Markdown (.Rmd)",
+        "RData files (.RData)"
     ],
-    "installation_setup": [
-        "Download from cran.r-project.org for Windows, macOS, Linux",
-        "Use package managers: apt (Ubuntu), brew (macOS), chocolatey (Windows)",
-        "Use RStudio for integrated development environment",
-        "Use conda for R with conda-forge channel"
-    ],
-    "documentation_tutorials": [
-        "R Project official documentation",
-        "CRAN manuals and vignettes",
-        "RStudio tutorials and guides",
-        "R for Data Science online book",
-        "R-bloggers community tutorials"
-    ],
-    "community_support": [
-        "R-help mailing list",
-        "Stack Overflow R community",
-        "Reddit communities (r/rstats, r/Rlanguage)",
-        "RStudio Community forums",
-        "R-bloggers for tutorials and tips"
-    ],
-    "licensing": "GPL-2 (GNU General Public License)",
-    "latest_version_release_date": "R 4.4.0 (Latest)",
-    "references_official_website_docs": [
-        "https://www.r-project.org",
-        "https://cran.r-project.org",
-        "https://www.rstudio.com"
-    ],
-    "other_supporting_links_github": [
-        "https://github.com/wch/r-source",
-        "https://github.com/rstudio/rstudio"
+    "refactoring_tools": "",
+    "model_types_supported": [],
+    "data_quality_tools": "",
+    "code_generation": "",
+    "statistical_analysis": "",
+    "fine_tuning_capabilities": "",
+    "export_formats": [],
+    "language_support": [],
+    "version_control_integration": "",
+    "ml_framework_integration": "",
+    "rendering_capabilities": "",
+    "data_export_formats": [],
+    "extension_ecosystem": "",
+    "api_sdk_availability": "",
+    "hardware_acceleration": "",
+    "code_analysis": "",
+    "data_preprocessing_tools": "",
+    "testing_frameworks": "",
+    "asset_management": "",
+    "safety_features": "",
+    "example_notebooks": [],
+    "debugging_tools": "",
+    "evaluation_metrics": "",
+    "pre_trained_models": [],
+    "interactive_features": "",
+    "visualization_capabilities": "",
+    "performance_optimization": "",
+    "collaboration_features": "",
+    "inference_features": "",
+    "data_processing_features": "",
+    "build_deployment": "",
+    "workflow_automation": "",
+    "real_time_features": "",
+    "ml_library_integration": "",
+    "model_management": "",
+    "reporting_features": "",
+    "plugin_ecosystem": "",
+    "data_formats_supported": [],
+    "user_interface": "",
+    "supportive_links": [
+        {
+            "title": "Roblox",
+            "url": "https://www.roblox.com/",
+            "type": "documentation"
+        },
+        {
+            "title": "Reddit- Dive into anything",
+            "url": "https://www.reddit.com/",
+            "type": "documentation"
+        },
+        {
+            "title": "Rockstar Games",
+            "url": "https://www.rockstargames.com/",
+            "type": "documentation"
+        },
+        {
+            "title": "Roblox",
+            "url": "https://www.roblox.com/",
+            "type": "documentation"
+        },
+        {
+            "title": "Reddit- Dive into anything",
+            "url": "https://www.reddit.com/",
+            "type": "documentation"
+        },
+        {
+            "title": "Rockstar Games",
+            "url": "https://www.rockstargames.com/",
+            "type": "documentation"
+        },
+        {
+            "title": "Roblox",
+            "url": "https://www.roblox.com/",
+            "type": "documentation"
+        },
+        {
+            "title": "Reddit- Dive into anything",
+            "url": "https://www.reddit.com/",
+            "type": "documentation"
+        },
+        {
+            "title": "Rockstar Games",
+            "url": "https://www.rockstargames.com/",
+            "type": "documentation"
+        },
+        {
+            "title": "R Stack Overflow Community",
+            "url": "https://stackoverflow.com/questions/tagged/r",
+            "type": "community"
+        },
+        {
+            "title": "R GitHub Repository",
+            "url": "https://github.com/r",
+            "type": "repository"
+        },
+        {
+            "title": "R Documentation Wiki",
+            "url": "https://wiki.r.org",
+            "type": "documentation"
+        },
+        {
+            "title": "R Dev.to Posts",
+            "url": "https://dev.to/search?q=r",
+            "type": "article"
+        },
+        {
+            "title": "R Community Forum",
+            "url": "https://forum.r.org",
+            "type": "community"
+        },
+        {
+            "title": "R YouTube Tutorials",
+            "url": "https://www.youtube.com/results?search_query=r+tutorial",
+            "type": "tutorial"
+        },
+        {
+            "title": "R Hashnode Articles",
+            "url": "https://hashnode.com/search?q=r",
+            "type": "article"
+        },
+        {
+            "title": "R Reddit Discussions",
+            "url": "https://www.reddit.com/r/r/",
+            "type": "community"
+        },
+        {
+            "title": "R RubyGems Package",
+            "url": "https://rubygems.org/gems/r",
+            "type": "package"
+        },
+        {
+            "title": "R Official Blog",
+            "url": "https://blog.r.org",
+            "type": "blog"
+        },
+        {
+            "title": "R API Reference",
+            "url": "https://api.r.org",
+            "type": "documentation"
+        }
     ]
 }

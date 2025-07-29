@@ -1,46 +1,41 @@
 {
     "basic_info": {
-        "tool_name": "Python",
-        "overview_description": "Python is a high-level, general-purpose programming language that emphasizes code readability and simplicity. It supports multiple programming paradigms and has a vast ecosystem of libraries and frameworks, making it ideal for web development, data science, machine learning, automation, and more.",
+        "tool_name": "Elgato Stream Deck",
+        "overview_description": "Elgato Stream Deck is a customizable control pad with LCD keys that allows content creators to control various aspects of their streaming setup, including scene switching, audio controls, and automation.",
         "key_features": [
-            "Clean, readable syntax with significant indentation",
-            "Dynamic typing with optional type hints",
-            "Interactive interpreter (REPL) with enhanced features",
-            "Comprehensive error messages with colored tracebacks",
-            "Extensive standard library covering common programming tasks",
-            "Simple package management with pip and virtual environments",
-            "Excellent debugging and profiling tools",
-            "Strong testing framework ecosystem",
-            "Native C/C++ extension capabilities for performance-critical code",
-            "Multiprocessing and asyncio support for concurrent programming"
+            "Programmable LCD keys for content creation",
+            "Integration with streaming software (OBS, Streamlabs)",
+            "Customizable profiles and key assignments",
+            "Multi-action sequences and macros",
+            "Plugin ecosystem for extended functionality",
+            "Cross-platform software support",
+            "Hardware integration with Elgato devices",
+            "Streaming and productivity automation",
+            "Professional content creation tools",
+            "Community-driven plugin development"
         ],
         "use_cases": [],
-        "supported_platforms": [
-            "Windows 10 and newer",
-            "macOS 10.15 (Catalina) and newer",
-            "Linux (Ubuntu, Fedora, CentOS, Debian)",
-            "FreeBSD 10 and newer"
-        ]
+        "supported_platforms": []
     },
     "technical_specs": {
         "dependencies": {},
-        "system_requirements": "Python 3.8 or higher, 4GB RAM minimum, 1GB disk space",
-        "performance_considerations": "Interpreted language with slower execution than compiled languages, but excellent for rapid development",
+        "system_requirements": "Windows 10+, macOS 10.14+, USB connection, 4GB RAM",
+        "performance_considerations": "Hardware device with minimal latency, software integration may have delays",
         "supported_languages": [],
         "supported_file_formats": [
-            "Python files (.py)",
-            "Jupyter notebooks (.ipynb)",
-            "Configuration files (.cfg, .ini)"
+            "Stream Deck profiles",
+            "Configuration files",
+            "Plugin files"
         ],
-        "hardware_requirements": "4GB RAM minimum, 1GB disk space, multi-core CPU recommended",
-        "network_requirements": "Internet connection for package installation and updates"
+        "hardware_requirements": "4GB RAM minimum, USB connection, modern CPU",
+        "network_requirements": "Internet connection for software updates and cloud features"
     },
     "setup_info": {
         "installation_setup": [
-            "Download Python from python.org for your operating system",
-            "Use pip to install additional packages: pip install package_name",
-            "Create virtual environments: python -m venv myenv",
-            "Activate virtual environment: source myenv/bin/activate (Linux/Mac) or myenv\\Scripts\\activate (Windows)"
+            "Download Stream Deck software from elgato.com",
+            "Connect Stream Deck hardware device",
+            "Install plugins from Stream Deck Store",
+            "Configure profiles and key assignments"
         ],
         "configuration_guide": "Comprehensive configuration guide available in official documentation",
         "quick_start_tutorial": "Quick start tutorial available in official documentation and tutorials",
@@ -57,7 +52,7 @@
             "Community tutorials available on GitHub, YouTube, and blogs"
         ],
         "api_reference": [
-            "https://www.python.org/api"
+            "https://www.elgato.com/stream-deck/api"
         ],
         "video_tutorials": [
             "Video tutorials available on YouTube and official channels"
@@ -87,7 +82,7 @@
         ]
     },
     "legal_versioning": {
-        "licensing": "PSF License (Python Software Foundation)",
+        "licensing": "Commercial License",
         "latest_version": "",
         "release_date": "",
         "version_history": "Comprehensive version history and changelog available",
@@ -100,7 +95,7 @@
         "documentation_links": [],
         "additional_resources": [],
         "download_links": [
-            "https://www.python.org/download"
+            "https://www.elgato.com/stream-deck/download"
         ],
         "demo_links": [
             "Live demos available on official website"
@@ -117,9 +112,9 @@
     "deployment_options": "",
     "training_capabilities": "",
     "media_formats_supported": [
-        "Python files (.py)",
-        "Jupyter notebooks (.ipynb)",
-        "Configuration files (.cfg, .ini)"
+        "Stream Deck profiles",
+        "Configuration files",
+        "Plugin files"
     ],
     "refactoring_tools": "",
     "model_types_supported": [],
@@ -162,104 +157,94 @@
     "user_interface": "",
     "supportive_links": [
         {
-            "title": "Welcome toPython.org",
-            "url": "https://www.python.org/",
+            "title": "Test Elgato Stream Deck Neo - jeuxvideo.com",
+            "url": "https://www.jeuxvideo.com/high-tech/tests/test-1891106.htm",
             "type": "documentation"
         },
         {
-            "title": "Python Tutorial-W3Schools",
-            "url": "https://www.w3schools.com/python/",
+            "title": "Test Elgato Stream Deck Neo - jeuxvideo.com",
+            "url": "https://www.jeuxvideo.com/high-tech/tests/test-1891106.htm",
             "type": "documentation"
         },
         {
-            "title": "OnlinePythonCompiler (Interpreter) - Programiz",
-            "url": "https://www.programiz.com/python-programming/online-compiler/",
+            "title": "黄柏和苍术泡水喝的功效与禁忌，7种人不宜吃黄柏和苍术...",
+            "url": "https://www.lyxunlong.com/zycs/1681289197.html",
             "type": "documentation"
         },
         {
-            "title": "Welcome toPython.org",
-            "url": "https://www.python.org/",
+            "title": "Elgato_Stream_Deck Official Documentation",
+            "url": "https://docs.elgato_stream_deck.org",
             "type": "documentation"
         },
         {
-            "title": "Python Tutorial-W3Schools",
-            "url": "https://www.w3schools.com/python/",
-            "type": "documentation"
-        },
-        {
-            "title": "OnlinePythonCompiler (Interpreter) - Programiz",
-            "url": "https://www.programiz.com/python-programming/online-compiler/",
-            "type": "documentation"
-        },
-        {
-            "title": "Welcome toPython.org",
-            "url": "https://www.python.org/",
-            "type": "documentation"
-        },
-        {
-            "title": "Python Tutorial-W3Schools",
-            "url": "https://www.w3schools.com/python/",
-            "type": "documentation"
-        },
-        {
-            "title": "OnlinePythonCompiler (Interpreter) - Programiz",
-            "url": "https://www.programiz.com/python-programming/online-compiler/",
-            "type": "documentation"
-        },
-        {
-            "title": "Python Packagist Package",
-            "url": "https://packagist.org/packages/python",
-            "type": "package"
-        },
-        {
-            "title": "Python Official Documentation",
-            "url": "https://docs.python.org",
-            "type": "documentation"
-        },
-        {
-            "title": "Python API Reference",
-            "url": "https://api.python.org",
-            "type": "documentation"
-        },
-        {
-            "title": "Python NPM Package",
-            "url": "https://www.npmjs.com/package/python",
-            "type": "package"
-        },
-        {
-            "title": "Python GitHub Repository",
-            "url": "https://github.com/python",
-            "type": "repository"
-        },
-        {
-            "title": "Python Community Forum",
-            "url": "https://forum.python.org",
+            "title": "Elgato_Stream_Deck Stack Overflow Community",
+            "url": "https://stackoverflow.com/questions/tagged/elgato_stream_deck",
             "type": "community"
         },
         {
-            "title": "Python Hashnode Articles",
-            "url": "https://hashnode.com/search?q=python",
+            "title": "Elgato_Stream_Deck Crates.io Package",
+            "url": "https://crates.io/crates/elgato_stream_deck",
+            "type": "package"
+        },
+        {
+            "title": "Elgato_Stream_Deck GitHub Repository",
+            "url": "https://github.com/elgato_stream_deck",
+            "type": "repository"
+        },
+        {
+            "title": "Elgato_Stream_Deck Packagist Package",
+            "url": "https://packagist.org/packages/elgato_stream_deck",
+            "type": "package"
+        },
+        {
+            "title": "Elgato_Stream_Deck Maven Repository",
+            "url": "https://mvnrepository.com/artifact/elgato_stream_deck",
+            "type": "package"
+        },
+        {
+            "title": "Elgato_Stream_Deck Examples Gallery",
+            "url": "https://examples.elgato_stream_deck.org",
+            "type": "tutorial"
+        },
+        {
+            "title": "Elgato_Stream_Deck PyPI Package",
+            "url": "https://pypi.org/project/elgato_stream_deck/",
+            "type": "package"
+        },
+        {
+            "title": "Elgato_Stream_Deck NPM Package",
+            "url": "https://www.npmjs.com/package/elgato_stream_deck",
+            "type": "package"
+        },
+        {
+            "title": "Elgato_Stream_Deck Hashnode Articles",
+            "url": "https://hashnode.com/search?q=elgato_stream_deck",
             "type": "article"
         },
         {
-            "title": "Python RubyGems Package",
-            "url": "https://rubygems.org/gems/python",
+            "title": "Elgato_Stream_Deck Reddit Discussions",
+            "url": "https://www.reddit.com/r/elgato_stream_deck/",
+            "type": "community"
+        },
+        {
+            "title": "Elgato_Stream_Deck Official Blog",
+            "url": "https://blog.elgato_stream_deck.org",
+            "type": "blog"
+        },
+        {
+            "title": "Elgato_Stream_Deck NuGet Package",
+            "url": "https://www.nuget.org/packages/elgato_stream_deck",
             "type": "package"
         },
         {
-            "title": "Python NuGet Package",
-            "url": "https://www.nuget.org/packages/python",
-            "type": "package"
+            "title": "Elgato_Stream_Deck YouTube Tutorials",
+            "url": "https://www.youtube.com/results?search_query=elgato_stream_deck+tutorial",
+            "type": "tutorial"
         },
         {
-            "title": "Python Documentation Wiki",
-            "url": "https://wiki.python.org",
+            "title": "Elgato_Stream_Deck Documentation Wiki",
+            "url": "https://wiki.elgato_stream_deck.org",
             "type": "documentation"
-        },
-        {
-            "title": "Python Maven Repository",
-            "url": "https://mvnrepository.com/artifact/python",
-            "type": "package"
         }
     ]
 }

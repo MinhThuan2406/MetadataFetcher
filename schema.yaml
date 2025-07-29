@@ -16,12 +16,19 @@ technical_specs:
   - performance_considerations
   - supported_languages
   - supported_file_formats
+  - hardware_requirements
+  - network_requirements
 
 # Installation and setup
 setup_info:
   - installation_setup
   - configuration_guide
   - quick_start_tutorial
+  - environment_setup
+  - dependency_management
+  - installation_commands
+  - setup_steps
+  - verification_commands
 
 # Documentation and learning resources
 documentation:
@@ -29,12 +36,16 @@ documentation:
   - tutorials_examples
   - community_tutorials
   - api_reference
+  - video_tutorials
+  - sample_projects
 
 # Community and support
 community:
   - community_support
   - forums_channels
   - ecosystem_packages
+  - support_channels
+  - user_groups
 
 # Licensing and versioning
 legal_versioning:
@@ -42,6 +53,8 @@ legal_versioning:
   - latest_version
   - release_date
   - version_history
+  - update_policy
+  - end_of_life
 
 # External references and links
 references:
@@ -49,6 +62,8 @@ references:
   - github_repository
   - documentation_links
   - additional_resources
+  - download_links
+  - demo_links
 
 # Category-specific fields organized by domain
 category_fields:
@@ -60,6 +75,9 @@ category_fields:
     - ml_framework_integration
     - model_deployment_options
     - example_notebooks
+    - pre_trained_models
+    - model_optimization
+    - data_preprocessing_tools
 
   "Data Science and Analytics Tools":
     - data_formats_supported
@@ -69,6 +87,9 @@ category_fields:
     - ml_library_integration
     - data_export_formats
     - interactive_features
+    - data_import_tools
+    - reporting_features
+    - data_quality_tools
 
   "Creative and Media Tools":
     - media_formats_supported
@@ -78,6 +99,9 @@ category_fields:
     - collaboration_features
     - export_formats
     - performance_optimization
+    - asset_management
+    - workflow_automation
+    - real_time_features
 
   "Developer Tools":
     - language_support
@@ -87,6 +111,9 @@ category_fields:
     - code_analysis
     - build_deployment
     - extension_ecosystem
+    - testing_frameworks
+    - code_generation
+    - refactoring_tools
 
   "Large Language Models (LLM) Tools":
     - supported_model_types
@@ -96,6 +123,9 @@ category_fields:
     - model_management
     - deployment_options
     - integration_frameworks
+    - evaluation_metrics
+    - safety_features
+    - cost_optimization
 
 # Field descriptions for validation and documentation
 field_descriptions:
@@ -112,34 +142,49 @@ field_descriptions:
   performance_considerations: "Performance characteristics and optimization notes"
   supported_languages: "Programming languages and technologies supported"
   supported_file_formats: "Input and output file formats supported"
+  hardware_requirements: "Specific hardware requirements (CPU, GPU, RAM, etc.)"
+  network_requirements: "Network connectivity and bandwidth requirements"
   
   # Setup Info
-  installation_setup: "How to install and configure the tool"
-  configuration_guide: "Detailed configuration instructions"
+  installation_setup: "Step-by-step installation methods and procedures with detailed commands"
+  configuration_guide: "Detailed configuration instructions and settings"
   quick_start_tutorial: "Quick start guide for beginners"
+  environment_setup: "Development environment setup and requirements"
+  dependency_management: "How to manage dependencies and packages"
+  installation_commands: "Specific commands for installation and setup"
+  setup_steps: "Detailed step-by-step setup instructions"
+  verification_commands: "Commands to verify successful installation"
   
   # Documentation
   official_documentation: "Official documentation and guides"
   tutorials_examples: "Tutorials and example projects"
   community_tutorials: "Community-created tutorials and resources"
   api_reference: "API documentation and reference"
+  video_tutorials: "Video tutorials and screencasts"
+  sample_projects: "Sample projects and code examples"
   
   # Community
   community_support: "Community size and support channels"
   forums_channels: "Forums, Discord, Slack channels"
   ecosystem_packages: "Related packages and ecosystem"
+  support_channels: "Official support channels and contact methods"
+  user_groups: "Local user groups and meetups"
   
   # Legal/Versioning
   licensing: "License type and terms"
   latest_version: "Current version information"
   release_date: "Latest release date"
   version_history: "Version history and changelog"
+  update_policy: "How updates are delivered and managed"
+  end_of_life: "End of life and support policies"
   
   # References
   official_website: "Official website URL"
   github_repository: "GitHub repository link"
   documentation_links: "Additional documentation links"
   additional_resources: "Other relevant resources"
+  download_links: "Direct download links"
+  demo_links: "Demo and trial links"
   
   # AI/ML specific
   model_types_supported: "Types of models that can be used"
@@ -149,6 +194,9 @@ field_descriptions:
   ml_framework_integration: "Integration with ML frameworks"
   model_deployment_options: "Deployment and hosting options"
   example_notebooks: "Sample Jupyter notebooks and projects"
+  pre_trained_models: "Available pre-trained models"
+  model_optimization: "Model optimization and compression tools"
+  data_preprocessing_tools: "Data preprocessing and cleaning tools"
   
   # Data Science specific
   data_formats_supported: "File formats and data types supported"
@@ -158,6 +206,9 @@ field_descriptions:
   ml_library_integration: "Machine learning library integration"
   data_export_formats: "Export and output formats"
   interactive_features: "Interactive features and widgets"
+  data_import_tools: "Data import and connection tools"
+  reporting_features: "Reporting and dashboard capabilities"
+  data_quality_tools: "Data quality and validation tools"
   
   # Creative/Media specific
   media_formats_supported: "Media file formats supported"
@@ -167,6 +218,9 @@ field_descriptions:
   collaboration_features: "Team collaboration and sharing"
   export_formats: "Output and export formats"
   performance_optimization: "Performance optimization features"
+  asset_management: "Asset and resource management"
+  workflow_automation: "Workflow automation and scripting"
+  real_time_features: "Real-time collaboration and features"
   
   # Developer Tools specific
   language_support: "Programming languages supported"
@@ -176,6 +230,9 @@ field_descriptions:
   code_analysis: "Code analysis and linting features"
   build_deployment: "CI/CD and deployment integration"
   extension_ecosystem: "Available extensions and plugins"
+  testing_frameworks: "Testing framework integration"
+  code_generation: "Code generation and templates"
+  refactoring_tools: "Code refactoring and restructuring tools"
   
   # LLM Tools specific
   supported_model_types: "Types of language models supported"
@@ -185,6 +242,9 @@ field_descriptions:
   model_management: "Model versioning and management"
   deployment_options: "Deployment and hosting options"
   integration_frameworks: "Integration with other LLM tools"
+  evaluation_metrics: "Model evaluation and metrics"
+  safety_features: "Safety and bias mitigation features"
+  cost_optimization: "Cost optimization and resource management"
 
 # Validation rules for field types
 field_types:
@@ -201,34 +261,49 @@ field_types:
   performance_considerations: "text"
   supported_languages: "list"
   supported_file_formats: "list"
+  hardware_requirements: "text"
+  network_requirements: "text"
   
   # Setup Info
   installation_setup: "text"
   configuration_guide: "text"
   quick_start_tutorial: "text"
+  environment_setup: "text"
+  dependency_management: "text"
+  installation_commands: "text"
+  setup_steps: "text"
+  verification_commands: "text"
   
   # Documentation
   official_documentation: "list"
   tutorials_examples: "list"
   community_tutorials: "list"
   api_reference: "list"
+  video_tutorials: "list"
+  sample_projects: "list"
   
   # Community
   community_support: "text"
   forums_channels: "list"
   ecosystem_packages: "list"
+  support_channels: "list"
+  user_groups: "list"
   
   # Legal/Versioning
   licensing: "string"
   latest_version: "string"
   release_date: "string"
   version_history: "text"
+  update_policy: "text"
+  end_of_life: "text"
   
   # References
   official_website: "string"
   github_repository: "string"
   documentation_links: "list"
   additional_resources: "list"
+  download_links: "list"
+  demo_links: "list"
   
   # Category-specific fields
   model_types_supported: "list"
@@ -238,6 +313,9 @@ field_types:
   ml_framework_integration: "text"
   model_deployment_options: "text"
   example_notebooks: "list"
+  pre_trained_models: "list"
+  model_optimization: "text"
+  data_preprocessing_tools: "text"
   data_formats_supported: "list"
   visualization_capabilities: "text"
   statistical_analysis: "text"
@@ -245,6 +323,9 @@ field_types:
   ml_library_integration: "text"
   data_export_formats: "list"
   interactive_features: "text"
+  data_import_tools: "text"
+  reporting_features: "text"
+  data_quality_tools: "text"
   media_formats_supported: "list"
   rendering_capabilities: "text"
   plugin_ecosystem: "text"
@@ -252,6 +333,9 @@ field_types:
   collaboration_features: "text"
   export_formats: "list"
   performance_optimization: "text"
+  asset_management: "text"
+  workflow_automation: "text"
+  real_time_features: "text"
   language_support: "list"
   ide_integration: "text"
   version_control_integration: "text"
@@ -259,6 +343,9 @@ field_types:
   code_analysis: "text"
   build_deployment: "text"
   extension_ecosystem: "text"
+  testing_frameworks: "text"
+  code_generation: "text"
+  refactoring_tools: "text"
   supported_model_types: "list"
   prompt_engineering_tools: "text"
   fine_tuning_capabilities: "text"
@@ -266,3 +353,6 @@ field_types:
   model_management: "text"
   deployment_options: "text"
   integration_frameworks: "text" 
+  evaluation_metrics: "text"
+  safety_features: "text"
+  cost_optimization: "text" 

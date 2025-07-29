@@ -1,0 +1,20 @@
+{
+  "python": {
+    "error": "'UnifiedMetadata' object has no attribute 'urls'"
+  },
+  "pandas": {
+    "error": "'UnifiedMetadata' object has no attribute 'urls'"
+  },
+  "tensorflow": {
+    "error": "'UnifiedMetadata' object has no attribute 'urls'"
+  },
+  "git": {
+    "error": "'UnifiedMetadata' object has no attribute 'urls'"
+  },
+  "docker": {
+    "error": "'UnifiedMetadata' object has no attribute 'urls'"
+  },
+  "vscode": {
+    "error": "'UnifiedMetadata' object has no attribute 'urls'"
+  }
+}

@@ -1,41 +1,42 @@
 {
     "basic_info": {
-        "tool_name": "Tensorflow",
-        "overview_description": "TensorFlow is Google's open-source machine learning framework that enables developers to build and deploy ML models at scale. It provides both high-level APIs for easy model building and low-level APIs for fine-grained control, with support for GPU and TPU acceleration.",
+        "tool_name": "Langchain",
+        "overview_description": "LangChain is a framework for developing applications powered by language models. It provides tools for building LLM applications, including chains, agents, memory systems, and integrations with various data sources.",
         "key_features": [
-            "Static and dynamic computational graphs",
-            "GPU and TPU acceleration support",
-            "High-level Keras API for easy model building",
-            "TensorFlow Serving for production deployment",
-            "TensorFlow Lite for mobile and edge devices",
-            "TensorBoard for visualization and monitoring",
-            "Distributed training across multiple devices",
-            "Extensive pre-trained models and model hub",
-            "Integration with Google Cloud AI Platform",
-            "Support for custom operations and kernels"
+            "Framework for developing LLM applications",
+            "Chain and agent abstractions",
+            "Memory and conversation management",
+            "Tool integration and function calling",
+            "Document loading and processing",
+            "Vector stores and embeddings",
+            "Prompt templates and management",
+            "Evaluation and testing tools",
+            "Production deployment utilities",
+            "Extensive integration ecosystem"
         ],
         "use_cases": [],
         "supported_platforms": []
     },
     "technical_specs": {
         "dependencies": {},
-        "system_requirements": "Python 3.8+, 8GB RAM recommended, GPU support for training",
-        "performance_considerations": "Static graphs for production, GPU/TPU support, optimized for deployment",
+        "system_requirements": "Python 3.8+, 4GB RAM, OpenAI API access",
+        "performance_considerations": "Depends on underlying LLM performance, optimized for chain and agent operations",
         "supported_languages": [],
         "supported_file_formats": [
-            "TensorFlow models (.pb, .h5)",
-            "SavedModel format",
-            "ONNX models (.onnx)"
+            "Text files",
+            "JSON files",
+            "Database connections",
+            "API endpoints"
         ],
-        "hardware_requirements": "8GB RAM recommended, GPU/TPU for training, multi-core CPU",
-        "network_requirements": "Internet connection for model downloads and package installation"
+        "hardware_requirements": "4GB RAM minimum, internet connection for API calls",
+        "network_requirements": "Internet connection for API calls and model access"
     },
     "setup_info": {
         "installation_setup": [
-            "Install TensorFlow: pip install tensorflow",
-            "For GPU support: pip install tensorflow[gpu]",
-            "Verify installation: python -c 'import tensorflow as tf; print(tf.__version__)'",
-            "Install additional packages: pip install tensorflow-hub tensorflow-datasets"
+            "Install LangChain: pip install langchain",
+            "Install with all dependencies: pip install langchain[all]",
+            "Install specific integrations: pip install langchain-openai",
+            "Verify installation: python -c 'import langchain; print(langchain.__version__)'"
         ],
         "configuration_guide": "Comprehensive configuration guide available in official documentation",
         "quick_start_tutorial": "Quick start tutorial available in official documentation and tutorials",
@@ -52,7 +53,7 @@
             "Community tutorials available on GitHub, YouTube, and blogs"
         ],
         "api_reference": [
-            "https://tensorflow.org/api"
+            "https://langchain.com/api"
         ],
         "video_tutorials": [
             "Video tutorials available on YouTube and official channels"
@@ -82,7 +83,7 @@
         ]
     },
     "legal_versioning": {
-        "licensing": "Apache 2.0 License",
+        "licensing": "MIT License",
         "latest_version": "",
         "release_date": "",
         "version_history": "Comprehensive version history and changelog available",
@@ -95,7 +96,7 @@
         "documentation_links": [],
         "additional_resources": [],
         "download_links": [
-            "https://tensorflow.org/download"
+            "https://langchain.com/download"
         ],
         "demo_links": [
             "Live demos available on official website"
@@ -112,9 +113,10 @@
     "deployment_options": "",
     "training_capabilities": "",
     "media_formats_supported": [
-        "TensorFlow models (.pb, .h5)",
-        "SavedModel format",
-        "ONNX models (.onnx)"
+        "Text files",
+        "JSON files",
+        "Database connections",
+        "API endpoints"
     ],
     "refactoring_tools": "",
     "model_types_supported": [],
@@ -157,104 +159,79 @@
     "user_interface": "",
     "supportive_links": [
         {
-            "title": "TensorFlow",
-            "url": "https://www.tensorflow.org/",
-            "type": "documentation"
-        },
-        {
-            "title": "Install TensorFlow 2",
-            "url": "https://www.tensorflow.org/install",
-            "type": "documentation"
-        },
-        {
-            "title": "Introduction to TensorFlow",
-            "url": "https://www.tensorflow.org/learn",
-            "type": "documentation"
-        },
-        {
-            "title": "TensorFlow",
-            "url": "https://www.tensorflow.org/",
-            "type": "documentation"
-        },
-        {
-            "title": "Install TensorFlow 2",
-            "url": "https://www.tensorflow.org/install",
-            "type": "documentation"
-        },
-        {
-            "title": "Introduction to TensorFlow",
-            "url": "https://www.tensorflow.org/learn",
-            "type": "documentation"
-        },
-        {
-            "title": "TensorFlow",
-            "url": "https://www.tensorflow.org/",
-            "type": "documentation"
-        },
-        {
-            "title": "Install TensorFlow 2",
-            "url": "https://www.tensorflow.org/install",
-            "type": "documentation"
-        },
-        {
-            "title": "Introduction to TensorFlow",
-            "url": "https://www.tensorflow.org/learn",
-            "type": "documentation"
-        },
-        {
-            "title": "Tensorflow Stack Overflow Community",
-            "url": "https://stackoverflow.com/questions/tagged/tensorflow",
-            "type": "community"
-        },
-        {
-            "title": "Tensorflow API Reference",
-            "url": "https://api.tensorflow.org",
-            "type": "documentation"
-        },
-        {
-            "title": "Tensorflow PyPI Package",
-            "url": "https://pypi.org/project/tensorflow/",
+            "title": "Langchain Maven Repository",
+            "url": "https://mvnrepository.com/artifact/langchain",
             "type": "package"
         },
         {
-            "title": "Tensorflow GitHub Repository",
-            "url": "https://github.com/tensorflow",
+            "title": "Langchain NuGet Package",
+            "url": "https://www.nuget.org/packages/langchain",
+            "type": "package"
+        },
+        {
+            "title": "Langchain Dev.to Posts",
+            "url": "https://dev.to/search?q=langchain",
+            "type": "article"
+        },
+        {
+            "title": "Langchain NPM Package",
+            "url": "https://www.npmjs.com/package/langchain",
+            "type": "package"
+        },
+        {
+            "title": "Langchain YouTube Tutorials",
+            "url": "https://www.youtube.com/results?search_query=langchain+tutorial",
+            "type": "tutorial"
+        },
+        {
+            "title": "Langchain GitHub Repository",
+            "url": "https://github.com/langchain",
             "type": "repository"
         },
         {
-            "title": "Tensorflow Crates.io Package",
-            "url": "https://crates.io/crates/tensorflow",
-            "type": "package"
+            "title": "Langchain Stack Overflow Community",
+            "url": "https://stackoverflow.com/questions/tagged/langchain",
+            "type": "community"
         },
         {
-            "title": "Tensorflow Official Blog",
-            "url": "https://blog.tensorflow.org",
-            "type": "blog"
+            "title": "Langchain Community Forum",
+            "url": "https://forum.langchain.org",
+            "type": "community"
         },
         {
-            "title": "Tensorflow Documentation Wiki",
-            "url": "https://wiki.tensorflow.org",
+            "title": "Langchain Documentation Wiki",
+            "url": "https://wiki.langchain.org",
             "type": "documentation"
         },
         {
-            "title": "Tensorflow Community Forum",
-            "url": "https://forum.tensorflow.org",
-            "type": "community"
+            "title": "Langchain API Reference",
+            "url": "https://api.langchain.org",
+            "type": "documentation"
         },
         {
-            "title": "Tensorflow Packagist Package",
-            "url": "https://packagist.org/packages/tensorflow",
+            "title": "Langchain Packagist Package",
+            "url": "https://packagist.org/packages/langchain",
             "type": "package"
         },
         {
-            "title": "Tensorflow NuGet Package",
-            "url": "https://www.nuget.org/packages/tensorflow",
+            "title": "Langchain Crates.io Package",
+            "url": "https://crates.io/crates/langchain",
             "type": "package"
         },
         {
-            "title": "Tensorflow Reddit Discussions",
-            "url": "https://www.reddit.com/r/tensorflow/",
-            "type": "community"
+            "title": "Langchain Official Documentation",
+            "url": "https://docs.langchain.org",
+            "type": "documentation"
+        },
+        {
+            "title": "Langchain Medium Articles",
+            "url": "https://medium.com/search?q=langchain",
+            "type": "article"
+        },
+        {
+            "title": "Langchain RubyGems Package",
+            "url": "https://rubygems.org/gems/langchain",
+            "type": "package"
         }
     ]
 }

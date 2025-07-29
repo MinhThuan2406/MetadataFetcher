@@ -1,41 +1,41 @@
 {
     "basic_info": {
-        "tool_name": "Tensorflow",
-        "overview_description": "TensorFlow is Google's open-source machine learning framework that enables developers to build and deploy ML models at scale. It provides both high-level APIs for easy model building and low-level APIs for fine-grained control, with support for GPU and TPU acceleration.",
+        "tool_name": "ComfyUI",
+        "overview_description": "ComfyUI is an open-source graphical user interface for AI image generation. It provides a node-based interface for creating complex workflows with various AI models like Stable Diffusion.",
         "key_features": [
-            "Static and dynamic computational graphs",
-            "GPU and TPU acceleration support",
-            "High-level Keras API for easy model building",
-            "TensorFlow Serving for production deployment",
-            "TensorFlow Lite for mobile and edge devices",
-            "TensorBoard for visualization and monitoring",
-            "Distributed training across multiple devices",
-            "Extensive pre-trained models and model hub",
-            "Integration with Google Cloud AI Platform",
-            "Support for custom operations and kernels"
+            "Node-based UI for AI image generation",
+            "Support for multiple AI models (Stable Diffusion, etc.)",
+            "Custom workflow creation and sharing",
+            "Real-time image generation and editing",
+            "Extensive node library and custom nodes",
+            "Batch processing capabilities",
+            "Integration with various AI models",
+            "Community-driven development",
+            "Cross-platform compatibility",
+            "Free and open-source"
         ],
         "use_cases": [],
         "supported_platforms": []
     },
     "technical_specs": {
         "dependencies": {},
-        "system_requirements": "Python 3.8+, 8GB RAM recommended, GPU support for training",
-        "performance_considerations": "Static graphs for production, GPU/TPU support, optimized for deployment",
+        "system_requirements": "Python 3.8+, 8GB RAM, GPU for image generation",
+        "performance_considerations": "GPU-intensive for image generation, optimized for workflow automation",
         "supported_languages": [],
         "supported_file_formats": [
-            "TensorFlow models (.pb, .h5)",
-            "SavedModel format",
-            "ONNX models (.onnx)"
+            "Image files",
+            "Model files",
+            "Workflow files"
         ],
-        "hardware_requirements": "8GB RAM recommended, GPU/TPU for training, multi-core CPU",
-        "network_requirements": "Internet connection for model downloads and package installation"
+        "hardware_requirements": "8GB RAM recommended, GPU for image generation, sufficient disk space",
+        "network_requirements": "Internet connection for model downloads and updates"
     },
     "setup_info": {
         "installation_setup": [
-            "Install TensorFlow: pip install tensorflow",
-            "For GPU support: pip install tensorflow[gpu]",
-            "Verify installation: python -c 'import tensorflow as tf; print(tf.__version__)'",
-            "Install additional packages: pip install tensorflow-hub tensorflow-datasets"
+            "Clone repository: git clone https://github.com/comfyanonymous/ComfyUI",
+            "Install dependencies: pip install -r requirements.txt",
+            "Download models to models/checkpoints/",
+            "Run ComfyUI: python main.py"
         ],
         "configuration_guide": "Comprehensive configuration guide available in official documentation",
         "quick_start_tutorial": "Quick start tutorial available in official documentation and tutorials",
@@ -52,7 +52,7 @@
             "Community tutorials available on GitHub, YouTube, and blogs"
         ],
         "api_reference": [
-            "https://tensorflow.org/api"
+            "https://github.com/comfyanonymous/ComfyUI/api"
         ],
         "video_tutorials": [
             "Video tutorials available on YouTube and official channels"
@@ -82,7 +82,7 @@
         ]
     },
     "legal_versioning": {
-        "licensing": "Apache 2.0 License",
+        "licensing": "GPL License",
         "latest_version": "",
         "release_date": "",
         "version_history": "Comprehensive version history and changelog available",
@@ -95,7 +95,7 @@
         "documentation_links": [],
         "additional_resources": [],
         "download_links": [
-            "https://tensorflow.org/download"
+            "https://github.com/comfyanonymous/ComfyUI/download"
         ],
         "demo_links": [
             "Live demos available on official website"
@@ -112,9 +112,9 @@
     "deployment_options": "",
     "training_capabilities": "",
     "media_formats_supported": [
-        "TensorFlow models (.pb, .h5)",
-        "SavedModel format",
-        "ONNX models (.onnx)"
+        "Image files",
+        "Model files",
+        "Workflow files"
     ],
     "refactoring_tools": "",
     "model_types_supported": [],
@@ -157,103 +157,93 @@
     "user_interface": "",
     "supportive_links": [
         {
-            "title": "TensorFlow",
-            "url": "https://www.tensorflow.org/",
+            "title": "\"Comfy\"的意思和用法 | HiNative",
+            "url": "https://tw.hinative.com/dictionaries/comfy",
             "type": "documentation"
         },
         {
-            "title": "Install TensorFlow 2",
-            "url": "https://www.tensorflow.org/install",
+            "title": "\"Comfy\"的意思和用法 | HiNative",
+            "url": "https://tw.hinative.com/dictionaries/comfy",
             "type": "documentation"
         },
         {
-            "title": "Introduction to TensorFlow",
-            "url": "https://www.tensorflow.org/learn",
+            "title": "\"Comfy\"的意思和用法 | HiNative",
+            "url": "https://tw.hinative.com/dictionaries/comfy",
             "type": "documentation"
         },
         {
-            "title": "TensorFlow",
-            "url": "https://www.tensorflow.org/",
-            "type": "documentation"
-        },
-        {
-            "title": "Install TensorFlow 2",
-            "url": "https://www.tensorflow.org/install",
-            "type": "documentation"
-        },
-        {
-            "title": "Introduction to TensorFlow",
-            "url": "https://www.tensorflow.org/learn",
-            "type": "documentation"
-        },
-        {
-            "title": "TensorFlow",
-            "url": "https://www.tensorflow.org/",
-            "type": "documentation"
-        },
-        {
-            "title": "Install TensorFlow 2",
-            "url": "https://www.tensorflow.org/install",
-            "type": "documentation"
-        },
-        {
-            "title": "Introduction to TensorFlow",
-            "url": "https://www.tensorflow.org/learn",
-            "type": "documentation"
-        },
-        {
-            "title": "Tensorflow Stack Overflow Community",
-            "url": "https://stackoverflow.com/questions/tagged/tensorflow",
+            "title": "Comfy_Ui Stack Overflow Community",
+            "url": "https://stackoverflow.com/questions/tagged/comfy_ui",
             "type": "community"
         },
         {
-            "title": "Tensorflow API Reference",
-            "url": "https://api.tensorflow.org",
+            "title": "Comfy_Ui Documentation Wiki",
+            "url": "https://wiki.comfy_ui.org",
             "type": "documentation"
         },
         {
-            "title": "Tensorflow PyPI Package",
-            "url": "https://pypi.org/project/tensorflow/",
+            "title": "Comfy_Ui Examples Gallery",
+            "url": "https://examples.comfy_ui.org",
+            "type": "tutorial"
+        },
+        {
+            "title": "Comfy_Ui RubyGems Package",
+            "url": "https://rubygems.org/gems/comfy_ui",
             "type": "package"
         },
         {
-            "title": "Tensorflow GitHub Repository",
-            "url": "https://github.com/tensorflow",
-            "type": "repository"
-        },
-        {
-            "title": "Tensorflow Crates.io Package",
-            "url": "https://crates.io/crates/tensorflow",
+            "title": "Comfy_Ui Crates.io Package",
+            "url": "https://crates.io/crates/comfy_ui",
             "type": "package"
         },
         {
-            "title": "Tensorflow Official Blog",
-            "url": "https://blog.tensorflow.org",
+            "title": "Comfy_Ui NPM Package",
+            "url": "https://www.npmjs.com/package/comfy_ui",
+            "type": "package"
+        },
+        {
+            "title": "Comfy_Ui Dev.to Posts",
+            "url": "https://dev.to/search?q=comfy_ui",
+            "type": "article"
+        },
+        {
+            "title": "Comfy_Ui PyPI Package",
+            "url": "https://pypi.org/project/comfy_ui/",
+            "type": "package"
+        },
+        {
+            "title": "Comfy_Ui Official Documentation",
+            "url": "https://docs.comfy_ui.org",
+            "type": "documentation"
+        },
+        {
+            "title": "Comfy_Ui Official Blog",
+            "url": "https://blog.comfy_ui.org",
             "type": "blog"
         },
         {
-            "title": "Tensorflow Documentation Wiki",
-            "url": "https://wiki.tensorflow.org",
-            "type": "documentation"
-        },
-        {
-            "title": "Tensorflow Community Forum",
-            "url": "https://forum.tensorflow.org",
+            "title": "Comfy_Ui Reddit Discussions",
+            "url": "https://www.reddit.com/r/comfy_ui/",
             "type": "community"
         },
         {
-            "title": "Tensorflow Packagist Package",
-            "url": "https://packagist.org/packages/tensorflow",
-            "type": "package"
+            "title": "Comfy_Ui API Reference",
+            "url": "https://api.comfy_ui.org",
+            "type": "documentation"
         },
         {
-            "title": "Tensorflow NuGet Package",
-            "url": "https://www.nuget.org/packages/tensorflow",
-            "type": "package"
+            "title": "Comfy_Ui Medium Articles",
+            "url": "https://medium.com/search?q=comfy_ui",
+            "type": "article"
         },
         {
-            "title": "Tensorflow Reddit Discussions",
-            "url": "https://www.reddit.com/r/tensorflow/",
+            "title": "Comfy_Ui Hashnode Articles",
+            "url": "https://hashnode.com/search?q=comfy_ui",
+            "type": "article"
+        },
+        {
+            "title": "Comfy_Ui Community Forum",
+            "url": "https://forum.comfy_ui.org",
             "type": "community"
         }
     ]

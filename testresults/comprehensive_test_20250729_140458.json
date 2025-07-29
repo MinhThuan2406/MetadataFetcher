@@ -1,0 +1,378 @@
+{
+  "python": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 688,
+    "features_count": 16,
+    "installation_count": 547,
+    "links_count": 0,
+    "sources": [
+      "main_fetcher",
+      "mainfetcher"
+    ]
+  },
+  "pytorch": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 66,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 3,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "tensorflow": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 69,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 3,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "anaconda": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 67,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 2,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "pandas": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 65,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 3,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "jupyterlab": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 90,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 4,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "jupyternotebook": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 95,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 4,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "r": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 355,
+    "features_count": 10,
+    "installation_count": 268,
+    "links_count": 0,
+    "sources": [
+      "main_fetcher",
+      "mainfetcher"
+    ]
+  },
+  "blender": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 66,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 3,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "gimp": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 63,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 3,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "elgato_stream_deck": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 97,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 4,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "comfyui": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": false,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 87,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 4,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "visual_studio_code": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": true,
+    "has_installation": true,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "links"
+    ],
+    "description_length": 77,
+    "features_count": 5,
+    "installation_count": 3,
+    "links_count": 3,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "git_version_control": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 98,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 4,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "pycharm": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 86,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 4,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "github_desktop": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 93,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 4,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "langchain": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 88,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 4,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "ollama": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 85,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 4,
+    "sources": [
+      "mainfetcher"
+    ]
+  },
+  "hugging_face_transformers": {
+    "is_comprehensive": false,
+    "has_description": true,
+    "has_features": false,
+    "has_installation": false,
+    "has_links": false,
+    "is_generic": true,
+    "missing_fields": [
+      "key_features",
+      "installation_setup",
+      "links"
+    ],
+    "description_length": 104,
+    "features_count": 0,
+    "installation_count": 0,
+    "links_count": 4,
+    "sources": [
+      "mainfetcher"
+    ]
+  }
+}

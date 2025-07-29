@@ -1,46 +1,42 @@
 {
     "basic_info": {
-        "tool_name": "Python",
-        "overview_description": "Python is a high-level, general-purpose programming language that emphasizes code readability and simplicity. It supports multiple programming paradigms and has a vast ecosystem of libraries and frameworks, making it ideal for web development, data science, machine learning, automation, and more.",
+        "tool_name": "Git (Version Control)",
+        "overview_description": "Git is a distributed version control system designed to handle everything from small to very large projects with speed and efficiency. It allows multiple developers to work on the same codebase simultaneously.",
         "key_features": [
-            "Clean, readable syntax with significant indentation",
-            "Dynamic typing with optional type hints",
-            "Interactive interpreter (REPL) with enhanced features",
-            "Comprehensive error messages with colored tracebacks",
-            "Extensive standard library covering common programming tasks",
-            "Simple package management with pip and virtual environments",
-            "Excellent debugging and profiling tools",
-            "Strong testing framework ecosystem",
-            "Native C/C++ extension capabilities for performance-critical code",
-            "Multiprocessing and asyncio support for concurrent programming"
+            "Distributed version control system",
+            "Branching and merging capabilities",
+            "Commit history and change tracking",
+            "Remote repository support (GitHub, GitLab, Bitbucket)",
+            "Staging area for selective commits",
+            "Conflict resolution tools",
+            "Tagging and release management",
+            "Submodule support for complex projects",
+            "Hooks for automation and integration",
+            "Graphical user interfaces available"
         ],
         "use_cases": [],
-        "supported_platforms": [
-            "Windows 10 and newer",
-            "macOS 10.15 (Catalina) and newer",
-            "Linux (Ubuntu, Fedora, CentOS, Debian)",
-            "FreeBSD 10 and newer"
-        ]
+        "supported_platforms": []
     },
     "technical_specs": {
         "dependencies": {},
-        "system_requirements": "Python 3.8 or higher, 4GB RAM minimum, 1GB disk space",
-        "performance_considerations": "Interpreted language with slower execution than compiled languages, but excellent for rapid development",
+        "system_requirements": "Windows 7+, macOS 10.12+, Linux, 1GB RAM",
+        "performance_considerations": "Very fast for most operations, scales well with large repositories",
         "supported_languages": [],
         "supported_file_formats": [
-            "Python files (.py)",
-            "Jupyter notebooks (.ipynb)",
-            "Configuration files (.cfg, .ini)"
+            "All file types",
+            "Git repositories",
+            "Configuration files"
         ],
-        "hardware_requirements": "4GB RAM minimum, 1GB disk space, multi-core CPU recommended",
-        "network_requirements": "Internet connection for package installation and updates"
+        "hardware_requirements": "1GB RAM minimum, sufficient disk space for repositories",
+        "network_requirements": "Internet connection for remote repository access"
     },
     "setup_info": {
         "installation_setup": [
-            "Download Python from python.org for your operating system",
-            "Use pip to install additional packages: pip install package_name",
-            "Create virtual environments: python -m venv myenv",
-            "Activate virtual environment: source myenv/bin/activate (Linux/Mac) or myenv\\Scripts\\activate (Windows)"
+            "Download Git from git-scm.com for your operating system",
+            "Configure user identity: git config --global user.name 'Your Name'",
+            "Configure email: git config --global user.email 'your.email@example.com'",
+            "Initialize repository: git init",
+            "Clone existing repository: git clone <repository-url>"
         ],
         "configuration_guide": "Comprehensive configuration guide available in official documentation",
         "quick_start_tutorial": "Quick start tutorial available in official documentation and tutorials",
@@ -57,7 +53,7 @@
             "Community tutorials available on GitHub, YouTube, and blogs"
         ],
         "api_reference": [
-            "https://www.python.org/api"
+            "https://git-scm.com/api"
         ],
         "video_tutorials": [
             "Video tutorials available on YouTube and official channels"
@@ -87,7 +83,7 @@
         ]
     },
     "legal_versioning": {
-        "licensing": "PSF License (Python Software Foundation)",
+        "licensing": "GPL License",
         "latest_version": "",
         "release_date": "",
         "version_history": "Comprehensive version history and changelog available",
@@ -100,7 +96,7 @@
         "documentation_links": [],
         "additional_resources": [],
         "download_links": [
-            "https://www.python.org/download"
+            "https://git-scm.com/download"
         ],
         "demo_links": [
             "Live demos available on official website"
@@ -117,9 +113,9 @@
     "deployment_options": "",
     "training_capabilities": "",
     "media_formats_supported": [
-        "Python files (.py)",
-        "Jupyter notebooks (.ipynb)",
-        "Configuration files (.cfg, .ini)"
+        "All file types",
+        "Git repositories",
+        "Configuration files"
     ],
     "refactoring_tools": "",
     "model_types_supported": [],
@@ -162,103 +158,103 @@
     "user_interface": "",
     "supportive_links": [
         {
-            "title": "Welcome toPython.org",
-            "url": "https://www.python.org/",
+            "title": "Git- Downloads",
+            "url": "https://git-scm.com/downloads",
             "type": "documentation"
         },
         {
-            "title": "Python Tutorial-W3Schools",
-            "url": "https://www.w3schools.com/python/",
+            "title": "Git·GitHub",
+            "url": "https://github.com/git-guides",
             "type": "documentation"
         },
         {
-            "title": "OnlinePythonCompiler (Interpreter) - Programiz",
-            "url": "https://www.programiz.com/python-programming/online-compiler/",
+            "title": "Gitfor Windows",
+            "url": "https://gitforwindows.org/",
             "type": "documentation"
         },
         {
-            "title": "Welcome toPython.org",
-            "url": "https://www.python.org/",
+            "title": "Git- Downloads",
+            "url": "https://git-scm.com/downloads",
             "type": "documentation"
         },
         {
-            "title": "Python Tutorial-W3Schools",
-            "url": "https://www.w3schools.com/python/",
+            "title": "Git·GitHub",
+            "url": "https://github.com/git-guides",
             "type": "documentation"
         },
         {
-            "title": "OnlinePythonCompiler (Interpreter) - Programiz",
-            "url": "https://www.programiz.com/python-programming/online-compiler/",
+            "title": "Gitfor Windows",
+            "url": "https://gitforwindows.org/",
             "type": "documentation"
         },
         {
-            "title": "Welcome toPython.org",
-            "url": "https://www.python.org/",
+            "title": "Git- Downloads",
+            "url": "https://git-scm.com/downloads",
             "type": "documentation"
         },
         {
-            "title": "Python Tutorial-W3Schools",
-            "url": "https://www.w3schools.com/python/",
+            "title": "Git·GitHub",
+            "url": "https://github.com/git-guides",
             "type": "documentation"
         },
         {
-            "title": "OnlinePythonCompiler (Interpreter) - Programiz",
-            "url": "https://www.programiz.com/python-programming/online-compiler/",
+            "title": "Gitfor Windows",
+            "url": "https://gitforwindows.org/",
             "type": "documentation"
         },
         {
-            "title": "Python Packagist Package",
-            "url": "https://packagist.org/packages/python",
-            "type": "package"
-        },
-        {
-            "title": "Python Official Documentation",
-            "url": "https://docs.python.org",
-            "type": "documentation"
-        },
-        {
-            "title": "Python API Reference",
-            "url": "https://api.python.org",
-            "type": "documentation"
-        },
-        {
-            "title": "Python NPM Package",
-            "url": "https://www.npmjs.com/package/python",
-            "type": "package"
-        },
-        {
-            "title": "Python GitHub Repository",
-            "url": "https://github.com/python",
-            "type": "repository"
-        },
-        {
-            "title": "Python Community Forum",
-            "url": "https://forum.python.org",
-            "type": "community"
-        },
-        {
-            "title": "Python Hashnode Articles",
-            "url": "https://hashnode.com/search?q=python",
+            "title": "Git_Version_Control Hashnode Articles",
+            "url": "https://hashnode.com/search?q=git_version_control",
             "type": "article"
         },
         {
-            "title": "Python RubyGems Package",
-            "url": "https://rubygems.org/gems/python",
+            "title": "Git_Version_Control Examples Gallery",
+            "url": "https://examples.git_version_control.org",
+            "type": "tutorial"
+        },
+        {
+            "title": "Git_Version_Control Maven Repository",
+            "url": "https://mvnrepository.com/artifact/git_version_control",
             "type": "package"
         },
         {
-            "title": "Python NuGet Package",
-            "url": "https://www.nuget.org/packages/python",
-            "type": "package"
-        },
-        {
-            "title": "Python Documentation Wiki",
-            "url": "https://wiki.python.org",
+            "title": "Git_Version_Control API Reference",
+            "url": "https://api.git_version_control.org",
             "type": "documentation"
         },
         {
-            "title": "Python Maven Repository",
-            "url": "https://mvnrepository.com/artifact/python",
+            "title": "Git_Version_Control Reddit Discussions",
+            "url": "https://www.reddit.com/r/git_version_control/",
+            "type": "community"
+        },
+        {
+            "title": "Git_Version_Control NuGet Package",
+            "url": "https://www.nuget.org/packages/git_version_control",
+            "type": "package"
+        },
+        {
+            "title": "Git_Version_Control Dev.to Posts",
+            "url": "https://dev.to/search?q=git_version_control",
+            "type": "article"
+        },
+        {
+            "title": "Git_Version_Control Community Forum",
+            "url": "https://forum.git_version_control.org",
+            "type": "community"
+        },
+        {
+            "title": "Git_Version_Control Stack Overflow Community",
+            "url": "https://stackoverflow.com/questions/tagged/git_version_control",
+            "type": "community"
+        },
+        {
+            "title": "Git_Version_Control Medium Articles",
+            "url": "https://medium.com/search?q=git_version_control",
+            "type": "article"
+        },
+        {
+            "title": "Git_Version_Control Packagist Package",
+            "url": "https://packagist.org/packages/git_version_control",
             "type": "package"
         }
     ]

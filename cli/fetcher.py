@@ -11,10 +11,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from metadata.core import FetcherRegistry, FetcherConfig, ToolCategory
-from metadata.core.fetchers import PyPIFetcher, GitHubFetcher, DockerHubFetcher, DocsFetcher, WebSearchFetcher, GoogleCSEFetcher, DuckDuckGoFetcher, BingSearchFetcher, YandexSearchFetcher, MainFetcher
+from metadata.core.fetchers import PyPIFetcher, GitHubFetcher, DockerHubFetcher, DocsFetcher, GoogleCSEFetcher, DuckDuckGoFetcher, BingSearchFetcher, YandexSearchFetcher, MainFetcher, MultiSearchFetcher
 from metadata.core.basic import save_to_json, save_to_yaml
 from metadata.core.export_formats import save_to_docx, save_to_pdf, save_to_txt
 from metadata.core.schema_formatter import SchemaFormatter
+from utils.tool_normalizer import tool_normalizer
 
 class MetadataFetcher:
     """Handles metadata fetching operations with improved logic."""
@@ -27,22 +28,22 @@ class MetadataFetcher:
         self.supported_tools = {
             'ai_ml': [
                 'pytorch', 'tensorflow', 'anaconda', 'pandas', 
-                'jupyterlab', 'jupyter', 'langchain', 'ollama', 'huggingface', 'transformers',
+                'jupyter_lab', 'jupyter_notebook', 'langchain', 'ollama', 'hugging_face_transformers',
                 'scikit-learn', 'numpy', 'matplotlib', 'seaborn', 'plotly'
             ],
             'data_science': [
-                'pandas', 'jupyterlab', 'jupyter', 'anaconda', 'numpy', 'matplotlib',
+                'pandas', 'jupyter_lab', 'jupyter_notebook', 'anaconda', 'numpy', 'matplotlib',
                 'scikit-learn', 'seaborn', 'plotly', 'scipy', 'statsmodels'
             ],
             'creative_media': [
-                'blender', 'gimp', 'elgatostreamdeck', 'comfyui', 'photoshop', 'illustrator'
+                'blender', 'gimp', 'elgato_stream_deck', 'comfy_ui', 'photoshop', 'illustrator'
             ],
             'developer_tools': [
-                'visualstudiocode', 'git', 'pycharm', 'githubdesktop', 'sublime', 'atom',
+                'visual_studio_code', 'git_version_control', 'pycharm', 'github_desktop', 'sublime', 'atom',
                 'intellij', 'eclipse', 'vim', 'emacs'
             ],
             'llm_tools': [
-                'langchain', 'ollama', 'huggingface', 'transformers', 'openai', 'anthropic'
+                'langchain', 'ollama', 'hugging_face_transformers', 'openai', 'anthropic'
             ],
             'programming_languages': [
                 'python', 'r', 'javascript', 'java', 'c++', 'c#', 'go', 'rust', 'swift', 'kotlin'
@@ -63,21 +64,23 @@ class MetadataFetcher:
         
         self.registry = FetcherRegistry(self.config)
         
-        # Register MainFetcher first for programming languages (has comprehensive data)
+        # Register MainFetcher first (highest priority for programming languages and online data)
         self.registry.register_class(MainFetcher)
         
-        # Register online sources for other tools (higher priority for non-programming languages)
-        self.registry.register_class(GoogleCSEFetcher)  # Comprehensive data
+        # Register MultiSearchFetcher for comprehensive search engine results
+        self.registry.register_class(MultiSearchFetcher)
+        
+        # Register other online sources
+        self.registry.register_class(GoogleCSEFetcher)
         self.registry.register_class(PyPIFetcher)
-        self.registry.register_class(WebSearchFetcher)
         self.registry.register_class(GitHubFetcher)
         self.registry.register_class(DockerHubFetcher)
         self.registry.register_class(DocsFetcher)
         
         # Register alternative search engines as fallbacks
-        self.registry.register_class(DuckDuckGoFetcher)  # Alternative search engine
-        self.registry.register_class(BingSearchFetcher)  # Alternative search engine
-        self.registry.register_class(YandexSearchFetcher)  # Alternative search engine
+        self.registry.register_class(DuckDuckGoFetcher)
+        self.registry.register_class(BingSearchFetcher)
+        self.registry.register_class(YandexSearchFetcher)
     
     def fetch_tool_metadata(self, tool_name, output_format="json", output_directory="outputs"):
         """Fetch metadata for a single tool with improved logic."""
@@ -85,30 +88,43 @@ class MetadataFetcher:
             # Setup registry
             self.setup_registry(output_format, output_directory)
             
+            # Normalize tool name
+            original_tool_name = tool_name
+            normalized_tool_name = tool_normalizer.normalize_tool_name(tool_name)
+            display_name = tool_normalizer.get_display_name(tool_name)
+            
+            # Show what we're actually fetching
+            if normalized_tool_name != original_tool_name.lower():
+                click.echo(f"🔄 Normalized '{original_tool_name}' to '{normalized_tool_name}'")
+                click.echo(f"📝 Display name: {display_name}")
+            
             # Pre-validate tool name
-            if not self._validate_tool_name(tool_name):
-                click.echo(f"❌ Invalid tool name: {tool_name}")
+            if not self._validate_tool_name(normalized_tool_name):
+                click.echo(f"❌ Invalid tool name: {original_tool_name}")
                 click.echo("💡 Try a valid tool name from our supported list:")
                 self._show_supported_tools()
                 return None
             
             # Fetch metadata with better error handling
-            click.echo(f"🔄 Fetching metadata for: {tool_name}")
+            click.echo(f"🔄 Fetching metadata for: {display_name}")
             click.echo("🔍 Trying online sources first...")
             
-            metadata = self.registry.fetch_metadata(tool_name)
+            metadata = self.registry.fetch_metadata(normalized_tool_name)
             
             if not metadata:
-                click.echo(f"❌ No metadata found for {tool_name}")
+                click.echo(f"❌ No metadata found for {display_name}")
                 click.echo("💡 Try searching for a different tool name or check spelling")
-                self._suggest_alternatives(tool_name)
+                self._suggest_alternatives(normalized_tool_name)
                 return None
             
             # Validate and improve metadata quality
-            metadata = self._improve_metadata_quality(metadata, tool_name)
+            metadata = self._improve_metadata_quality(metadata, normalized_tool_name)
             
-            # Create output path
-            output_path = self.config.create_output_path(tool_name, output_format)
+            # Update display name to use our standardized name
+            metadata.display_name = display_name
+            
+            # Create output path using normalized name
+            output_path = self.config.create_output_path(normalized_tool_name, output_format)
             
             # Export based on format
             self._export_metadata(metadata, output_path, output_format)
@@ -130,6 +146,10 @@ class MetadataFetcher:
         if not tool_name or len(tool_name.strip()) == 0:
             return False
         
+        # Check if it's a known tool with variations
+        if tool_normalizer.is_known_tool(tool_name):
+            return True
+        
         # Check if it's in our supported tools list
         tool_name_lower = tool_name.lower()
         return tool_name_lower in self.all_supported_tools
@@ -149,10 +169,25 @@ class MetadataFetcher:
         click.echo(f"  {', '.join(self.supported_tools['llm_tools'])}")
         click.echo("Programming Languages (Fallback):")
         click.echo(f"  {', '.join(self.supported_tools['programming_languages'])}")
+        
+        # Show known tool variations
+        click.echo("\n🔄 Tool Name Variations (you can use any of these):")
+        for normalized_name in tool_normalizer.get_all_known_tools():
+            display_name = tool_normalizer.get_display_name(normalized_name)
+            aliases = tool_normalizer.get_aliases(normalized_name)
+            click.echo(f"  {display_name}: {', '.join(aliases)}")
     
     def _suggest_alternatives(self, tool_name):
         """Suggest alternative tool names."""
         tool_name_lower = tool_name.lower()
+        
+        # Check if this tool has known variations
+        if tool_normalizer.is_known_tool(tool_name):
+            normalized_name = tool_normalizer.normalize_tool_name(tool_name)
+            aliases = tool_normalizer.get_aliases(normalized_name)
+            if aliases:
+                click.echo(f"💡 Try these variations: {', '.join(aliases)}")
+                return
         
         # Find similar tools
         suggestions = []

@@ -193,27 +193,26 @@ class SchemaFormatter:
                 else:
                     formatted_data["references"][field_name] = ""
         
-        # Add category-specific fields based on tool category
-        tool_category = self._get_category(metadata.name)
-        if tool_category in self.schema.get("category_fields", {}):
-            category_fields = self.schema["category_fields"][tool_category]
-            for field_name in category_fields:
-                field_value = self._get_value(metadata, field_name)
-                if field_value is not None:
-                    formatted_data[field_name] = field_value
+        # Process ALL category-specific fields and add them to the root level
+        # This ensures all fields from schema.yaml are included
+        for field_name in all_category_fields:
+            field_value = self._get_value(metadata, field_name)
+            if field_value is not None:
+                formatted_data[field_name] = field_value
+            else:
+                # Include field with appropriate default value
+                field_type = self.schema.get("field_types", {}).get(field_name, "text")
+                if field_type == "list":
+                    formatted_data[field_name] = []
+                elif field_type == "string":
+                    formatted_data[field_name] = ""
                 else:
-                    field_type = self.schema.get("field_types", {}).get(field_name, "text")
-                    if field_type == "list":
-                        formatted_data[field_name] = []
-                    elif field_type == "string":
-                        formatted_data[field_name] = ""
-                    else:
-                        formatted_data[field_name] = ""
+                    formatted_data[field_name] = ""
         
-        # Ensure at least 15 supportive links are included
+        # Ensure comprehensive links
         formatted_data = self._ensure_comprehensive_links(formatted_data, metadata)
         
-        # Clean and validate the output to remove any HTML tags
+        # Clean the output
         formatted_data = self._clean_output(formatted_data)
         
         return formatted_data

@@ -1,0 +1,20 @@
+{
+  "python": {
+    "error": "No metadata found"
+  },
+  "pandas": {
+    "error": "No metadata found"
+  },
+  "tensorflow": {
+    "error": "No metadata found"
+  },
+  "git": {
+    "error": "No metadata found"
+  },
+  "docker": {
+    "error": "No metadata found"
+  },
+  "vscode": {
+    "error": "No metadata found"
+  }
+}

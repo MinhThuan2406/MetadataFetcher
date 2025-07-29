@@ -676,29 +676,28 @@ class GoogleCSEFetcher(BaseFetcher):
         
         tool_name_lower = tool_name.lower()
         
-        # Different description templates for variety
+        # Try to use actual search results first
+        if results:
+            # Use the first result's snippet if available
+            first_result = results[0]
+            if first_result.get('snippet') and len(first_result['snippet']) > 50:
+                return first_result['snippet']
+            
+            # Combine multiple snippets if available
+            snippets = [r.get('snippet', '') for r in results if r.get('snippet')]
+            if snippets:
+                combined = " ".join(snippets[:2])  # Use first 2 snippets
+                if len(combined) > 100:
+                    return combined[:500] + "..." if len(combined) > 500 else combined
+        
+        # Only use templates as last resort
         templates = [
-            f"{tool_name.title()} represents a powerful and versatile tool in the modern development ecosystem, offering developers comprehensive capabilities for building robust applications and solutions.",
-            f"As a cornerstone technology, {tool_name.title()} provides developers with an extensive toolkit for creating innovative solutions across diverse domains and use cases.",
-            f"{tool_name.title()} stands as a fundamental building block in contemporary software development, enabling developers to construct sophisticated applications with efficiency and precision.",
-            f"Renowned for its flexibility and power, {tool_name.title()} serves as an essential component in the developer's toolkit, facilitating the creation of complex and scalable solutions.",
-            f"{tool_name.title()} emerges as a critical technology in the current development landscape, offering unparalleled capabilities for building next-generation applications and systems."
+            f"{tool_name.title()} is a software tool used in development and related fields.",
+            f"{tool_name.title()} provides functionality for software development and data processing.",
+            f"{tool_name.title()} is a development tool with various applications."
         ]
         
-        # Select a random template for variety
-        base_description = random.choice(templates)
-        
-        # Add specific details based on results
-        if results:
-            source_types = [r.get('source_type', '') for r in results]
-            if 'docs' in source_types:
-                base_description += " Comprehensive documentation and tutorials are readily available for developers at all skill levels."
-            if 'community' in source_types:
-                base_description += " A vibrant community provides extensive support, troubleshooting, and knowledge sharing."
-            if 'repo' in source_types:
-                base_description += " Open-source development fosters continuous improvement and community-driven innovation."
-        
-        return base_description
+        return random.choice(templates)
     
     def _add_distinctive_comprehensive_fields(self, metadata: UnifiedMetadata, tool_name: str, results: List[Dict[str, Any]]):
         """Add comprehensive category fields with distinctive content."""
@@ -732,7 +731,7 @@ class GoogleCSEFetcher(BaseFetcher):
         
         tool_name_lower = tool_name.lower()
         
-        # Different feature templates for variety
+        # Only use specific features for known tools, avoid generic ones
         feature_templates = {
             'python': [
                 "Advanced object-oriented programming capabilities with dynamic typing",
@@ -757,18 +756,12 @@ class GoogleCSEFetcher(BaseFetcher):
             ]
         }
         
-        # Get features for specific tool or use generic ones
-        features = feature_templates.get(tool_name_lower, [
-            "Robust and reliable performance across diverse use cases",
-            "Comprehensive documentation and extensive community support",
-            "Flexible architecture enabling customization and extension",
-            "Cross-platform compatibility and deployment versatility",
-            "Active development with regular updates and improvements"
-        ])
+        # Only return features for specific known tools
+        features = feature_templates.get(tool_name_lower, [])
         
         # Shuffle features for variety
         random.shuffle(features)
-        return features[:5]  # Return top 5 features
+        return features[:3]  # Return top 3 features (or empty if not known)
     
     def _generate_distinctive_installation_methods(self, tool_name: str) -> List[str]:
         """Generate distinctive installation methods for each run."""

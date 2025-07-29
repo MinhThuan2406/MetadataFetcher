@@ -1,0 +1,224 @@
+{
+  "total_tools": 19,
+  "successful_tools": 19,
+  "failed_tools": 0,
+  "total_formats": 95,
+  "successful_formats": 95,
+  "failed_formats": 0,
+  "tool_results": {
+    "python": {
+      "success": 5,
+      "failed": 0
+    },
+    "pytorch": {
+      "success": 5,
+      "failed": 0
+    },
+    "tensorflow": {
+      "success": 5,
+      "failed": 0
+    },
+    "anaconda": {
+      "success": 5,
+      "failed": 0
+    },
+    "pandas": {
+      "success": 5,
+      "failed": 0
+    },
+    "jupyterlab": {
+      "success": 5,
+      "failed": 0
+    },
+    "jupyternotebook": {
+      "success": 5,
+      "failed": 0
+    },
+    "r": {
+      "success": 5,
+      "failed": 0
+    },
+    "blender": {
+      "success": 5,
+      "failed": 0
+    },
+    "gimp": {
+      "success": 5,
+      "failed": 0
+    },
+    "elgato_stream_deck": {
+      "success": 5,
+      "failed": 0
+    },
+    "comfyui": {
+      "success": 5,
+      "failed": 0
+    },
+    "visual_studio_code": {
+      "success": 5,
+      "failed": 0
+    },
+    "git_version_control": {
+      "success": 5,
+      "failed": 0
+    },
+    "pycharm": {
+      "success": 5,
+      "failed": 0
+    },
+    "github_desktop": {
+      "success": 5,
+      "failed": 0
+    },
+    "langchain": {
+      "success": 5,
+      "failed": 0
+    },
+    "ollama": {
+      "success": 5,
+      "failed": 0
+    },
+    "hugging_face_transformers": {
+      "success": 5,
+      "failed": 0
+    }
+  },
+  "format_results": {
+    "json": {
+      "success": 19,
+      "failed": 0
+    },
+    "yaml": {
+      "success": 19,
+      "failed": 0
+    },
+    "txt": {
+      "success": 19,
+      "failed": 0
+    },
+    "docx": {
+      "success": 19,
+      "failed": 0
+    },
+    "pdf": {
+      "success": 19,
+      "failed": 0
+    }
+  },
+  "detailed_results": [
+    {
+      "tool": "python",
+      "success": true,
+      "metadata": "python",
+      "formats_exported": 5
+    },
+    {
+      "tool": "pytorch",
+      "success": true,
+      "metadata": "pytorch",
+      "formats_exported": 5
+    },
+    {
+      "tool": "tensorflow",
+      "success": true,
+      "metadata": "tensorflow",
+      "formats_exported": 5
+    },
+    {
+      "tool": "anaconda",
+      "success": true,
+      "metadata": "anaconda",
+      "formats_exported": 5
+    },
+    {
+      "tool": "pandas",
+      "success": true,
+      "metadata": "pandas",
+      "formats_exported": 5
+    },
+    {
+      "tool": "jupyterlab",
+      "success": true,
+      "metadata": "jupyterlab",
+      "formats_exported": 5
+    },
+    {
+      "tool": "jupyternotebook",
+      "success": true,
+      "metadata": "jupyternotebook",
+      "formats_exported": 5
+    },
+    {
+      "tool": "r",
+      "success": true,
+      "metadata": "r",
+      "formats_exported": 5
+    },
+    {
+      "tool": "blender",
+      "success": true,
+      "metadata": "blender",
+      "formats_exported": 5
+    },
+    {
+      "tool": "gimp",
+      "success": true,
+      "metadata": "gimp",
+      "formats_exported": 5
+    },
+    {
+      "tool": "elgato_stream_deck",
+      "success": true,
+      "metadata": "elgato_stream_deck",
+      "formats_exported": 5
+    },
+    {
+      "tool": "comfyui",
+      "success": true,
+      "metadata": "comfyui",
+      "formats_exported": 5
+    },
+    {
+      "tool": "visual_studio_code",
+      "success": true,
+      "metadata": "visual_studio_code",
+      "formats_exported": 5
+    },
+    {
+      "tool": "git_version_control",
+      "success": true,
+      "metadata": "git_version_control",
+      "formats_exported": 5
+    },
+    {
+      "tool": "pycharm",
+      "success": true,
+      "metadata": "pycharm",
+      "formats_exported": 5
+    },
+    {
+      "tool": "github_desktop",
+      "success": true,
+      "metadata": "github_desktop",
+      "formats_exported": 5
+    },
+    {
+      "tool": "langchain",
+      "success": true,
+      "metadata": "langchain",
+      "formats_exported": 5
+    },
+    {
+      "tool": "ollama",
+      "success": true,
+      "metadata": "ollama",
+      "formats_exported": 5
+    },
+    {
+      "tool": "hugging_face_transformers",
+      "success": true,
+      "metadata": "hugging_face_transformers",
+      "formats_exported": 5
+    }
+  ]
+}

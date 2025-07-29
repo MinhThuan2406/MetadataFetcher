@@ -1,0 +1,59 @@
+{
+  "python": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "pytorch": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "tensorflow": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "anaconda": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "pandas": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "jupyterlab": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "jupyternotebook": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "r": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "blender": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "gimp": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "elgato_stream_deck": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "comfyui": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "visual_studio_code": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "git_version_control": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "pycharm": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "github_desktop": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "langchain": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "ollama": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  },
+  "hugging_face_transformers": {
+    "error": "'MetadataFetcher' object has no attribute 'fetch_metadata'"
+  }
+}

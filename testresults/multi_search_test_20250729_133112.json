@@ -1,0 +1,50 @@
+{
+  "python": {
+    "name": "python",
+    "description": "21 thg 3, 2010\u00b7 There is no bitwise negation in Python (just the bitwise inverse operator ~ - but th...",
+    "category": "generic",
+    "urls_count": 5,
+    "sources_count": 2,
+    "metadata_source": "MultiSearchFetcher"
+  },
+  "pandas": {
+    "name": "pandas",
+    "description": "7 thg 7, 2025\u00b7pandas is an open source, BSD-licensed library providing high-performance, easy-to-use...",
+    "category": "data_science",
+    "urls_count": 5,
+    "sources_count": 1,
+    "metadata_source": "MultiSearchFetcher"
+  },
+  "tensorflow": {
+    "name": "tensorflow",
+    "description": "29 thg 1, 2025\u00b7 I want to install tensorflow in my machine but I have a problem during the installat...",
+    "category": "ai_ml",
+    "urls_count": 5,
+    "sources_count": 2,
+    "metadata_source": "MultiSearchFetcher"
+  },
+  "git": {
+    "name": "git",
+    "description": "Git is a distributed version control software. Version control is a way to save changes over time wi...",
+    "category": "developer_tools",
+    "urls_count": 5,
+    "sources_count": 3,
+    "metadata_source": "MultiSearchFetcher"
+  },
+  "docker": {
+    "name": "docker",
+    "description": "Accelerate your development by building Docker images locally or in the cloud with Docker Build Clou...",
+    "category": "developer_tools",
+    "urls_count": 5,
+    "sources_count": 3,
+    "metadata_source": "MultiSearchFetcher"
+  },
+  "vscode": {
+    "name": "vscode",
+    "description": "Code anywhere Code wherever you're most productive, whether you're connected to the cloud, a remote ...",
+    "category": "developer_tools",
+    "urls_count": 5,
+    "sources_count": 3,
+    "metadata_source": "MultiSearchFetcher"
+  }
+}
