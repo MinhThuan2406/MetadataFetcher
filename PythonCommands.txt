@@ -10,25 +10,49 @@ python -m pip install python-dotenv
 # PRIMARY CLI COMMANDS (RECOMMENDED)
 # ========================================================
 
-# Fetch metadata for a single tool
-python cli/main.py fetch <tool_name>
-python cli/main.py fetch flask
-python cli/main.py fetch numpy --format yaml
-python cli/main.py fetch pandas --format docx
-python cli/main.py fetch tensorflow --format pdf
-python cli/main.py fetch redis --output-dir my_outputs
-python cli/main.py fetch postgresql --category database
+# SIMPLE INTERACTIVE COMMAND (RECOMMENDED)
+python cli/main.py fetch
+# - Prompts for tool name
+# - Shows 5 format options (1-5)
+# - Automatically saves to /outputs
+
+# System information
+python cli/main.py info
 
 # Fetch metadata for multiple tools (batch processing)
 python cli/main.py batch flask numpy pandas
-python cli/main.py batch --input-file tools.txt --format yaml
-python cli/main.py batch redis postgresql mysql --format json
+python cli/main.py batch --input-file tools.txt --format txt
+python cli/main.py batch redis postgresql mysql --format yaml
 
 # Show available output formats
 python cli/main.py formats
 
 # Show system information
 python cli/main.py info
+
+# ========================================================
+# SIMPLE INTERACTIVE COMMAND FEATURES
+# ========================================================
+# The 'fetch' command provides:
+# - Prompts for tool name
+# - Shows 5 format options (1-5)
+# - Automatic fetching and crawling
+# - Automatic output to /outputs directory
+# - All formats supported: json, yaml, txt, docx, pdf
+# - Simple step-by-step interaction
+# - Perfect for quick metadata retrieval
+
+# ========================================================
+# INTERACTIVE MODE FEATURES
+# ========================================================
+# The interactive mode provides:
+# - Menu-driven interface
+# - Step-by-step tool selection
+# - Format selection with numbered options
+# - Category selection with descriptions
+# - Input method choice (manual/file)
+# - Real-time feedback and progress
+# - User-friendly error handling
 
 # ========================================================
 # ALTERNATIVE MODULE-BASED COMMANDS
@@ -80,6 +104,7 @@ python scripts/batch.py
 # ========================================================
 # - json: JSON format (default)
 # - yaml: YAML format
+# - txt: Plain text format (human-readable)
 # - docx: Microsoft Word document
 # - pdf: PDF document
 
@@ -89,6 +114,7 @@ python scripts/batch.py
 # outputs/
 # ├── json/
 # ├── yaml/
+# ├── txt/
 # ├── docx/
 # └── pdf/
 
@@ -111,7 +137,7 @@ python scripts/batch.py
 # AI/ML Tools
 python cli/main.py fetch tensorflow --format json
 python cli/main.py fetch pytorch --format yaml
-python cli/main.py fetch scikit-learn --format docx
+python cli/main.py fetch scikit-learn --format txt
 
 # Database Tools
 python cli/main.py fetch postgresql --category database
@@ -121,14 +147,14 @@ python cli/main.py fetch mysql --category database
 # Web Frameworks
 python cli/main.py fetch flask --category web_framework
 python cli/main.py fetch django --category web_framework
-python cli/main.py fetch fastapi --category web_framework
+python cli/main.py fetch fastapi --format txt
 
 # Data Science Tools
 python cli/main.py fetch pandas --category data_science
 python cli/main.py fetch numpy --category data_science
-python cli/main.py fetch matplotlib --category data_science
+python cli/main.py fetch matplotlib --format txt
 
 # Batch Processing Examples
 python cli/main.py batch tensorflow pytorch scikit-learn --format json
 python cli/main.py batch postgresql redis mysql --format yaml
-python cli/main.py batch flask django fastapi --format docx
+python cli/main.py batch flask django fastapi --format txt

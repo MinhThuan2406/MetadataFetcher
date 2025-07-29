@@ -1,0 +1,95 @@
+{
+    "tool_name": "Git (Version Control)",
+    "overview_description": "Git is the most widely used distributed version control system in software development, created by Linus Torvalds in 2005. According to 2025 statistics, Git is used by 93.87% of developers worldwide, making it the de facto standard for version control. Git enables developers to track changes in code, collaborate effectively, and maintain project history with branching and merging capabilities.",
+    "supported_languages_technologies": [
+        "Git is language-agnostic and supports all programming languages and file types",
+        "Development Environments: VS Code, IntelliJ IDEA, Eclipse, Xcode",
+        "Hosting Platforms: GitHub, GitLab, Bitbucket, Azure DevOps",
+        "CI/CD Tools: Jenkins, GitHub Actions, GitLab CI, Travis CI",
+        "Project Management: Jira, Trello, Asana integration",
+        "IDEs and Editors: Universal support across all development tools"
+    ],
+    "key_features": [
+        "Distributed architecture with local repository capability",
+        "Branching and merging with conflict resolution",
+        "Staging area for selective commit preparation",
+        "Completeback capabilities",
+        "Collaborative workflows with remote repositories",
+        "Lightweight and fast operations",
+        "Data integrity through SHA-1 checksums",
+        "Flexible workflow support (Git Flow, GitHub Flow)"
+    ],
+    "system_requirements": [
+        "Operating Systems: Windows, macOS, Linux, Unix variants",
+        "Storage: Minimal space requirements (typically <100MB)",
+        "RAM: Low memory footprint, works on resource-constrained systems",
+        "Network: Optional for local operations, required for remote synchronization",
+        "Dependencies: Minimal system dependencies, self-contained installation"
+    ],
+    "installation_setup": [
+        "Git can be installed through platform-specific installers, package managers, or GitHub Desktop",
+        "Configuration includes setting user name and email for commit attribution",
+        "Popular installation methods include direct download, Homebrew (macOS), and package managers (Linux)"
+    ],
+    "integration_capabilities": [
+        "IDEs: Native integration with most development environments",
+        "Hosting Services: GitHub, GitLab, Bitbucket, Azure Repos",
+        "CI/CD Platforms: Jenkins, GitHub Actions, GitLab CI/CD",
+        "Project Management: Issue tracking and project board integration",
+        "Code Review: Pull request and merge request workflows",
+        "Documentation: Wiki and documentation hosting integration"
+    ],
+    "version_control_support": [
+        "Branching: Lightweight branch creation and switching",
+        "Merging: Three-way merge with conflict resolution",
+        "History: Complete project timeline with commit messages",
+        "Tagging: Release versioning and milestone marking",
+        "Remote Repositories: Distributed collaboration capabilities",
+        "Hooks: Automated scripts for workflow integration"
+    ],
+    "extensions_plugins": [
+        "Git LFS: Large File Storage for binary files",
+        "Git Flow: Branching model implementation",
+        "Git Hooks: Custom automation scripts",
+        "GUI Clients: GitKraken, SourceTree, Tower",
+        "Command Line Tools: Hub, gh (GitHub CLI), glab (GitLab CLI)"
+    ],
+    "documentation_tutorials": [
+        "Extensive documentation includes official Git manual, tutorials, and community resources",
+        "Educational platforms like GitHub Learning Lab, Atlassian Git tutorials, and interactive courses provide comprehensive learning paths for beginners to advanced users"
+    ],
+    "community_support": [
+        "Git has a massive global community with active development and extensive third-party tool ecosystem",
+        "Support is available through official documentation, Stack Overflow, GitHub discussions, and community forums",
+        "Regular updates and improvements are maintained by core developers and contributors"
+    ],
+    "licensing": "GNU General Public License v2 (GPL-2.0) - Free and Open Source",
+    "latest_version_release_date": "Git 2.50+ (2025) with regular feature releases and security updates",
+    "references": [
+        "Official Website: https://git-scm.com/",
+        "Documentation: https://git-scm.com/doc",
+        "GitHub Repository: https://github.com/git/git"
+    ],
+    "helpful_resources_links": [
+        "https://git-scm.com/downloads - Official Downloads",
+        "https://git-scm.com/docs/gittutorial - Official Tutorial",
+        "https://learngitbranching.js.org/ - Interactive Git Tutorial",
+        "https://github.com/git-guides - GitHub Git Guides",
+        "https://www.atlassian.com/git/tutorials - Atlassian Git Tutorials",
+        "https://stackoverflow.com/questions/tagged/git - Stack Overflow Git Q&A",
+        "https://git-scm.com/docs - Official Documentation",
+        "https://gitimmersion.com/ - Git Immersion Tutorial",
+        "https://github.com/k88hudson/git-flight-rules - Git Flight Rules",
+        "https://ohshitgit.com/ - Git Problem Solutions",
+        "https://github.com/arslanbilal/git-cheat-sheet - Git Cheat Sheet",
+        "https://www.youtube.com/watch?v=8JJ101D3knE - Git Tutorial Video",
+        "https://git-scm.com/book - Pro Git Book (Free)",
+        "https://github.com/git-tips/tips - Git Tips Repository",
+        "https://gitexplorer.com/ - Git Command Explorer",
+        "https://www.git-tower.com/learn - Git Tower Learning",
+        "https://github.com/pluralsight/git-internals-pdf - Git Internals PDF",
+        "https://training.github.com/ - GitHub Training",
+        "https://backlog.com/git-tutorial/ - Backlog Git Tutorial",
+        "https://www.codecademy.com/learn/learn-git - Codecademy Git Course"
+    ]
+}

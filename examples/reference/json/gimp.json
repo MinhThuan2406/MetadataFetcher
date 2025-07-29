@@ -1,0 +1,132 @@
+{
+    "tool_name": "GIMP (GNU Image Manipulation Program)",
+    "overview_description": "GIMP is a free, open-source raster graphics editor used for tasks such as photo retouching, image composition, and image authoring. It's a multiplatform photo manipulation tool suitable for a variety of image manipulation tasks, from simple editing to expert-quality photo retouching. GIMP is a free and open-source raster graphics editor used for image manipulation, photo retouching, and graphic design. First released in 1995, GIMP provides professional-level tools comparable to commercial alternatives like Adobe Photoshop. The software supports extensive customization through plugins, scripts, and themes, making it popular among photographers, graphic designers, and digital artists.",
+    "main_functions": [
+        "Photo retouching and restoration",
+        "Image composition and digital painting",
+        "Hardware support for input devices",
+        "File format conversion",
+        "Batch image processing",
+        "Digital painting and illustration",
+        "Logo and graphic design",
+        "Web graphics optimization",
+        "Print preparation and color management"
+    ],
+    "supported_file_formats": [
+        "Native XCF format",
+        "Common formats: JPEG, PNG, GIF, TIFF, BMP",
+        "RAW image formats",
+        "PSD (Photoshop) files with limitations",
+        "SVG vector graphics",
+        "Native XCF format with layers and metadata",
+        "Professional formats: PSD (limited), RAW, EXR",
+        "Web formats: WebP, SVG (import)",
+        "Specialized formats: FITS, DICOM, PDF",
+        "Export formats optimized for web and print"
+    ],
+    "system_requirements": [
+        "Compatible with Windows, macOS, and Linux",
+        "Minimum 4GB RAM recommended",
+        "Graphics card with OpenGL support",
+        "1GB+ available disk space",
+        "Operating Systems: Windows 7+, macOS 10.12+, Linux distributions",
+        "RAM: 1GB minimum, 4GB+ recommended",
+        "Storage: 200MB for installation, additional space for resources",
+        "Graphics: OpenGL 2.1 compatible graphics card recommended",
+        "Display: 1024x768 minimum resolution"
+    ],
+    "installation_setup": [
+        "Download from official website (gimp.org)",
+        "Available through package managers on Linux",
+        "Flatpak and Snap packages available",
+        "Portable versions for Windows",
+        "GIMP 3.0+ can be installed from the official website with platform-specific installers",
+        "Linux users can install via package managers (apt, dnf, pacman) or use Flatpak/AppImage for the latest versions",
+        "Windows users can choose between installer or portable ZIP versions"
+    ],
+    "key_features": [
+        "Full suite of painting tools (brushes, pencil, airbrush)",
+        "Advanced selection tools",
+        "Layer-based editing with blend modes",
+        "Customizable brushes and patterns",
+        "Plugin and script support",
+        "Color management system",
+        "Advanced selection tools and masks",
+        "Comprehensive layer system with blend modes",
+        "Extensive brush engine with pressure sensitivity",
+        "Non-destructive editing with GEGL filters",
+        "Color management and ICC profile support",
+        "Scripting support (Script-Fu, Python-Fu, Perl)",
+        "Customizable user interface and themes",
+        "Plugin architecture for extended functionality"
+    ],
+    "plugin_extension_support": [
+        "Extensive plugin ecosystem",
+        "Script-Fu scripting interface",
+        "Python scripting support",
+        "Third-party filter and effect plugins",
+        "GIMP supports extensive plugin ecosystem through G'MIC, Resynthesizer, and thousands of community-created plugins",
+        "Popular extensions include photo enhancement tools, artistic filters, and workflow automation scripts",
+        "Plugins can be installed manually or through package managers"
+    ],
+    "user_interface_overview": [
+        "Multi-window interface (single-window mode available)",
+        "Dockable dialogs and toolbox",
+        "Customizable tool options",
+        "Context-sensitive help system",
+        "GIMP 3.0 introduces updated GTK3-based interface with better HiDPI support and improved tablet input",
+        "The interface features dockable dialogs, customizable toolbox, and multiple window modes",
+        "Users can create custom layouts and save workspaces for different tasks"
+    ],
+    "community_tutorials": [
+        "Active open-source community",
+        "Official tutorials and documentation",
+        "User forums and support channels",
+        "Regular workshops and events",
+        "GIMP has a large global community with extensive tutorial resources, forums, and user contributions",
+        "Educational content includes YouTube channels, written tutorials, and community forums",
+        "The project maintains active development with regular releases and community feedback integration"
+    ],
+    "licensing": "GNU General Public License (free and open source) - GNU General Public License v3+ (GPL) - Free and Open Source",
+    "latest_version_release_date": "GIMP 2.10.x series (regular updates) - GIMP 3.0.4 (May 2025) with major interface updates and feature improvements",
+    "example_projects_outputs": [
+        "Digital photo editing and restoration",
+        "Web graphics and UI design",
+        "Digital artwork and illustrations",
+        "Logo and graphic design",
+        "Professional photo retouching and color correction",
+        "Digital artwork and concept art creation",
+        "Web graphics and user interface design",
+        "Print materials and marketing collateral",
+        "Meme creation and social media graphics",
+        "Scientific image analysis and annotation"
+    ],
+    "references": [
+        "Official Website: https://www.gimp.org",
+        "Documentation: https://docs.gimp.org",
+        "Tutorials: https://www.gimp.org/tutorials",
+        "Downloads: https://www.gimp.org/downloads/"
+    ],
+    "helpful_resources_links": [
+        "https://www.gimp.org/tutorials/ - Official Tutorials",
+        "https://docs.gimp.org/en/ - Official Documentation",
+        "https://www.youtube.com/channel/UCEQXp_fcqwPcqrzNtWJ1w9w - Davies Media Design",
+        "https://gimplearn.net/ - GIMP Learning Resources",
+        "https://www.gimptalk.com/ - Community Forum",
+        "https://registry.gimp.org/ - Plugin Registry",
+        "https://gmic.eu/ - G'MIC Plugin Suite",
+        "https://www.reddit.com/r/GIMP/ - Reddit Community",
+        "https://gitlab.gnome.org/GNOME/gimp - Development Repository",
+        "https://www.gimp.org/news/ - Latest News and Updates",
+        "https://www.gimp-forum.net/ - User Forum",
+        "https://www.youtube.com/channel/UCHf4QD4q_oXrQAXsZPGCpDg - Logos By Nick",
+        "https://www.gimp.org/develop/ - Development Information",
+        "https://docs.gimp.org/en/gimp-concepts-brushes.html - Brush Documentation",
+        "https://www.gimp.org/books/ - Recommended Books",
+        "https://scripting.gimp.org/ - Scripting Resources",
+        "https://www.gimp.org/irc.html - IRC Chat Channels",
+        "https://www.gimp.org/mail_lists.html - Mailing Lists",
+        "https://docs.gimp.org/en/gimp-using-fileformats.html - File Format Guide",
+        "https://www.gimp.org/about/splash/ - Splash Screen Gallery"
+    ]
+}

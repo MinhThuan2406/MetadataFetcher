@@ -1,0 +1,97 @@
+{
+    "tool_name": "ComfyUI",
+    "overview_description": "ComfyUI is a node-based graphical user interface for Stable Diffusion and other AI image generation models, designed for advanced users who need granular control over the image generation process. Unlike traditional prompt-based interfaces, ComfyUI uses a visual workflow system where users connect nodes to create complex image generation pipelines. This approach enables sophisticated control over every aspect of the generation process, from initial prompting to post-processing and refinement.",
+    "main_functions": [
+        "AI image generation with Stable Diffusion models",
+        "Node-based workflow creation and management",
+        "Advanced prompt engineering and conditioning",
+        "Image-to-image transformation pipelines",
+        "ControlNet integration for precise image control",
+        "Model loading and switching capabilities",
+        "Batch processing and queue management",
+        "Custom workflow sharing and collaboration"
+    ],
+    "supported_file_formats": [
+        "Image formats: PNG, JPEG, WebP, TIFF",
+        "Model formats: SafeTensors, Checkpoint (.ckpt), LoRA",
+        "Workflow files: JSON-based ComfyUI workflows",
+        "Configuration files: YAML, JSON for settings",
+        "Video formats: MP4, GIF for animation workflows",
+        "Embedding formats: .pt, .safetensors"
+    ],
+    "system_requirements": [
+        "GPU: NVIDIA RTX series (8GB+ VRAM recommended)",
+        "RAM: 16GB minimum, 32GB+ for complex workflows",
+        "Storage: 50GB+ for models and output images",
+        "Operating Systems: Windows 10+, Linux, macOS (with Metal support)",
+        "Python: 3.8+ with CUDA support for GPU acceleration",
+        "Internet: Required for model downloads and updates"
+    ],
+    "installation_setup": [
+        "ComfyUI can be installed via standalone packages, Python pip, or from source code",
+        "Installation includes setting up the Python environment, downloading base models, and configuring GPU support",
+        "The portable version includes all dependencies for easy deployment"
+    ],
+    "key_features": [
+        "Visual node-based interface for workflow creation",
+        "Support for multiple AI models and architectures",
+        "Advanced sampling and scheduling options",
+        "Real-time preview and monitoring",
+        "Custom node development and plugin system",
+        "Workflow templates and sharing capabilities",
+        "GPU optimization and memory management",
+        "Extensive customization and scripting support"
+    ],
+    "plugin_extension_support": [
+        "ComfyUI supports extensive custom node ecosystem through community contributions and third-party developers",
+        "Popular extensions include additional model loaders, processing nodes, UI enhancements, and integration with external services",
+        "The modular architecture enables easy plugin installation and management"
+    ],
+    "user_interface_overview": [
+        "The interface consists of a node graph editor where users drag and drop nodes to create workflows, a properties panel for node configuration, and output previews",
+        "The system supports multiple tabs, workflow templates, and customizable layouts",
+        "Advanced users can create complex multi-stage pipelines with conditional logic and branching"
+    ],
+    "community_tutorials": [
+        "ComfyUI has a growing community of AI artists and developers sharing workflows, tutorials, and custom nodes",
+        "Educational resources include YouTube tutorials, GitHub repositories, and community forums",
+        "The project maintains active development with regular updates and community feedback integration"
+    ],
+    "licensing": "Open Source (GPL-3.0 License)",
+    "latest_version_release_date": "Active development with regular updates (2024-2025)",
+    "example_projects_outputs": [
+        "Professional AI artwork and concept art",
+        "Product visualization and marketing imagery",
+        "Architectural rendering and design exploration",
+        "Character design and illustration",
+        "Texture generation for 3D applications",
+        "Animation and video content creation"
+    ],
+    "references": [
+        "Official Repository: https://github.com/comfyanonymous/ComfyUI",
+        "Documentation: Available in repository and community wikis",
+        "Community Forum: Various Discord servers and Reddit communities"
+    ],
+    "helpful_resources_links": [
+        "https://github.com/comfyanonymous/ComfyUI - Official Repository",
+        "https://comfyui.space/ - Community Hub and Workflows",
+        "https://www.youtube.com/results?search_query=ComfyUI+tutorial - Video Tutorials",
+        "https://civitai.com/models?type=Workflow - Community Workflows",
+        "https://github.com/ltdrdata/ComfyUI-Manager - Node Manager Extension",
+        "https://reddit.com/r/comfyui - Reddit Community",
+        "https://discord.gg/comfyui - Community Discord Server",
+        "https://github.com/comfyanonymous/ComfyUI/wiki - Official Wiki",
+        "https://comfyui-wiki.com/ - Community Wiki",
+        "https://github.com/comfyanonymous/ComfyUI/releases - Latest Releases",
+        "https://openart.ai/workflows/comfyui - Workflow Gallery",
+        "https://www.youtube.com/channel/UCX8mYCTSgn6rN2_xQiuNDSA - Tutorial Channel",
+        "https://github.com/comfyanonymous/ComfyUI/discussions - Discussions",
+        "https://comfyworkflows.com/ - Workflow Sharing Platform",
+        "https://huggingface.co/spaces/comfyanonymous/ComfyUI - Online Demo",
+        "https://github.com/comfyanonymous/ComfyUI/blob/master/README.md - Installation Guide",
+        "https://www.patreon.com/comfyanonymous - Support Development",
+        "https://github.com/comfyanonymous/ComfyUI/issues - Issue Tracker",
+        "https://comfyui.org/ - Community Resources",
+        "https://github.com/comfyanonymous/ComfyUI/blob/master/CHANGELOG.md - Changelog"
+    ]
+}

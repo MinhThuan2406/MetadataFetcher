@@ -9,11 +9,11 @@ import yaml
 from typing import Optional
 
 # Import all category-specific report generators
-from output_processor.ai_ml_reports import export_ai_ml_tool
-from output_processor.data_science_reports import export_data_science_tool
-from output_processor.creative_media_reports import export_creative_media_tool
-from output_processor.developer_tools_reports import export_developer_tool
-from output_processor.llm_tools_reports import export_llm_tool
+from metadata.core.reports import export_ai_ml_tool
+from metadata.core.reports import export_data_science_tool
+from metadata.core.reports import export_creative_media_tool
+from metadata.core.reports import export_developer_tool
+from metadata.core.reports import export_llm_tool
 
 class ReportRouter:
     """Routes tools to appropriate category-specific report generators"""

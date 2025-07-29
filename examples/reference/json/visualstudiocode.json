@@ -1,0 +1,91 @@
+{
+    "tool_name": "Visual Studio Code (VS Code)",
+    "overview_description": "Visual Studio Code is a free, open-source code editor developed by Microsoft that has become the most popular development environment worldwide. According to the 2024 Stack Overflow Developer Survey, 73.6% of developers use VS Code, making it the dominant choice in the development community. The editor combines the simplicity of a code editor with powerful developer tooling through its extensible architecture and integrated development features.",
+    "supported_languages_technologies": [
+        "Primary Languages: JavaScript, TypeScript, Python, C#, Java, C++, Go, Rust, PHP",
+        "Web Technologies: HTML, CSS, React, Vue.js, Angular, Node.js",
+        "Data Science: Jupyter Notebooks, R, SQL, PowerShell",
+        "Mobile Development: Flutter, React Native, Xamarin",
+        "Cloud Platforms: Azure, AWS, Google Cloud Platform",
+        "DevOps Tools: Docker, Kubernetes, Terraform"
+    ],
+    "key_features": [
+        "IntelliSense code completion and syntax highlighting",
+        "Integrated terminal and debugger",
+        "Built-in Git version control support",
+        "Live Share for real-time collaboration",
+        "Extensive extension marketplace",
+        "Multi-cursor editing and powerful search/replace",
+        "Integrated development server and preview",
+        "Cross-platform compatibility (Windows, macOS, Linux)"
+    ],
+    "system_requirements": [
+        "Operating Systems: Windows 10+, macOS 10.15+, Linux (64-bit)",
+        "RAM: 1.5GB minimum, 8GB+ recommended for large projects",
+        "Storage: 200MB for installation, additional space for extensions",
+        "Processor: 1.6GHz or faster processor",
+        "Display: 1024x768 minimum resolution"
+    ],
+    "installation_setup": [
+        "VS Code can be downloaded from the official website with platform-specific installers",
+        "Installation options include user setup (recommended), system setup, and portable ZIP versions",
+        "The editor automatically updates monthly with new features and improvements"
+    ],
+    "integration_capabilities": [
+        "Version Control: Git, GitHub, Azure DevOps integration",
+        "Cloud Services: Azure, AWS, Google Cloud extensions",
+        "Databases: MySQL, PostgreSQL, MongoDB, Redis connections",
+        "Containers: Docker and Kubernetes development",
+        "AI Tools: GitHub Copilot, IntelliCode, Tabnine",
+        "Testing Frameworks: Jest, Mocha, PyTest, NUnit"
+    ],
+    "version_control_support": [
+        "Built-in Git support with graphical interface for staging, committing, branching, and merging",
+        "Extensions provide integration with GitHub, GitLab, Bitbucket, and other version control systems",
+        "Features include inline diff views, conflict resolution, and repository management"
+    ],
+    "extensions_plugins": [
+        "The VS Code Marketplace offers over 45,000 extensions covering languages, themes, debuggers, and tools",
+        "Popular extensions include Prettier, ESLint, Python, Live Server, Docker, and language-specific tooling",
+        "Extensions can be installed, managed, and synchronized across devices"
+    ],
+    "documentation_tutorials": [
+        "Comprehensive documentation includes getting started guides, language-specific tutorials, and advanced topics",
+        "Microsoft provides official learning paths, video tutorials, and interactive courses",
+        "The community contributes extensive educational content through blogs, YouTube, and coding platforms"
+    ],
+    "community_support": [
+        "VS Code has a massive global developer community with active GitHub repository, Stack Overflow support, and community forums",
+        "Microsoft provides regular updates, bug fixes, and feature additions based on community feedback",
+        "The open-source nature enables community contributions to core functionality"
+    ],
+    "licensing": "MIT License (Open Source) with Microsoft branding",
+    "latest_version_release_date": "Version 1.102+ (July 2025) with monthly release cycle",
+    "references": [
+        "Official Website: https://code.visualstudio.com/",
+        "Documentation: https://code.visualstudio.com/docs",
+        "GitHub Repository: https://github.com/microsoft/vscode"
+    ],
+    "helpful_resources_links": [
+        "https://code.visualstudio.com/download - Official Download Page",
+        "https://code.visualstudio.com/docs/getstarted/getting-started - Getting Started Guide",
+        "https://marketplace.visualstudio.com/ - Extension Marketplace",
+        "https://code.visualstudio.com/docs/languages/overview - Language Support",
+        "https://code.visualstudio.com/api - Extension Development API",
+        "https://github.com/Microsoft/vscode-tips-and-tricks - Tips and Tricks",
+        "https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf - Keyboard Shortcuts",
+        "https://stackoverflow.com/questions/tagged/visual-studio-code - Stack Overflow Q&A",
+        "https://code.visualstudio.com/updates - Monthly Release Notes",
+        "https://www.youtube.com/channel/UCs5Y5_7XK8HLDX0SLNwkd3w - Official YouTube Channel",
+        "https://code.visualstudio.com/docs/editor/debugging - Debugging Guide",
+        "https://code.visualstudio.com/docs/remote/remote-overview - Remote Development",
+        "https://github.com/microsoft/vscode/wiki - Community Wiki",
+        "https://code.visualstudio.com/docs/editor/extension-marketplace - Extension Guide",
+        "https://code.visualstudio.com/docs/languages/json - JSON Support",
+        "https://code.visualstudio.com/blogs - Official Blog",
+        "https://code.visualstudio.com/docs/editor/integrated-terminal - Terminal Guide",
+        "https://code.visualstudio.com/docs/editor/github - GitHub Integration",
+        "https://code.visualstudio.com/docs/python/python-tutorial - Python Tutorial",
+        "https://code.visualstudio.com/docs/nodejs/nodejs-tutorial - Node.js Tutorial"
+    ]
+}

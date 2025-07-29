@@ -1,0 +1,128 @@
+{
+    "tool_name": "Blender",
+    "overview_description": "Blender is a free and open-source 3D creation suite that supports the entirety of the 3D pipeline—modeling, rigging, animation, simulation, rendering, compositing, and motion tracking. It's a comprehensive 3D graphics application used by artists, designers, animators, and game developers worldwide. As a complete 3D content creation software, Blender serves professional studios, independent artists, and hobbyists worldwide. The software continues to evolve with regular updates and community-driven development.",
+    "main_functions": [
+        "3D modeling and sculpting",
+        "Animation and rigging",
+        "Rendering with multiple engines (Cycles, EEVEE, Workbench)",
+        "Video editing and compositing",
+        "Simulation (fluid, smoke, cloth, rigid body)",
+        "Motion tracking and camera reconstruction",
+        "Character rigging and animation",
+        "Visual effects and compositing",
+        "Motion graphics and 2D animation",
+        "Game asset creation",
+        "Architectural visualization",
+        "Product design and prototyping"
+    ],
+    "supported_file_formats": [
+        "Native .blend files",
+        "Import/Export: OBJ, FBX, COLLADA, 3DS, PLY, STL",
+        "Image formats: PNG, JPEG, TIFF, EXR, HDR",
+        "Video formats: AVI, MO: FBX, OBJ, DAE, 3DS, PLY, STL, USD",
+        "Export: FBX, OBJ, glTF 2.0, Alembic, USD",
+        "Audio formats: WAV, MP3, OGG"
+    ],
+    "system_requirements": [
+        "Download from official website (blender.org)",
+        "Available for Windows, macOS, and Linux",
+        "Portable versions available",
+        "Regular LTS and feature releases",
+        "Minimum: 64-bit dual-core 2Ghz CPU, 8GB RAM, OpenGL 3.3 compatible graphics",
+        "Recommended: Multi-core CPU, 32GB+ RAM, dedicated GPU (NVIDIA/AMD)",
+        "Storage: 1GB+ free space",
+        "Operating Systems: Windows 10+, macOS 10.15+, Linux"
+    ],
+    "installation_setup": [
+        "Download from official website (blender.org)",
+        "Available for Windows, macOS, and Linux",
+        "Portable versions available",
+        "Regular LTS and feature releases",
+        "Blender can be downloaded from the official website (blender.org) with platform-specific installers",
+        "Alternative installation methods include Steam, Microsoft Store, and package managers for Linux distributions",
+        "The software offers portable installation options for Windows users"
+    ],
+    "key_features": [
+        "Advanced polygon modeling tools",
+        "Multi-resolution sculpting with dynamic topology",
+        "Node-based shader and compositing systems",
+        "Physics simulations and particle systems",
+        "Grease Pencil for 2D animation in 3D space",
+        "Python scripting API for automation",
+        "Advanced modeling tools with non-destructive workflows",
+        "Powerful sculpting capabilities with dynamic topology",
+        "Comprehensive animation system with graph editor",
+        "Cycles and Eevee render engines",
+        "Built-in compositor for post-processing",
+        "Active community and extensive documentation",
+        "Regular updates with new features"
+    ],
+    "plugin_extension_support": [
+        "Extensive add-on ecosystem",
+        "Built-in Python console for scripting",
+        "Third-party add-ons for specialized workflows",
+        "Asset libraries and templates",
+        "Blender supports extensive add-on ecosystem through built-in add-on manager and third-party marketplaces",
+        "Popular add-ons include Hard Ops, BoxCutter, Animation Nodes, and specialized tools for different industries",
+        "The Python API enables custom tool development and automation scripts"
+    ],
+    "user_interface_overview": [
+        "Customizable workspace layouts",
+        "Context-sensitive menus and properties",
+        "Hotkey-driven workflow",
+        "Multiple editor types (3D Viewport, Outliner, Properties)",
+        "Blender 4.0+ features a modern, customizable interface with workspace-based organization",
+        "The UI includes 3D viewport, properties panel, outliner, timeline, and specialized editors",
+        "Interface themes and layouts can be customized for different workflows and user preferences"
+    ],
+    "community_tutorials": [
+        "Large, active open-source community",
+        "Extensive official and community tutorials",
+        "Annual Blender Conference",
+        "Active forums and social media presence",
+        "Blender boasts one of the largest 3D software communities with extensive tutorial resources, forums, and user-generated content",
+        "Educational resources include Blender Guru, CG Cookie, and official Blender tutorials",
+        "The annual Blender Conference showcases community achievements and development roadmap"
+    ],
+    "licensing": "GNU General Public License v2+ (free and open source) - GNU General Public License v3 (GPL) - Free and Open Source",
+    "latest_version_release_date": "Regular quarterly releases with LTS versions every 2 years - Blender 4.5 LTS (July 2025) with planned releases including Blender 5.0 in November 2025",
+    "example_projects_outputs": [
+        "Feature films and short animations",
+        "Architectural visualization",
+        "Product design and prototyping",
+        "Game asset creation",
+        "Scientific and medical visualization",
+        "Animated short films and feature productions",
+        "Game assets and environments",
+        "Motion graphics and advertisements",
+        "VR/AR content creation"
+    ],
+    "references": [
+        "Official Website: https://www.blender.org",
+        "Documentation: https://docs.blender.org",
+        "Community Hub: https://www.blender.org/community",
+        "GitHub Repository: https://github.com/blender/blender"
+    ],
+    "helpful_resources_links": [
+        "https://www.blender.org/download/ - Official Download Page",
+        "https://docs.blender.org/manual/en/latest/ - Official Manual",
+        "https://www.blenderguru.com/ - Blender Guru Tutorials",
+        "https://cgcookie.com/lessons - CG Cookie Learning Platform",
+        "https://www.youtube.com/user/BlenderFoundation - Official YouTube Channel",
+        "https://blenderartists.org/ - Community Forum",
+        "https://cloud.blender.org/welcome - Blender Cloud Resources",
+        "https://github.com/blender/blender-addons - Official Add-ons Repository",
+        "https://www.blendernation.com/ - Blender News and Resources",
+        "https://blendermarket.com/ - Commercial Add-ons Marketplace",
+        "https://docs.blender.org/api/current/ - Python API Documentation",
+        "https://www.reddit.com/r/blender/ - Reddit Community",
+        "https://blender.stackexchange.com/ - Stack Exchange Q&A",
+        "https://academy.cgboost.com/ - CGBoost Academy",
+        "https://www.creativeshrimp.com/ - Creative Shrimp Tutorials",
+        "https://blendswap.com/ - Free Blender Models",
+        "https://docs.blender.org/manual/en/latest/advanced/scripting/ - Scripting Guide",
+        "https://www.blender.org/support/ - Official Support Resources",
+        "https://devtalk.blender.org/ - Developer Forum",
+        "https://www.blender.org/conference/ - Blender Conference"
+    ]
+}

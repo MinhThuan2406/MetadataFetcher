@@ -1,0 +1,44 @@
+{
+    "tool_name": "R",
+    "overview_description": "R is a language and environment for statistical computing and graphics.",
+    "key_features": [
+        "Statistical computing and graphics",
+        "Extensive package ecosystem (CRAN)",
+        "Data manipulation and analysis",
+        "Machine learning capabilities",
+        "Reproducible research with R Markdown",
+        "Interactive visualizations",
+        "Cross-platform compatibility"
+    ],
+    "installation_setup": [
+        "Download from cran.r-project.org for Windows, macOS, Linux",
+        "Use package managers: apt (Ubuntu), brew (macOS), chocolatey (Windows)",
+        "Use RStudio for integrated development environment",
+        "Use conda for R with conda-forge channel"
+    ],
+    "documentation_tutorials": [
+        "R Project official documentation",
+        "CRAN manuals and vignettes",
+        "RStudio tutorials and guides",
+        "R for Data Science online book",
+        "R-bloggers community tutorials"
+    ],
+    "community_support": [
+        "R-help mailing list",
+        "Stack Overflow R community",
+        "Reddit communities (r/rstats, r/Rlanguage)",
+        "RStudio Community forums",
+        "R-bloggers for tutorials and tips"
+    ],
+    "licensing": "GPL-2 (GNU General Public License)",
+    "latest_version_release_date": "R 4.4.0 (Latest)",
+    "references_official_website_docs": [
+        "https://www.r-project.org",
+        "https://cran.r-project.org",
+        "https://www.rstudio.com"
+    ],
+    "other_supporting_links_github": [
+        "https://github.com/wch/r-source",
+        "https://github.com/rstudio/rstudio"
+    ]
+}

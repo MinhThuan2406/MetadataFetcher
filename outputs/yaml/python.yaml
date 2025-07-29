@@ -1,0 +1,258 @@
+tool_name: Python
+overview_description: Python is a high-level, general-purpose programming language
+  that has become the dominant choice for artificial intelligence, machine learning,
+  and data science applications in 2025. Created by Guido van Rossum and first released
+  in 1991, Python emphasizes code readability through its design philosophy of significant
+  indentation and clean syntax. As a dynamically typed and interpreted language, Python
+  supports multiple programming paradigms including procedural, object-oriented, and
+  functional programming. Its extensive standard library, massive ecosystem of third-party
+  packages, and active global community have made it the most popular programming
+  language for AI/ML development.
+key_features:
+- Clean, readable syntax with significant indentation
+- Dynamic typing with optional type hints for better code documentation
+- Interactive interpreter (REPL) with enhanced features in Python 3.13+
+- Comprehensive error messages with colored tracebacks
+- Experimental free-threaded mode without Global Interpreter Lock (GIL) in Python
+  3.13+
+- Just-In-Time (JIT) compiler for improved performance
+- Enhanced interactive shell with multi-line editing and syntax highlighting
+- Memory optimizations and improved garbage collection
+- Extensive standard library covering common programming tasks
+- Simple package management with pip and virtual environments
+- Excellent debugging and profiling tools
+- Strong testing framework ecosystem
+- Native C/C++ extension capabilities for performance-critical code
+- Multiprocessing and asyncio support for concurrent programming
+- GPU acceleration support through libraries like NumPy and PyTorch
+- Memory-efficient data structures and iterators
+installation_setup: 'Official Python.org installer - Download platform-specific installers
+  from python.org with pip package manager and IDLE development environment. Package
+  Managers - Windows: Microsoft Store, Chocolatey; macOS: Homebrew, MacPorts; Linux:
+  System package managers (apt, yum, dnf, pacman). Development Environment Installers
+  - Anaconda/Miniconda for data science workflows, Pyenv for managing multiple Python
+  versions. Advanced Installation - Building from source code for custom configurations,
+  Docker containers, cloud-based development environments.'
+documentation_tutorials:
+- Comprehensive Python 3.13+ documentation at docs.python.org
+- Official Python tutorial for programming fundamentals
+- Library reference and language specification
+- What's New guides for each Python version
+- Real Python tutorials and courses for practical Python skills
+- DataCamp courses focusing on data science and ML applications
+- Coursera and edX university courses for structured learning
+- Python.org community tutorials and guides
+- W3Schools Python tutorial for beginners
+- GeeksforGeeks comprehensive Python resources
+- YouTube channels and video tutorials for visual learners
+- Jupyter notebooks and interactive examples for hands-on practice
+- Machine learning specific tutorials with Real Python
+- Project-based learning through GitHub repositories
+community_support: Python.org community forums and mailing lists. Official Python
+  Discord server with 60,000+ active members. Python Software Foundation for governance
+  and events. Stack Overflow with millions of Python-related questions and answers.
+  Reddit communities (r/Python, r/learnpython) with 1.3+ million members. GitHub with
+  thousands of open-source Python projects. PyLadies for diversity and inclusion with
+  196+ global chapters. Local Python user groups and meetups worldwide. LinkedIn Python
+  Developer Community for professional networking. Real Python community for structured
+  learning. Python Discord for real-time help and collaboration. Conference and events
+  like PyCon for knowledge sharing.
+licensing: Python Software Foundation License Version 2 (PSF License) - Compatible
+  with commercial and proprietary applications, allows modification, distribution,
+  and commercial use. More permissive than GPL, similar to BSD and MIT licenses with
+  no copyleft requirements for derivative works. GPL-compatible since Python 2.1 and
+  widely accepted in enterprise environments.
+latest_version_release_date: Python 3.13.3 (April 2025) - Latest stable release with
+  Python 3.13.2 (February 2025) major new features, monthly bug fix releases and security
+  updates. Python 3.14 (October 2025) - Next major release in development with annual
+  major releases and 5-year long-term support.
+references_official_website_docs:
+- 'Official Website: https://www.python.org'
+- 'Documentation: https://docs.python.org'
+- 'Download Page: https://www.python.org/downloads/'
+- 'Python Enhancement Proposals (PEPs): https://peps.python.org'
+- 'Python Package Index (PyPI): https://pypi.org'
+- 'GitHub Repository: https://github.com/python/cpython'
+other_supporting_links_github:
+- https://docs.python.org/3/tutorial/ - Official Python Tutorial
+- https://realpython.com/ - Real Python Tutorials and Courses
+- https://www.python.org/downloads/ - Official Python Downloads
+- https://docs.python.org/3/whatsnew/ - What's New in Python Releases
+- https://packaging.python.org/ - Python Packaging User Guide
+- https://pypi.org/ - Python Package Index
+- https://github.com/vinta/awesome-python - Awesome Python Resources
+- https://docs.python.org/3/library/ - Python Standard Library Reference
+- https://www.python.org/community/ - Python Community Resources
+- https://discuss.python.org/ - Official Python Discussion Forum
+- https://stackoverflow.com/questions/tagged/python - Stack Overflow Python Questions
+- https://reddit.com/r/Python/ - Python Reddit Community
+- https://www.datacamp.com/courses/intro-to-python-for-data-science - DataCamp Python
+  Course
+- https://jupyter.org/ - Project Jupyter for Interactive Development
+- https://code.visualstudio.com/docs/python/python-tutorial - VS Code Python Tutorial
+- https://www.coursera.org/courses?query=python - Coursera Python Courses
+- https://github.com/python/cpython - CPython Source Code Repository
+- https://peps.python.org/ - Python Enhancement Proposals
+- https://www.python.org/dev/peps/pep-0008/ - Python Style Guide (PEP 8)
+- https://wiki.python.org/moin/BeginnersGuide - Python Beginner's Guide
+dependencies: {}
+system_requirements: 'Operating System: Windows 10+, macOS 10.15+, Linux (various
+  distributions). Memory: 512MB RAM minimum, 4GB+ recommended for data science. Storage:
+  100MB for basic installation, 1GB+ for full development environment. Processor:
+  Any modern CPU (multi-core recommended for data processing). Network: Internet connection
+  for package installation and updates. Display: Any modern display (higher resolution
+  recommended for IDEs).'
+performance_considerations: Use built-in functions and libraries optimized in C (NumPy,
+  Pandas). Leverage appropriate data structures (sets vs lists, tuples vs lists).
+  Implement caching and memoization for repeated computations. Utilize generator expressions
+  for memory-efficient iteration. Python 3.11+ delivers 10-60% performance improvements.
+  Python 3.13+ introduces experimental JIT compilation. Free-threaded mode removes
+  GIL limitations for CPU-bound tasks. Optimized memory management and garbage collection.
+  Profile code using cProfile and other profiling tools. Monitor memory usage and
+  allocation patterns. Identify algorithmic complexity issues. Consider C extensions
+  or Cython for performance-critical sections. Choose appropriate algorithms and data
+  structures. Minimize global variable lookups and function call overhead. Use vectorized
+  operations with NumPy for numerical computations. Consider async/await for I/O-bound
+  applications.
+training_inference_capabilities: ''
+debugging_features: ''
+supported_model_types: []
+model_types_supported: []
+supported_platforms_os:
+- Windows 10 and newer (officially supported)
+- macOS 10.15 (Catalina) and newer with Intel x86 and Apple Silicon (M1/M2) support
+- Universal support across all major Linux distributions (Ubuntu, Fedora, CentOS,
+  Debian)
+- FreeBSD 10 and newer
+- Android and iOS (Tier 3 support)
+- WebAssembly (WASI) with Tier 2 support
+integration_with_other_tools: 'Machine Learning Frameworks: PyTorch, TensorFlow, Keras
+  for neural network development; Scikit-learn for classical machine learning algorithms;
+  OpenCV for computer vision, NLTK/spaCy for NLP. Data Science Ecosystem: Pandas for
+  data analysis, NumPy for numerical computing; Matplotlib, Seaborn, Plotly for data
+  visualization; Dask, PySpark for distributed computing. Development Tools Integration:
+  VS Code, PyCharm, Jupyter notebooks for development environments; Git integration
+  with GitHub, GitLab workflows; AWS, Google Cloud, Azure ML integration. Database
+  and Storage: SQLAlchemy, PyMongo for database connectivity; Support for CSV, JSON,
+  Parquet, HDF5, and more; Requests library for REST API consumption, FastAPI for
+  API development.'
+example_use_cases_demos: []
+supported_file_formats: []
+integration_with_other_tools_frameworks: ''
+model_management_tools: ''
+code_analysis_tools: ''
+statistical_analysis_features: ''
+api_sdk_availability: ''
+example_projects_outputs: []
+machine_learning_integration: ''
+rendering_capabilities: ''
+main_functions: []
+example_use_cases: []
+extensions_plugins: ''
+integration_with_other_libraries: ''
+data_formats_supported: []
+prompt_engineering_features: ''
+integration_capabilities: ''
+primary_use_cases:
+- Building and training neural networks with frameworks like PyTorch and TensorFlow
+- Developing machine learning models for classification, regression, and clustering
+- Creating recommendation systems for e-commerce and streaming platforms
+- Natural language processing and text analysis applications
+- Data cleaning, preprocessing, and transformation pipelines
+- Statistical analysis and hypothesis testing
+- Data visualization and exploratory data analysis
+- Big data processing and ETL operations
+- Computer vision and image processing applications
+- Healthcare data analysis and clinical research
+- Automated trading and financial modeling
+- Building REST APIs and web services for ML model deployment
+- Creating data-driven web applications
+- Developing microservices architectures
+user_interface_overview: ''
+plugin_extension_support: ''
+build_deployment_integration: ''
+community_ecosystem: ''
+supported_languages_technologies: []
+community_tutorials: []
+hardware_acceleration_support: ''
+fine_tuning_capabilities: ''
+version_control_support: ''
+collaboration_features: ''
+model_deployment_options: ''
+example_projects_notebooks:
+- Machine learning tutorials with scikit-learn and pandas
+- Deep learning projects using PyTorch and TensorFlow
+- Data science workflows with real-world datasets
+- Awesome Python repository with curated libraries and tools
+- PyTorch official examples repository with neural network implementations
+- Real-world applications in computer vision, NLP, and data analysis
+- Beginner-friendly tutorials covering Python basics to advanced topics
+- Step-by-step project notebooks for hands-on learning
+- Industry-specific examples in healthcare, finance, and technology
+- University course materials and assignments
+- Coding challenge solutions and algorithm implementations
+- Open-source contributions and collaborative projects
+visualization_capabilities: ''
+typical_applications: []
+supportive_links:
+- title: Python - References Official Website Docs
+  url: 'Official Website: https://www.python.org'
+  type: supportive
+- title: Python - References Official Website Docs
+  url: 'Documentation: https://docs.python.org'
+  type: supportive
+- title: Python - References Official Website Docs
+  url: 'Download Page: https://www.python.org/downloads/'
+  type: supportive
+- title: Python - References Official Website Docs
+  url: 'Python Enhancement Proposals (PEPs): https://peps.python.org'
+  type: supportive
+- title: Python - References Official Website Docs
+  url: 'Python Package Index (PyPI): https://pypi.org'
+  type: supportive
+- title: Python - References Official Website Docs
+  url: 'GitHub Repository: https://github.com/python/cpython'
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://docs.python.org/3/tutorial/ - Official Python Tutorial
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://realpython.com/ - Real Python Tutorials and Courses
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://www.python.org/downloads/ - Official Python Downloads
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://docs.python.org/3/whatsnew/ - What's New in Python Releases
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://packaging.python.org/ - Python Packaging User Guide
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://pypi.org/ - Python Package Index
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://github.com/vinta/awesome-python - Awesome Python Resources
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://docs.python.org/3/library/ - Python Standard Library Reference
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://www.python.org/community/ - Python Community Resources
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://discuss.python.org/ - Official Python Discussion Forum
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://stackoverflow.com/questions/tagged/python - Stack Overflow Python Questions
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://reddit.com/r/Python/ - Python Reddit Community
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://www.datacamp.com/courses/intro-to-python-for-data-science - DataCamp
+    Python Course
+  type: supportive
+- title: Python - Other Supporting Links Github
+  url: https://jupyter.org/ - Project Jupyter for Interactive Development
+  type: supportive

@@ -60,17 +60,12 @@ class FetcherConfig:
     
     def create_output_path(self, tool_name: str, format_override: Optional[str] = None) -> str:
         """Create output file path with unified structure."""
-        import time
-        from datetime import datetime
         
         # Determine format
         output_format = format_override or self.output_format
         
-        # Create timestamp
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        
-        # Create filename
-        filename = f"{tool_name}_{timestamp}.{output_format}"
+        # Create filename without timestamp
+        filename = f"{tool_name}.{output_format}"
         
         # Ensure output directory exists
         format_dir = os.path.join(self.output_directory, output_format)

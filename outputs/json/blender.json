@@ -1,0 +1,133 @@
+{
+    "tool_name": "Blender",
+    "overview_description": "Blender's comprehensive array of modeling tools make creating, transforming and editing your models a breeze. Suits most recent GNU/Linux distributions using glibc 2.28 or newer. Intel Arc supported with driver version XX.XX.27642.38 or newer. Checksum: md5 ... Jan 22, 2025 ... In this interview, Gints Zilbalodis, writer and director (and more!) of the film, shares how Blender was instrumental in the creation of the film.",
+    "supported_platforms_os": [
+        "Windows 10/11",
+        "macOS 10.15+",
+        "Linux (Ubuntu, Fedora, CentOS, Debian)",
+        "Cross-platform compatibility"
+    ],
+    "key_features": [
+        "Blender 4.3 is another fantastic release for the Video Sequencer, with numerous performance improvements and features you won't want to live without. CONNECTED ...",
+        "The proposed actions can be browsed and activated either by mouse or keyboard. Similar Feature in other Software. Blender has a similar feature called the “ ..."
+    ],
+    "installation_setup": [
+        "Aug 24, 2021 ... 1. Edit > Preferences > Install> Locate the install folder> Install Addon and once complete, I don't see the Animation Mixamo Rig plugin in the list.",
+        "Jan 2, 2025 ... My Solution for Substance for Blender not working in 4.3.1 was as following. I installed Adobe Substance 3d add-on for Blender version 2.2.0 ...",
+        "Dec 28, 2023 ... I am having issues getting the add-on for Blender to be enabled, I install the zip file ..."
+    ],
+    "licensing": "Various licenses - check official documentation",
+    "latest_version_release_date": "Blender Latest Version",
+    "references_official_website_docs": [
+        "Official Blender documentation",
+        "GitHub repositories for Blender",
+        "Community forums and discussions"
+    ],
+    "other_supporting_links_github": [
+        "GitHub search results for Blender",
+        "Stack Overflow discussions about Blender",
+        "Reddit communities for Blender"
+    ],
+    "supportive_links": [
+        {
+            "title": "Blender FBX to VRed - Autodesk Community",
+            "url": "https://forums.autodesk.com/t5/vred-forum/blender-fbx-to-vred/td-p/9645201",
+            "type": "supportive"
+        },
+        {
+            "title": "Fusion 360 for design, Blender for rendering? - Autodesk Community",
+            "url": "https://forums.autodesk.com/t5/fusion-design-validate-document/fusion-360-for-design-blender-for-rendering/td-p/8823008",
+            "type": "supportive"
+        },
+        {
+            "title": "Solved: Steps for exporting from blender for import to Fusion 360 ...",
+            "url": "https://forums.autodesk.com/t5/fusion-design-validate-document/steps-for-exporting-from-blender-for-import-to-fusion-360/td-p/11850650",
+            "type": "supportive"
+        },
+        {
+            "title": "Solved: Exporting Fusion models to Blender: what's the simplest way ...",
+            "url": "https://forums.autodesk.com/t5/fusion-design-validate-document/exporting-fusion-models-to-blender-what-s-the-simplest-way-of/td-p/9548705",
+            "type": "supportive"
+        },
+        {
+            "title": "Export Fusion360 model to import into Blender - Autodesk Community",
+            "url": "https://forums.autodesk.com/t5/fusion-support-forum/export-fusion360-model-to-import-into-blender/td-p/9311861",
+            "type": "supportive"
+        },
+        {
+            "title": "Trying to bring a Blender file over to Fusion so I can edit ...",
+            "url": "https://forums.autodesk.com/t5/fusion-design-validate-document/trying-to-bring-a-blender-file-over-to-fusion-so-i-can-edit/td-p/12783578",
+            "type": "supportive"
+        },
+        {
+            "title": "Making 3ds Max have a Blender-esque control scheme? - Autodesk ...",
+            "url": "https://forums.autodesk.com/t5/3ds-max-design-visualization/making-3ds-max-have-a-blender-esque-control-scheme/td-p/7691700",
+            "type": "supportive"
+        },
+        {
+            "title": "Blender like viewport navigation and hotkeys preset? - Autodesk ...",
+            "url": "https://forums.autodesk.com/t5/3ds-max-forum/blender-like-viewport-navigation-and-hotkeys-preset/td-p/8377231",
+            "type": "supportive"
+        },
+        {
+            "title": "Export mesh with multiple UV sets, for use in Blender - Autodesk ...",
+            "url": "https://forums.autodesk.com/t5/maya-modeling-forum/export-mesh-with-multiple-uv-sets-for-use-in-blender/td-p/10122299",
+            "type": "supportive"
+        },
+        {
+            "title": "Solved: Exported FBX& OBJ appears transparent/see-through in ...",
+            "url": "https://forums.autodesk.com/t5/maya-modeling-forum/exported-fbx-amp-obj-appears-transparent-see-through-in-blender/td-p/10741330",
+            "type": "supportive"
+        },
+        {
+            "title": "Blender - The Free and Open Source 3D Creation Software ...",
+            "url": "https://www.blender.org/",
+            "type": "supportive"
+        },
+        {
+            "title": "Download — Blender",
+            "url": "https://www.blender.org/download/",
+            "type": "supportive"
+        },
+        {
+            "title": "Making Flow – Interview with director Gints Zilbalodis — Blender",
+            "url": "https://www.blender.org/user-stories/making-flow-an-interview-with-director-gints-zilbalodis/",
+            "type": "supportive"
+        },
+        {
+            "title": "Animation & Rigging — Blender",
+            "url": "https://www.blender.org/features/animation/",
+            "type": "supportive"
+        },
+        {
+            "title": "Blender Development Fund",
+            "url": "https://fund.blender.org/",
+            "type": "supportive"
+        },
+        {
+            "title": "4.3 — Blender",
+            "url": "https://www.blender.org/download/releases/4-3/",
+            "type": "supportive"
+        },
+        {
+            "title": "Features — Blender",
+            "url": "https://www.blender.org/features/",
+            "type": "supportive"
+        },
+        {
+            "title": "Video Editing — Blender",
+            "url": "https://www.blender.org/features/video-editing/",
+            "type": "supportive"
+        },
+        {
+            "title": "Requirements — Blender",
+            "url": "https://www.blender.org/download/requirements/",
+            "type": "supportive"
+        },
+        {
+            "title": "4.4 — Blender",
+            "url": "https://www.blender.org/download/releases/4-4/",
+            "type": "supportive"
+        }
+    ]
+}

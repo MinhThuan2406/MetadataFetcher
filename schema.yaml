@@ -1,188 +1,268 @@
-# Schema for dynamic field assignment based on tool categories
-# This schema allows flexible field mapping instead of hardcoded categories
+# Metadata Schema for Software Tools and Libraries
+# Organized by logical sections for better maintainability
 
-# Common fields that apply to all tool categories
-common_fields:
+# Core identification and overview
+basic_info:
   - tool_name
   - overview_description
   - key_features
-  - installation_setup
-  - documentation_tutorials
-  - community_support
-  - licensing
-  - latest_version_release_date
-  - references_official_website_docs
-  - other_supporting_links_github
+  - use_cases
+  - supported_platforms
+
+# Technical specifications
+technical_specs:
   - dependencies
   - system_requirements
   - performance_considerations
+  - supported_languages
+  - supported_file_formats
 
-# Category-specific fields
+# Installation and setup
+setup_info:
+  - installation_setup
+  - configuration_guide
+  - quick_start_tutorial
+
+# Documentation and learning resources
+documentation:
+  - official_documentation
+  - tutorials_examples
+  - community_tutorials
+  - api_reference
+
+# Community and support
+community:
+  - community_support
+  - forums_channels
+  - ecosystem_packages
+
+# Licensing and versioning
+legal_versioning:
+  - licensing
+  - latest_version
+  - release_date
+  - version_history
+
+# External references and links
+references:
+  - official_website
+  - github_repository
+  - documentation_links
+  - additional_resources
+
+# Category-specific fields organized by domain
 category_fields:
   "AI/ML Development Tools":
-    - primary_use_cases
-    - supported_platforms_os
-    - integration_with_other_tools
-    - example_projects_notebooks
     - model_types_supported
-    - training_inference_capabilities
-    - hardware_acceleration_support
+    - training_capabilities
+    - inference_features
+    - hardware_acceleration
+    - ml_framework_integration
+    - model_deployment_options
+    - example_notebooks
 
   "Data Science and Analytics Tools":
-    - typical_applications
     - data_formats_supported
     - visualization_capabilities
-    - integration_with_other_libraries
-    - community_ecosystem
-    - example_use_cases
-    - statistical_analysis_features
-    - machine_learning_integration
+    - statistical_analysis
+    - data_processing_features
+    - ml_library_integration
+    - data_export_formats
+    - interactive_features
 
   "Creative and Media Tools":
-    - main_functions
-    - supported_file_formats
-    - plugin_extension_support
-    - user_interface_overview
-    - community_tutorials
-    - example_projects_outputs
+    - media_formats_supported
     - rendering_capabilities
+    - plugin_ecosystem
+    - user_interface
     - collaboration_features
+    - export_formats
+    - performance_optimization
 
   "Developer Tools":
-    - supported_languages_technologies
-    - integration_capabilities
-    - version_control_support
-    - extensions_plugins
-    - debugging_features
-    - code_analysis_tools
-    - build_deployment_integration
+    - language_support
+    - ide_integration
+    - version_control_integration
+    - debugging_tools
+    - code_analysis
+    - build_deployment
+    - extension_ecosystem
 
   "Large Language Models (LLM) Tools":
     - supported_model_types
-    - integration_with_other_tools_frameworks
-    - model_deployment_options
-    - api_sdk_availability
-    - example_use_cases_demos
+    - prompt_engineering_tools
     - fine_tuning_capabilities
-    - prompt_engineering_features
-    - model_management_tools
+    - api_sdk_availability
+    - model_management
+    - deployment_options
+    - integration_frameworks
 
 # Field descriptions for validation and documentation
 field_descriptions:
+  # Basic Info
   tool_name: "Name of the tool/library/framework"
   overview_description: "Brief description of what the tool does and its purpose"
   key_features: "Main capabilities and features of the tool"
-  installation_setup: "How to install and configure the tool"
-  documentation_tutorials: "Available documentation, tutorials, and learning resources"
-  community_support: "Community size, forums, support channels"
-  licensing: "License type and terms"
-  latest_version_release_date: "Current version and release information"
-  references_official_website_docs: "Official website and documentation links"
-  other_supporting_links_github: "Additional links like GitHub repositories"
+  use_cases: "Primary applications and use cases"
+  supported_platforms: "Operating systems and platforms supported"
+  
+  # Technical Specs
   dependencies: "Required dependencies, libraries, or tools needed"
   system_requirements: "Hardware and software requirements"
   performance_considerations: "Performance characteristics and optimization notes"
+  supported_languages: "Programming languages and technologies supported"
+  supported_file_formats: "Input and output file formats supported"
+  
+  # Setup Info
+  installation_setup: "How to install and configure the tool"
+  configuration_guide: "Detailed configuration instructions"
+  quick_start_tutorial: "Quick start guide for beginners"
+  
+  # Documentation
+  official_documentation: "Official documentation and guides"
+  tutorials_examples: "Tutorials and example projects"
+  community_tutorials: "Community-created tutorials and resources"
+  api_reference: "API documentation and reference"
+  
+  # Community
+  community_support: "Community size and support channels"
+  forums_channels: "Forums, Discord, Slack channels"
+  ecosystem_packages: "Related packages and ecosystem"
+  
+  # Legal/Versioning
+  licensing: "License type and terms"
+  latest_version: "Current version information"
+  release_date: "Latest release date"
+  version_history: "Version history and changelog"
+  
+  # References
+  official_website: "Official website URL"
+  github_repository: "GitHub repository link"
+  documentation_links: "Additional documentation links"
+  additional_resources: "Other relevant resources"
   
   # AI/ML specific
-  primary_use_cases: "Main applications and use cases"
-  supported_platforms_os: "Operating systems and platforms supported"
-  integration_with_other_tools: "How it integrates with other AI/ML tools"
-  example_projects_notebooks: "Sample projects and Jupyter notebooks"
   model_types_supported: "Types of models that can be used"
-  training_inference_capabilities: "Training and inference features"
-  hardware_acceleration_support: "GPU/TPU support and optimization"
+  training_capabilities: "Training features and capabilities"
+  inference_features: "Inference and prediction features"
+  hardware_acceleration: "GPU/TPU support and optimization"
+  ml_framework_integration: "Integration with ML frameworks"
+  model_deployment_options: "Deployment and hosting options"
+  example_notebooks: "Sample Jupyter notebooks and projects"
   
   # Data Science specific
-  typical_applications: "Common applications and use cases"
   data_formats_supported: "File formats and data types supported"
   visualization_capabilities: "Charting and visualization features"
-  integration_with_other_libraries: "Compatibility with other data science libraries"
-  community_ecosystem: "Package ecosystem and community packages"
-  example_use_cases: "Real-world examples and case studies"
-  statistical_analysis_features: "Statistical analysis capabilities"
-  machine_learning_integration: "ML library integration and features"
+  statistical_analysis: "Statistical analysis capabilities"
+  data_processing_features: "Data processing and manipulation"
+  ml_library_integration: "Machine learning library integration"
+  data_export_formats: "Export and output formats"
+  interactive_features: "Interactive features and widgets"
   
   # Creative/Media specific
-  main_functions: "Primary functions and capabilities"
-  supported_file_formats: "Input and output file formats"
-  plugin_extension_support: "Available plugins and extensions"
-  user_interface_overview: "UI/UX description and workflow"
-  community_tutorials: "Community-created tutorials and resources"
-  example_projects_outputs: "Sample projects and output examples"
+  media_formats_supported: "Media file formats supported"
   rendering_capabilities: "Rendering engine and performance"
-  collaboration_features: "Team collaboration and sharing features"
+  plugin_ecosystem: "Available plugins and extensions"
+  user_interface: "UI/UX description and workflow"
+  collaboration_features: "Team collaboration and sharing"
+  export_formats: "Output and export formats"
+  performance_optimization: "Performance optimization features"
   
   # Developer Tools specific
-  supported_languages_technologies: "Programming languages and technologies supported"
-  integration_capabilities: "Integration with other development tools"
-  version_control_support: "Git and version control integration"
-  extensions_plugins: "Available extensions and plugins"
-  debugging_features: "Debugging tools and capabilities"
-  code_analysis_tools: "Code analysis and linting features"
-  build_deployment_integration: "CI/CD and deployment integration"
+  language_support: "Programming languages supported"
+  ide_integration: "IDE and editor integration"
+  version_control_integration: "Git and version control integration"
+  debugging_tools: "Debugging tools and capabilities"
+  code_analysis: "Code analysis and linting features"
+  build_deployment: "CI/CD and deployment integration"
+  extension_ecosystem: "Available extensions and plugins"
   
   # LLM Tools specific
   supported_model_types: "Types of language models supported"
-  integration_with_other_tools_frameworks: "Integration with other LLM tools"
-  model_deployment_options: "Deployment and hosting options"
-  api_sdk_availability: "API and SDK availability"
-  example_use_cases_demos: "Example applications and demonstrations"
+  prompt_engineering_tools: "Prompt engineering and optimization"
   fine_tuning_capabilities: "Model fine-tuning and customization"
-  prompt_engineering_features: "Prompt engineering and optimization tools"
-  model_management_tools: "Model versioning and management features"
+  api_sdk_availability: "API and SDK availability"
+  model_management: "Model versioning and management"
+  deployment_options: "Deployment and hosting options"
+  integration_frameworks: "Integration with other LLM tools"
 
 # Validation rules for field types
 field_types:
+  # Basic Info
   tool_name: "string"
   overview_description: "text"
   key_features: "list"
-  installation_setup: "text"
-  documentation_tutorials: "list"
-  community_support: "text"
-  licensing: "string"
-  latest_version_release_date: "string"
-  references_official_website_docs: "list"
-  other_supporting_links_github: "list"
+  use_cases: "list"
+  supported_platforms: "list"
+  
+  # Technical Specs
   dependencies: "list"
   system_requirements: "text"
   performance_considerations: "text"
+  supported_languages: "list"
+  supported_file_formats: "list"
   
-  # All category-specific fields default to text or list
-  primary_use_cases: "list"
-  supported_platforms_os: "list"
-  integration_with_other_tools: "text"
-  example_projects_notebooks: "list"
+  # Setup Info
+  installation_setup: "text"
+  configuration_guide: "text"
+  quick_start_tutorial: "text"
+  
+  # Documentation
+  official_documentation: "list"
+  tutorials_examples: "list"
+  community_tutorials: "list"
+  api_reference: "list"
+  
+  # Community
+  community_support: "text"
+  forums_channels: "list"
+  ecosystem_packages: "list"
+  
+  # Legal/Versioning
+  licensing: "string"
+  latest_version: "string"
+  release_date: "string"
+  version_history: "text"
+  
+  # References
+  official_website: "string"
+  github_repository: "string"
+  documentation_links: "list"
+  additional_resources: "list"
+  
+  # Category-specific fields
   model_types_supported: "list"
-  training_inference_capabilities: "text"
-  hardware_acceleration_support: "text"
-  typical_applications: "list"
+  training_capabilities: "text"
+  inference_features: "text"
+  hardware_acceleration: "text"
+  ml_framework_integration: "text"
+  model_deployment_options: "text"
+  example_notebooks: "list"
   data_formats_supported: "list"
   visualization_capabilities: "text"
-  integration_with_other_libraries: "text"
-  community_ecosystem: "text"
-  example_use_cases: "list"
-  statistical_analysis_features: "text"
-  machine_learning_integration: "text"
-  main_functions: "list"
-  supported_file_formats: "list"
-  plugin_extension_support: "text"
-  user_interface_overview: "text"
-  community_tutorials: "list"
-  example_projects_outputs: "list"
+  statistical_analysis: "text"
+  data_processing_features: "text"
+  ml_library_integration: "text"
+  data_export_formats: "list"
+  interactive_features: "text"
+  media_formats_supported: "list"
   rendering_capabilities: "text"
+  plugin_ecosystem: "text"
+  user_interface: "text"
   collaboration_features: "text"
-  supported_languages_technologies: "list"
-  integration_capabilities: "text"
-  version_control_support: "text"
-  extensions_plugins: "text"
-  debugging_features: "text"
-  code_analysis_tools: "text"
-  build_deployment_integration: "text"
+  export_formats: "list"
+  performance_optimization: "text"
+  language_support: "list"
+  ide_integration: "text"
+  version_control_integration: "text"
+  debugging_tools: "text"
+  code_analysis: "text"
+  build_deployment: "text"
+  extension_ecosystem: "text"
   supported_model_types: "list"
-  integration_with_other_tools_frameworks: "text"
-  model_deployment_options: "text"
-  api_sdk_availability: "text"
-  example_use_cases_demos: "list"
+  prompt_engineering_tools: "text"
   fine_tuning_capabilities: "text"
-  prompt_engineering_features: "text"
-  model_management_tools: "text" 
+  api_sdk_availability: "text"
+  model_management: "text"
+  deployment_options: "text"
+  integration_frameworks: "text" 

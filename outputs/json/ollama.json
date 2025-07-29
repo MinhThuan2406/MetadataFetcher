@@ -1,0 +1,4 @@
+{
+    "tool_name": "ollama",
+    "overview_description": "The official Python client for Ollama."
+}
